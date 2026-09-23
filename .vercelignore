@@ -1,0 +1,11 @@
+.git
+.env*
+verification
+test-results
+playwright-report
+docs
+tests
+scripts
+AGENTS.md
+CLAUDE.md
+README.md

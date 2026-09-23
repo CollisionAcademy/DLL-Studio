@@ -1,0 +1,44 @@
+[
+  {
+    "id": "luca",
+    "url": "https://v3b.fal.media/files/b/0aaba0b6/r-gR7iWDWtb4V8gXqLjGN_output.mp4",
+    "request_id": "01a0d035-13ab-7371-b950-bbb40e69787c",
+    "endpoint_id": "fal-ai/kling-video/v3/turbo/standard/image-to-video",
+    "prompt": "A single continuous five-second welcoming character introduction. Preserve the exact animal, face, clothing, colors and anatomy in the reference image. Luca the cheetah gently drops his soccer ball, taps it once with his sneaker, catches it and gives the viewer a friendly wave. Soft polished children's 3D animation, gentle expressive movement, fixed camera, full body remains visible, same clean studio background and lighting, no scene cuts, no zoom, no added characters, no text, no speech, no music, silent visual greeting."
+  },
+  {
+    "id": "vienna",
+    "url": "https://v3b.fal.media/files/b/0aaba0b6/OUX33DSCBZktBiPMJzlRv_output.mp4",
+    "request_id": "01a0d035-238a-7be2-8bcf-1d2dec22dd1b",
+    "endpoint_id": "fal-ai/kling-video/v3/turbo/standard/image-to-video",
+    "prompt": "A single continuous five-second welcoming character introduction. Preserve the exact animal, face, clothing, colors and anatomy in the reference image. Vienna the red panda checks her map, looks up with delighted curiosity, points toward an imaginary trail and gives the viewer a friendly wave. Soft polished children's 3D animation, gentle expressive movement, fixed camera, full body remains visible, same clean studio background and lighting, no scene cuts, no zoom, no added characters, no text, no speech, no music, silent visual greeting."
+  },
+  {
+    "id": "doo-wop-dog",
+    "url": "https://v3b.fal.media/files/b/0aaba0b7/fwLfGdd6p2NP6G3rqZtWi_output.mp4",
+    "request_id": "01a0d035-3226-7e12-805f-b98b4fb659b2",
+    "endpoint_id": "fal-ai/kling-video/v3/turbo/standard/image-to-video",
+    "prompt": "A single continuous five-second welcoming character introduction. Preserve the exact animal, face, clothing, colors and anatomy in the reference image. Doo Wop Dog the beagle peers playfully through his magnifying glass, tilts his head in discovery, lowers the glass and gives a friendly tail wag. Soft polished children's 3D animation, gentle expressive movement, fixed camera, full body remains visible, same clean studio background and lighting, no scene cuts, no zoom, no added characters, no text, no speech, no music, silent visual greeting."
+  },
+  {
+    "id": "bianna",
+    "url": "https://v3b.fal.media/files/b/0aaba0ba/QCvmrRZ7_ucGVWVlsZgMB_output.mp4",
+    "request_id": "01a0d035-4325-76f1-8c18-d4174023ac4c",
+    "endpoint_id": "fal-ai/kling-video/v3/turbo/standard/image-to-video",
+    "prompt": "A single continuous five-second welcoming character introduction. Preserve the exact animal, face, clothing, colors and anatomy in the reference image. Bianna the duck does a short silly wobbly dance, her saucepan hat tips slightly, she catches it with a wing and laughs happily. Soft polished children's 3D animation, gentle expressive movement, fixed camera, full body remains visible, same clean studio background and lighting, no scene cuts, no zoom, no added characters, no text, no speech, no music, silent visual greeting."
+  },
+  {
+    "id": "gramps",
+    "url": "https://v3b.fal.media/files/b/0aaba0b9/T_2ANKnastSF-GUBwcqHw_output.mp4",
+    "request_id": "01a0d035-5a97-78f0-9969-bd30e9df13ed",
+    "endpoint_id": "fal-ai/kling-video/v3/turbo/standard/image-to-video",
+    "prompt": "A single continuous five-second welcoming character introduction. Preserve the exact animal, face, clothing, colors and anatomy in the reference image. Gramps the elderly falcon raises one skeptical eyebrow, softens into a warm amused smile, tips his blue Italia cap and gives a gentle welcoming nod. Soft polished children's 3D animation, gentle expressive movement, fixed camera, full body remains visible, same clean studio background and lighting, no scene cuts, no zoom, no added characters, no text, no speech, no music, silent visual greeting."
+  },
+  {
+    "id": "leo",
+    "url": "https://v3b.fal.media/files/b/0aaba0bb/GnOjyd-f8IWyFObrcVMqP_output.mp4",
+    "request_id": "01a0d035-6b41-7633-8abb-dbe68776960b",
+    "endpoint_id": "fal-ai/kling-video/v3/turbo/standard/image-to-video",
+    "prompt": "A single continuous five-second welcoming character introduction. Preserve the exact animal, face, clothing, colors and anatomy in the reference image. Leo the Spinosaurus superhero checks the small tool on his belt, his blue lightning chest emblem glows softly, he looks up proudly and gives a friendly thumbs up. Soft polished children's 3D animation, gentle expressive movement, fixed camera, full body remains visible, same clean studio background and lighting, no scene cuts, no zoom, no added characters, no text, no speech, no music, silent visual greeting."
+  }
+]
