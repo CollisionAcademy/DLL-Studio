@@ -19,3 +19,5 @@ The user authorized Story Lab integration, GitHub save and Vercel production dep
 Verification completed: Next production build; eight policy/episode-contract tests; seven companion tests; production browser tests at desktop, tablet and mobile sizes including navigation, homepage entry and companion playback.
 
 Home-office continuation: inspect the workflow run, download the leo-ten-minute-episode artifact after success, review complete picture and sound, correct problems without duplicating good shots, align captions to actual speech, and deliver the independent video. Do not automatically publish an unreviewed film to the public website.
+
+Cloud run started and preflight passed: https://github.com/CollisionAcademy/DLL-Studio/actions/runs/36192865667 . Source commit: 5d4adf14fd6754ad4717d5f4db36e1f9b778e529. Jobs run on GitHub-hosted Ubuntu and no longer depend on the office computer. Download the leo-ten-minute-episode artifact when assembly succeeds.
