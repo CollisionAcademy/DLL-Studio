@@ -83,6 +83,19 @@ export default function Home() {
         <span>PLAY A LITTLE</span>
       </div>
       <CharacterGallery />
+      <section className="story-feature" aria-labelledby="story-feature-title">
+        <div className="story-feature-art">
+          <Image src="/characters/leo.png" alt="Leo, our orange dinosaur super builder" width={520} height={520} sizes="(max-width: 700px) 90vw, 440px" />
+          <span className="story-sticker">A little brave.<br />A lot of heart.</span>
+        </div>
+        <div className="story-feature-copy">
+          <span className="eyebrow">NEW IN THE STORY LAB · STARRING LEO</span>
+          <h2 id="story-feature-title">A big adventure.<br />Room for everyone.</h2>
+          <p>Join Leo as Captain Giggle in a friendship adventure full of silly surprises, curious clues, and choices you can make together.</p>
+          <Link className="button button-blue" href="/story-lab">Explore Story Lab <ArrowRight size={20} /></Link>
+          <p className="story-format">Interactive illustrated preview · Ages 6–10</p>
+        </div>
+      </section>
       <section className="play-banner">
         <div className="play-banner-icon">
           <Gamepad2 size={58} />

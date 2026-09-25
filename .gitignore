@@ -9,3 +9,8 @@ playwright-report/
 verification/
 
 .vercel
+
+episode-renders/
+
+__pycache__/
+*.pyc

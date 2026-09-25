@@ -1,0 +1,89 @@
+name: Independent Leo episode
+run-name: Leo ten-minute episode — cloud production
+on:
+  workflow_dispatch:
+permissions:
+  contents: read
+  actions: read
+concurrency:
+  group: independent-leo-episode
+  cancel-in-progress: false
+jobs:
+  preflight:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Prevent duplicate paid builds
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          python - <<'PY'
+          import json, os, urllib.request
+          url='https://api.github.com/repos/'+os.environ['GITHUB_REPOSITORY']+'/actions/workflows/independent-episode.yml/runs?event=workflow_dispatch&per_page=100'
+          req=urllib.request.Request(url,headers={'Authorization':'Bearer '+os.environ['GH_TOKEN'],'Accept':'application/vnd.github+json'})
+          data=json.load(urllib.request.urlopen(req))
+          others=[r for r in data['workflow_runs'] if str(r['id'])!=os.environ['GITHUB_RUN_ID']]
+          if os.environ['GITHUB_RUN_ATTEMPT']!='1' or others:raise SystemExit('Existing production run found. Reconcile its ledger; automatic paid reruns are disabled.')
+          PY
+      - name: Validate production inputs
+        run: |
+          for scene in $(seq 1 10); do python scripts/independent-video/cloud-episode.py --scene "$scene" --dry-run; done
+  render:
+    needs: preflight
+    runs-on: ubuntu-latest
+    timeout-minutes: 240
+    strategy:
+      fail-fast: false
+      max-parallel: 3
+      matrix:
+        scene: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+    steps:
+      - uses: actions/checkout@v4
+      - name: Install media tools
+        run: sudo apt-get update -qq && sudo apt-get install -y -qq ffmpeg
+      - name: Render six continuous shots
+        env:
+          FAL_KEY: ${{ secrets.FAL_KEY }}
+        run: python -u scripts/independent-video/cloud-episode.py --scene ${{ matrix.scene }}
+      - name: Save rendered media and submission ledger
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: scene-${{ matrix.scene }}
+          path: episode-renders/cloud/scene-*/
+          retention-days: 14
+          compression-level: 0
+          if-no-files-found: warn
+  assemble:
+    needs: render
+    runs-on: ubuntu-latest
+    timeout-minutes: 90
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/download-artifact@v4
+        with:
+          pattern: scene-*
+          path: episode-renders/downloads
+      - name: Restore scene folders
+        run: |
+          python - <<'PY'
+          import pathlib,shutil
+          base=pathlib.Path('episode-renders/cloud');base.mkdir(parents=True,exist_ok=True)
+          for p in pathlib.Path('episode-renders/downloads').glob('scene-*'):
+              n=int(p.name.split('-')[1]);shutil.copytree(p,base/f'scene-{n:02d}',dirs_exist_ok=True)
+          PY
+      - name: Install media tools
+        run: sudo apt-get update -qq && sudo apt-get install -y -qq ffmpeg
+      - name: Assemble and verify continuous episode
+        run: python -u scripts/independent-video/cloud-episode.py --assemble
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: leo-ten-minute-episode
+          path: episode-renders/cloud/delivery/
+          retention-days: 14
+          compression-level: 0
+          if-no-files-found: warn
+      - name: Delivery summary
+        run: echo 'The continuous episode review MP4 and production segments are in the leo-ten-minute-episode artifact. Playback and caption QA remains required before public video release.' >> "$GITHUB_STEP_SUMMARY"
+

@@ -1,0 +1,557 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Captain Giggle production scene package",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "title",
+    "version",
+    "ageRange",
+    "duration",
+    "frame",
+    "status",
+    "characters",
+    "scenes"
+  ],
+  "properties": {
+    "title": {
+      "type": "string",
+      "minLength": 1
+    },
+    "version": {
+      "const": 1
+    },
+    "ageRange": {
+      "const": "6–10"
+    },
+    "duration": {
+      "const": 600
+    },
+    "frame": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "width",
+        "height",
+        "aspect",
+        "fps"
+      ],
+      "properties": {
+        "width": {
+          "const": 1920
+        },
+        "height": {
+          "const": 1080
+        },
+        "aspect": {
+          "const": "16:9"
+        },
+        "fps": {
+          "const": 24
+        }
+      }
+    },
+    "status": {
+      "type": "string",
+      "minLength": 1
+    },
+    "characters": {
+      "type": "array",
+      "minItems": 5,
+      "maxItems": 5,
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "id",
+          "name",
+          "look",
+          "scale",
+          "voice",
+          "trait"
+        ],
+        "properties": {
+          "id": {
+            "type": "string",
+            "minLength": 1
+          },
+          "name": {
+            "type": "string",
+            "minLength": 1
+          },
+          "look": {
+            "type": "string",
+            "minLength": 1
+          },
+          "scale": {
+            "type": "string",
+            "minLength": 1
+          },
+          "voice": {
+            "type": "string",
+            "minLength": 1
+          },
+          "trait": {
+            "type": "string",
+            "minLength": 1
+          }
+        }
+      }
+    },
+    "scenes": {
+      "type": "array",
+      "minItems": 10,
+      "maxItems": 10,
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "id",
+          "name",
+          "start",
+          "duration",
+          "location",
+          "characters",
+          "beats",
+          "hook",
+          "interaction",
+          "camera",
+          "motion",
+          "lighting",
+          "music",
+          "visualPrompt",
+          "consistency",
+          "negativePrompt",
+          "shotPrompts"
+        ],
+        "properties": {
+          "id": {
+            "type": "integer",
+            "minimum": 1,
+            "maximum": 10
+          },
+          "name": {
+            "type": "string",
+            "minLength": 1
+          },
+          "start": {
+            "type": "integer",
+            "minimum": 0
+          },
+          "duration": {
+            "const": 60
+          },
+          "location": {
+            "type": "string",
+            "minLength": 1
+          },
+          "characters": {
+            "type": "array",
+            "minItems": 1,
+            "uniqueItems": true,
+            "items": {
+              "enum": [
+                "giggle",
+                "zip",
+                "luna",
+                "boomer",
+                "snapper"
+              ]
+            }
+          },
+          "beats": {
+            "type": "array",
+            "minItems": 6,
+            "maxItems": 6,
+            "items": {
+              "type": "object",
+              "additionalProperties": false,
+              "required": [
+                "action",
+                "dialogue",
+                "sfx",
+                "onScreen",
+                "start",
+                "duration"
+              ],
+              "properties": {
+                "action": {
+                  "type": "string",
+                  "minLength": 1
+                },
+                "dialogue": {
+                  "type": "array",
+                  "items": {
+                    "type": "object",
+                    "additionalProperties": false,
+                    "required": [
+                      "speaker",
+                      "text"
+                    ],
+                    "properties": {
+                      "speaker": {
+                        "type": "string",
+                        "minLength": 1
+                      },
+                      "text": {
+                        "type": "string",
+                        "minLength": 1
+                      }
+                    }
+                  }
+                },
+                "sfx": {
+                  "type": "string",
+                  "minLength": 1
+                },
+                "onScreen": {
+                  "type": "string"
+                },
+                "start": {
+                  "enum": [
+                    0,
+                    10,
+                    20,
+                    30,
+                    40,
+                    50
+                  ]
+                },
+                "duration": {
+                  "const": 10
+                }
+              }
+            }
+          },
+          "hook": {
+            "type": "string",
+            "minLength": 1
+          },
+          "interaction": {
+            "type": [
+              "object",
+              "null"
+            ],
+            "additionalProperties": false,
+            "required": [
+              "type",
+              "at",
+              "duration",
+              "prompt",
+              "options"
+            ],
+            "properties": {
+              "type": {
+                "enum": [
+                  "choice",
+                  "spot",
+                  "count",
+                  "feelings",
+                  "spot-choice",
+                  "movement",
+                  "final",
+                  "sing"
+                ]
+              },
+              "at": {
+                "type": "integer",
+                "minimum": 0,
+                "maximum": 50
+              },
+              "duration": {
+                "type": "integer",
+                "minimum": 8,
+                "maximum": 10
+              },
+              "prompt": {
+                "type": "string",
+                "minLength": 1
+              },
+              "options": {
+                "type": "array",
+                "items": {
+                  "type": "object",
+                  "additionalProperties": false,
+                  "required": [
+                    "label",
+                    "feedback",
+                    "branch"
+                  ],
+                  "properties": {
+                    "label": {
+                      "type": "string",
+                      "minLength": 1
+                    },
+                    "feedback": {
+                      "type": "string",
+                      "minLength": 1
+                    },
+                    "branch": {
+                      "type": "string",
+                      "minLength": 1
+                    }
+                  }
+                },
+                "minItems": 0,
+                "maxItems": 3
+              },
+              "default": {
+                "type": "integer",
+                "minimum": 0,
+                "maximum": 2
+              },
+              "answer": {
+                "type": "integer",
+                "minimum": 0,
+                "maximum": 2
+              },
+              "reveal": {
+                "type": "string",
+                "minLength": 1
+              },
+              "targets": {
+                "type": "array",
+                "items": {
+                  "type": "object",
+                  "additionalProperties": false,
+                  "required": [
+                    "label",
+                    "x",
+                    "y"
+                  ],
+                  "properties": {
+                    "label": {
+                      "type": "string",
+                      "minLength": 1
+                    },
+                    "x": {
+                      "type": "number",
+                      "minimum": 0,
+                      "maximum": 100
+                    },
+                    "y": {
+                      "type": "number",
+                      "minimum": 0,
+                      "maximum": 100
+                    }
+                  }
+                }
+              },
+              "additionalPause": {
+                "type": "object",
+                "additionalProperties": false,
+                "required": [
+                  "type",
+                  "at",
+                  "duration",
+                  "prompt",
+                  "options"
+                ],
+                "properties": {
+                  "type": {
+                    "enum": [
+                      "choice",
+                      "spot",
+                      "count",
+                      "feelings",
+                      "spot-choice",
+                      "movement",
+                      "final",
+                      "sing"
+                    ]
+                  },
+                  "at": {
+                    "type": "integer",
+                    "minimum": 0,
+                    "maximum": 50
+                  },
+                  "duration": {
+                    "type": "integer",
+                    "minimum": 8,
+                    "maximum": 10
+                  },
+                  "prompt": {
+                    "type": "string",
+                    "minLength": 1
+                  },
+                  "options": {
+                    "type": "array",
+                    "items": {
+                      "type": "object",
+                      "additionalProperties": false,
+                      "required": [
+                        "label",
+                        "feedback",
+                        "branch"
+                      ],
+                      "properties": {
+                        "label": {
+                          "type": "string",
+                          "minLength": 1
+                        },
+                        "feedback": {
+                          "type": "string",
+                          "minLength": 1
+                        },
+                        "branch": {
+                          "type": "string",
+                          "minLength": 1
+                        }
+                      }
+                    },
+                    "minItems": 0,
+                    "maxItems": 3
+                  },
+                  "default": {
+                    "type": "integer",
+                    "minimum": 0,
+                    "maximum": 2
+                  },
+                  "answer": {
+                    "type": "integer",
+                    "minimum": 0,
+                    "maximum": 2
+                  },
+                  "reveal": {
+                    "type": "string",
+                    "minLength": 1
+                  },
+                  "targets": {
+                    "type": "array",
+                    "items": {
+                      "type": "object",
+                      "additionalProperties": false,
+                      "required": [
+                        "label",
+                        "x",
+                        "y"
+                      ],
+                      "properties": {
+                        "label": {
+                          "type": "string",
+                          "minLength": 1
+                        },
+                        "x": {
+                          "type": "number",
+                          "minimum": 0,
+                          "maximum": 100
+                        },
+                        "y": {
+                          "type": "number",
+                          "minimum": 0,
+                          "maximum": 100
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "camera": {
+            "type": "string",
+            "minLength": 1
+          },
+          "motion": {
+            "type": "string",
+            "minLength": 1
+          },
+          "lighting": {
+            "type": "string",
+            "minLength": 1
+          },
+          "music": {
+            "type": "string",
+            "minLength": 1
+          },
+          "visualPrompt": {
+            "type": "string",
+            "minLength": 1
+          },
+          "consistency": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "additionalProperties": false,
+              "required": [
+                "id",
+                "name",
+                "look",
+                "scale",
+                "voice",
+                "trait"
+              ],
+              "properties": {
+                "id": {
+                  "type": "string",
+                  "minLength": 1
+                },
+                "name": {
+                  "type": "string",
+                  "minLength": 1
+                },
+                "look": {
+                  "type": "string",
+                  "minLength": 1
+                },
+                "scale": {
+                  "type": "string",
+                  "minLength": 1
+                },
+                "voice": {
+                  "type": "string",
+                  "minLength": 1
+                },
+                "trait": {
+                  "type": "string",
+                  "minLength": 1
+                }
+              }
+            }
+          },
+          "negativePrompt": {
+            "type": "string",
+            "minLength": 1
+          },
+          "shotPrompts": {
+            "type": "array",
+            "minItems": 6,
+            "maxItems": 6,
+            "items": {
+              "type": "object",
+              "additionalProperties": false,
+              "required": [
+                "id",
+                "start",
+                "duration",
+                "prompt",
+                "negativePrompt"
+              ],
+              "properties": {
+                "id": {
+                  "type": "string",
+                  "minLength": 1
+                },
+                "start": {
+                  "type": "integer",
+                  "minimum": 0
+                },
+                "duration": {
+                  "const": 10
+                },
+                "prompt": {
+                  "type": "string",
+                  "minLength": 1
+                },
+                "negativePrompt": {
+                  "type": "string",
+                  "minLength": 1
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

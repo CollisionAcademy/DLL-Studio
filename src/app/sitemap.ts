@@ -4,6 +4,8 @@ export default function sitemap(): MetadataRoute.Sitemap {
   return [
     "",
     "/play",
+    "/story-lab",
+    "/adventures/captain-giggle/index.html",
     "/grown-ups",
     "/privacy",
     ...characters.map((c) => `/characters/${c.id}`),

@@ -54,6 +54,13 @@ export function Header() {
             The playroom
           </Link>
           <Link
+            href="/story-lab"
+            onClick={() => setOpen(false)}
+            className={path === "/story-lab" ? "active" : ""}
+          >
+            Story Lab
+          </Link>
+          <Link
             href="/grown-ups"
             onClick={() => setOpen(false)}
             className="parents-link"

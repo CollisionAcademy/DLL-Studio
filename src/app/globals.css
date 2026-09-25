@@ -1980,3 +1980,22 @@ a {
     scroll-behavior: auto !important;
   }
 }
+
+/* Story Lab: shared with the home feature; the companion remains independent. */
+.story-feature { max-width:1200px; margin:48px auto 72px; display:grid; grid-template-columns:0.9fr 1.1fr; border:1px solid var(--line); border-radius:32px; overflow:hidden; background:#f0f8ed; }
+.story-feature-art { position:relative; background:#c9f5f6; min-width:0; }
+.story-feature-art img { display:block; width:100%; height:100%; object-fit:cover; }
+.story-sticker { position:absolute; left:24px; bottom:24px; padding:14px 20px; border-radius:20px; background:#ffdf58; font-weight:900; transform:rotate(-4deg); }
+.story-feature-copy { align-self:center; padding:42px; }
+.story-feature-copy h2 { font-size:clamp(32px,4vw,48px); line-height:1.12; margin:18px 0; }
+.story-feature-copy h3 { font-size:24px; line-height:1.3; margin:0 0 20px; }
+.story-feature-copy p { line-height:1.75; margin:0 0 24px; }
+.story-feature-copy .story-format { font-size:13px; margin:18px 0 0; color:#4f6468; }
+.story-lab-page .story-feature { margin-top:0; }
+.story-promises { display:grid; grid-template-columns:repeat(3,1fr); gap:36px; margin:0 0 70px; }
+.story-promises svg { color:var(--blue); }
+.story-promises h3 { margin:12px 0; font-size:23px; }
+.story-promises p { line-height:1.7; color:#4f6468; }
+@media(max-width:1250px) { main > .story-feature { margin-left:25px; margin-right:25px; } }
+@media(max-width:850px) { .nav { gap:14px; } .story-feature-copy { padding:28px; } }
+@media(max-width:700px) { .story-feature { grid-template-columns:1fr; } .story-feature-art { max-height:440px; } .story-feature-art img { height:100%; object-fit:contain; } .story-promises { grid-template-columns:1fr; gap:24px; } .story-feature-copy { padding:28px 24px; } }
