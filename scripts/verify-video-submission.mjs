@@ -1,4 +1,5 @@
 import { chromium, expect } from "@playwright/test";
+const base = process.env.TEST_URL || "http://localhost:3100";
 const browser = await chromium.launch({ channel: "chrome", headless: true });
 const page = await browser.newPage();
 let remaining = 1;
@@ -28,7 +29,7 @@ await page.route("**/api/member/video", (r) => {
   });
 });
 try {
-  await page.goto("http://localhost:3100/parent");
+  await page.goto(base + "/parent");
   await expect(
     page.getByRole("button", { name: "Submit story · 1 credit" }),
   ).toBeEnabled();
