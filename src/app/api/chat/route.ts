@@ -119,6 +119,8 @@ export async function POST(request: NextRequest) {
   if (process.env.NODE_ENV !== "production") {
     allowed.add("http://localhost:3000");
     allowed.add("http://127.0.0.1:3000");
+    const host = request.headers.get("host");
+    if (host && /^(localhost|127\.0\.0\.1):\d+$/.test(host)) allowed.add(`http://${host}`);
   }
   if (process.env.VERCEL_URL) allowed.add(`https://${process.env.VERCEL_URL}`);
   if (process.env.VERCEL_PROJECT_PRODUCTION_URL)

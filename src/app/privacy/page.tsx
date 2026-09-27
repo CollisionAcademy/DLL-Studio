@@ -11,6 +11,7 @@ export default function Privacy() {
         website.
       </p>
       <h2>Games and videos</h2>
+      <p>Optional memberships add parent accounts, paid subscriptions, and private video requests. Clerk handles sign-in and Stripe handles billing. DLL stores membership status, credit usage, optional birthday month/day and timezone, parent scripts, review status, publishing permission, votes, badges, and gift box allocations. Parent scripts are checked through OpenAI and approved scenes are generated through FAL. See <Link href="/parents/safety">parent controls and membership data</Link> for details. Public play remains available without an account.</p>
       <p>
         Games run in your browser. Scores and progress are not uploaded or
         stored by the app. Character images and videos are served as website

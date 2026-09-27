@@ -9,3 +9,5 @@ scripts
 AGENTS.md
 CLAUDE.md
 README.md
+.agents
+skills-lock.json

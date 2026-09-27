@@ -1,5 +1,9 @@
 # DLL Studio
 
+## Membership implementation
+
+The site includes four membership tiers, parent controls, entitlement-gated activities, Stripe billing adapters, PostgreSQL migrations, and a moderated FAL video queue. Public pages remain available without membership configuration. See [membership setup, operations, changed files, and the four-tier test checklist](docs/membership-implementation.md). Checkout is closed until DLL-specific setup is complete; `.env.membership.example` lists configuration without secrets. The original public-site documentation below describes the public experience; membership adds optional accounts, payments, and stored parent-managed data.
+
 A Next.js website for Luca, Leo, Vienna, Bianna, Doo Wop Dog, and Gramps. Built for `dll-studio.com`, with Vercel hosting and the `CollisionAcademy/DLL-Studio` repository.
 
 ## Included
@@ -21,7 +25,7 @@ cp .env.example .env.local
 npm run dev
 ```
 
-`OPENAI_MODEL` defaults to `gpt-4.1-mini`. API credentials are server-only. No Fal credentials are needed at runtime because videos are already generated. Google Drive is not exposed to the public app.
+`OPENAI_MODEL` defaults to `gpt-4.1-mini`. API credentials are server-only. No Fal credentials are needed for public intro playback because those videos are already generated. Membership video generation uses a server-side FAL key. Google Drive is not exposed to the public app.
 
 ```sh
 npm run build
@@ -47,7 +51,7 @@ Add `dll-studio.com` and `www.dll-studio.com` to the project. Use the exact reco
 
 The API accepts only a valid character ID and one of six preset topic IDs. Additional fields, arbitrary messages, uploads, and history are rejected. No child's free text is sent to OpenAI. Replies are checked by OpenAI moderation and an additional output filter; generation/moderation failure uses a prewritten answer. Responses API storage is disabled, but that does not disable the provider's abuse-monitoring retention.
 
-The client keeps conversation display state only in memory. Rate limiting uses a temporary hash of the connection address. Response caching, in-flight deduplication, and rate counters are **per process**, not durable or globally enforced across Vercel instances. Configure Vercel Firewall rate limits and OpenAI project spending limits for public traffic. There are no ads, analytics scripts, user accounts, payments, database, or persistent child profiles.
+The client keeps conversation display state only in memory. Rate limiting uses a temporary hash of the connection address. Response caching, in-flight deduplication, and rate counters are **per process**, not durable or globally enforced across Vercel instances. Configure Vercel Firewall rate limits and OpenAI project spending limits for public traffic. Public play has no ads or analytics scripts. Optional memberships add parent accounts, billing, and stored parent-managed data; see the membership guide.
 
 ## Media provenance
 

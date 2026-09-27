@@ -2,6 +2,7 @@ node_modules/
 .next/
 .env*
 !.env.example
+!.env.membership.example
 .vercel/
 test-results/
 playwright-report/

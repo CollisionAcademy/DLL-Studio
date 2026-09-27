@@ -5,7 +5,10 @@ import "@fontsource/nunito-sans/400.css";
 import "@fontsource/nunito-sans/600.css";
 import "@fontsource/nunito-sans/800.css";
 import "./globals.css";
+import "./membership.css";
 import { Header, Footer } from "@/components/shell";
+import { AuthShell } from "@/components/membership/auth-shell";
+import { authConfigured } from "@/lib/membership/access";
 export const metadata: Metadata = {
   metadataBase: new URL("https://dll-studio.com"),
   title: {
@@ -18,16 +21,20 @@ export const metadata: Metadata = {
 export default function RootLayout({
   children,
 }: Readonly<{ children: React.ReactNode }>) {
+  const enabled = authConfigured();
+  const content = (
+    <>
+      <a className="skip-link" href="#main">
+        Skip to the fun
+      </a>
+      <Header authenticationEnabled={enabled} />
+      {children}
+      <Footer />
+    </>
+  );
   return (
     <html lang="en">
-      <body>
-        <a className="skip-link" href="#main">
-          Skip to the fun
-        </a>
-        <Header />
-        {children}
-        <Footer />
-      </body>
+      <body>{enabled ? <AuthShell>{content}</AuthShell> : content}</body>
     </html>
   );
 }

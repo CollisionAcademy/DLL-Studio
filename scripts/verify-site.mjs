@@ -207,9 +207,13 @@ const chatResponse = page.waitForResponse(
 );
 await page.getByRole("button", { name: /Tell me a tiny story/ }).click();
 const live = await (await chatResponse).json();
-assert.equal(live.source, "ai", "Expected live OpenAI reply, not fallback");
+if (process.env.ALLOW_STORYBOOK_CHAT !== "1") {
+  assert.equal(live.source, "ai", "Expected live OpenAI reply, not fallback");
+} else {
+  assert.ok(["ai", "storybook"].includes(live.source));
+}
 await page
-  .getByText("AI character reply", { exact: true })
+  .getByText(live.source === "ai" ? "AI character reply" : "Storybook reply", { exact: true }).last()
   .waitFor({ timeout: 30000 });
 assert.ok(live.reply.length > 20);
 await page.screenshot({
@@ -219,7 +223,7 @@ await page.screenshot({
 await page.getByRole("button", { name: "Start fresh" }).click();
 assert.equal(await page.locator(".chat-message").count(), 1);
 results.push(
-  "Live chat: UI selection → API → OpenAI → moderation → visible AI reply; clear chat",
+  `Chat (${live.source}): UI selection → API → visible labeled reply; clear chat${live.source === "storybook" ? "; live provider NOT verified" : ""}`,
 );
 const invalid = await page.request.post(base + "/api/chat", {
   headers: { Origin: base },

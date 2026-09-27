@@ -3,6 +3,7 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { ArrowUpRight, Gamepad2, Heart, Menu, X } from "lucide-react";
 import { useState } from "react";
+import { AccountNav } from "./membership/account-nav";
 export function Brand() {
   return (
     <span className="brand">
@@ -17,7 +18,11 @@ export function Brand() {
     </span>
   );
 }
-export function Header() {
+export function Header({
+  authenticationEnabled = false,
+}: {
+  authenticationEnabled?: boolean;
+}) {
   const [open, setOpen] = useState(false);
   const path = usePathname();
   return (
@@ -39,6 +44,20 @@ export function Header() {
           {open ? <X /> : <Menu />}
         </button>
         <nav className={open ? "nav open" : "nav"} aria-label="Main navigation">
+          {authenticationEnabled ? (
+            <AccountNav onNavigate={() => setOpen(false)} />
+          ) : (
+            <Link href="/login" onClick={() => setOpen(false)}>
+              Parent login
+            </Link>
+          )}
+          <Link
+            href="/membership"
+            onClick={() => setOpen(false)}
+            className={path === "/membership" ? "active" : ""}
+          >
+            Membership
+          </Link>
           <Link
             href="/#characters"
             onClick={() => setOpen(false)}
@@ -77,6 +96,9 @@ export function Footer() {
         </Link>
         <p>Little characters. Big possibilities.</p>
         <div>
+          <Link href="/membership">Membership</Link>
+          <Link href="/shop">DLL Shop</Link>
+          <Link href="/parent">Parent account</Link>
           <Link href="/grown-ups">For grown-ups</Link>
           <Link href="/privacy">Privacy</Link>
         </div>

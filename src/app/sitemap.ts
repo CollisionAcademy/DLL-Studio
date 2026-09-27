@@ -6,6 +6,9 @@ export default function sitemap(): MetadataRoute.Sitemap {
     "/play",
     "/grown-ups",
     "/privacy",
+    "/membership",
+    "/shop",
+    "/parents/safety",
     ...characters.map((c) => `/characters/${c.id}`),
   ].map((path) => ({ url: `https://dll-studio.com${path}` }));
 }
