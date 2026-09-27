@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="description" content="A local interactive storyboard for Captain Giggle and the Crocodile Who Needed a Friend.">
+  <title>Captain Giggle • A friendship adventure</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<a class="skip" href="#player">Skip to the adventure</a>
+<header><a class="brand" href="/">DLL <span>STUDIO</span></a><span class="edition">STORY LAB / 01</span><span class="badge">AGES 6–10 · 10 MIN</span></header>
+<main>
+  <section class="intro"><p class="eyebrow">STARRING LEO · THE DLL STUDIO SUPER BUILDER</p><h1>Captain Giggle <span>& the Crocodile Who Needed a Friend</span></h1><p class="lede">A funny adventure about listening, making things right, and finding room for everyone.</p></section>
+  <div class="workspace">
+    <section id="player" class="player" aria-label="Interactive storyboard player">
+      <div class="stage-top"><span id="mode">ILLUSTRATED EPISODE PREVIEW</span><span id="scene-number">01 / 10</span></div>
+      <div id="stage" class="stage">
+        <video id="video" playsinline preload="metadata" hidden aria-label="Locally selected review video"><track id="track" kind="captions" label="English draft" srclang="en" src="captions.vtt"></video>
+        <div id="board" class="board">
+          <div class="sun" aria-hidden="true"></div><div class="cloud cloud-one" aria-hidden="true"></div><div class="cloud cloud-two" aria-hidden="true"></div>
+          <div class="village" aria-hidden="true"><i></i><i></i><i></i><i></i></div>
+          <div class="location"><span class="eyebrow">BUBBLEVILLE</span><h2 id="scene-title">Getting the story ready…</h2><p id="location"></p></div>
+          <div id="cast" class="cast" aria-label="Characters in this scene"></div>
+          <span class="board-label">LEO & FRIENDS · A BUBBLEVILLE ADVENTURE</span>
+        </div>
+        <div id="puzzle" class="puzzle" hidden aria-label="Observation game"></div>
+        <div id="celebration" class="celebration" aria-hidden="true" hidden>★ Well spotted! ★</div>
+      </div>
+      <div id="caption" class="caption" aria-label="Draft captions"></div>
+      <div class="transport"><button id="play" class="primary" disabled>Play story</button><button id="mute" aria-pressed="false">Mute</button><button id="captions" aria-pressed="true">Captions on</button><span id="time">00:00 / 10:00</span></div>
+      <label class="sr-only" for="seek">Story position</label><input id="seek" type="range" min="0" max="600" step="1" value="0" aria-valuetext="0 minutes of 10 minutes">
+      <progress id="progress" value="0" max="600" aria-label="Story progress"></progress>
+      <div class="scene-nav"><label for="chapters">Jump to a scene</label><select id="chapters"></select><button id="replay">Replay choice</button></div>
+    </section>
+    <aside class="story-side">
+      <div class="interaction-card"><div class="card-heading"><p class="eyebrow" id="activity-label">YOUR PART IN THE STORY</p><span id="timer" role="timer" aria-live="off" aria-label="Seconds left" hidden>10</span></div><h2 id="question">Ready for an adventure?</h2><p id="instructions">Press Play. You can pause any time, choose an answer, or just watch.</p><div id="answers" class="answers"></div><p id="feedback" class="feedback" role="status" aria-live="polite"></p><p id="branch" class="branch"></p></div>
+      <details class="action-card"><summary>For grown-ups: scene direction</summary><p class="eyebrow">ON THE STORYBOARD</p><p id="action">Loading the scene plan…</p><p class="note">Illustrated animatic with simple character motion. Recorded dialogue and finished scene animation are still in production.</p></details>
+    </aside>
+  </div>
+  <section class="below"><div><p class="eyebrow">EVERY WAY TO JOIN COUNTS</p><h2>One adventure. One continuous episode.</h2><p>The story plays straight through. Choices are optional and always return to the episode. Every DLL Studio video features at least one member of our established crew.</p></div><div><p class="eyebrow">FOR GROWN-UPS & PRODUCERS</p><details><summary>Production files & local video review</summary><p><a href="production-kit.md">Read the complete production kit</a> · <a href="scenes.json" download>Scene data</a> · <a href="captions.vtt" download>Draft captions</a></p><label for="file">Review a local video (never uploaded)</label><input type="file" id="file" accept="video/*"><button id="clear-video" hidden>Return to storyboard</button><p id="video-note" role="status">Use the 10-minute linear master. Branch text is interactive; rendered branch clips are not included. Draft caption timings need final audio alignment.</p></details><p class="privacy">Choices stay in memory for this viewing. No account, tracking, purchases, messaging, or personal information.</p></div></section>
+  <p id="error" role="alert" hidden></p>
+</main>
+<footer><span>DLL STUDIO / ORIGINAL STORY DEVELOPMENT</span><span>Ask. Listen. Help.</span></footer>
+<script type="module" src="app.js"></script>
+</body></html>

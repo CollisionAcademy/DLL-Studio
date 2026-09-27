@@ -1,0 +1,762 @@
+{
+  "title": "Captain Giggle and the Crocodile Who Needed a Friend",
+  "status": "production plan; generated results require audiovisual QA",
+  "total_seconds": 600,
+  "estimated_video_usd": 67.2,
+  "max_video_estimate_usd": 100,
+  "automatic_paid_retries": 0,
+  "scenes": [
+    {
+      "id": 1,
+      "name": "A cupcake landing",
+      "keyframe": "docs/independent-video/keyframes/scene-01.png",
+      "shots": [
+        {
+          "id": 1,
+          "duration": 10,
+          "action": "Wide: a cupcake cart rolls slowly along a level painted parade track. Leo jogs beside it; empty foam cushions fill a shallow display pit.",
+          "dialogue": [
+            {
+              "speaker": "Narrator",
+              "text": "In Bubbleville, even a cupcake can have a busy morning!"
+            }
+          ],
+          "prompt": "Original polished 3D family animation. Leo is the established orange Spinosaurus with long snout, blue sail orange ribs, blue/orange superhero suit, lightning chest emblem and tool belt. Keep Leo visible, preserve all reference identities, outfits, limb counts and proportions. Real articulated acting, expressive faces, clear weight shifts and prop contact; never a moving still. Scene 1, shot 1, location Bubbleville town square. Continue naturally from the input frame. Ten seconds of story: Wide: a cupcake cart rolls slowly along a level painted parade track. Leo jogs beside it; empty foam cushions fill a shallow display pit. Voices: Leo warm buoyant midrange adult male; Snapper gentle soft low male; Luna clear calm young female; Zip bright quick male; Boomer rounded friendly synthetic male; Narrator warm expressive adult female; Townsperson adult male. Preserve these voice identities. Speak only the supplied lines in natural American English, with expressive matching mouth performance; nobody speaks another character's line. Native spoken dialogue and gentle matching foley, no background music. Narrator says: In Bubbleville, even a cupcake can have a busy morning! No captions, UI, logos, repeated intros, recaps or end cards. No fade except the final farewell. Compose 16:9. Finish on a natural pose ready for the next shot."
+        },
+        {
+          "id": 2,
+          "duration": 10,
+          "action": "Leo plants himself on an impossible squashy spring tile. It bends like jelly, then softly flips him sideways, below head height.",
+          "dialogue": [
+            {
+              "speaker": "Leo",
+              "text": "Stop, little cakes! I am excellent at stopping. Mostly."
+            }
+          ],
+          "prompt": "Original polished 3D family animation. Leo is the established orange Spinosaurus with long snout, blue sail orange ribs, blue/orange superhero suit, lightning chest emblem and tool belt. Keep Leo visible, preserve all reference identities, outfits, limb counts and proportions. Real articulated acting, expressive faces, clear weight shifts and prop contact; never a moving still. Scene 1, shot 2, location Bubbleville town square. Continue naturally from the input frame. Ten seconds of story: Leo plants himself on an impossible squashy spring tile. It bends like jelly, then softly flips him sideways, below head height. Voices: Leo warm buoyant midrange adult male; Snapper gentle soft low male; Luna clear calm young female; Zip bright quick male; Boomer rounded friendly synthetic male; Narrator warm expressive adult female; Townsperson adult male. Preserve these voice identities. Speak only the supplied lines in natural American English, with expressive matching mouth performance; nobody speaks another character's line. Native spoken dialogue and gentle matching foley, no background music. Leo says: Stop, little cakes! I am excellent at stopping. Mostly. No captions, UI, logos, repeated intros, recaps or end cards. No fade except the final farewell. Compose 16:9. Finish on a natural pose ready for the next shot."
+        },
+        {
+          "id": 3,
+          "duration": 10,
+          "action": "He lands in the cushion display, parade ribbon spread safely behind him. Cupcakes bounce into Boomer’s open tray. Hold his embarrassed blink.",
+          "dialogue": [
+            {
+              "speaker": "Leo",
+              "text": "Why did the cupcake stop? It ran out of sprinkles!"
+            }
+          ],
+          "prompt": "Original polished 3D family animation. Leo is the established orange Spinosaurus with long snout, blue sail orange ribs, blue/orange superhero suit, lightning chest emblem and tool belt. Keep Leo visible, preserve all reference identities, outfits, limb counts and proportions. Real articulated acting, expressive faces, clear weight shifts and prop contact; never a moving still. Scene 1, shot 3, location Bubbleville town square. Continue naturally from the input frame. Ten seconds of story: He lands in the cushion display, parade ribbon spread safely behind him. Cupcakes bounce into Boomer’s open tray. Hold his embarrassed blink. Voices: Leo warm buoyant midrange adult male; Snapper gentle soft low male; Luna clear calm young female; Zip bright quick male; Boomer rounded friendly synthetic male; Narrator warm expressive adult female; Townsperson adult male. Preserve these voice identities. Speak only the supplied lines in natural American English, with expressive matching mouth performance; nobody speaks another character's line. Native spoken dialogue and gentle matching foley, no background music. Leo says: Why did the cupcake stop? It ran out of sprinkles! No captions, UI, logos, repeated intros, recaps or end cards. No fade except the final farewell. Compose 16:9. Finish on a natural pose ready for the next shot."
+        },
+        {
+          "id": 4,
+          "duration": 10,
+          "action": "Boomer stops the cart with a giant projected bubble. He sniffs one cupcake, then notices Luna watching and closes the tray.",
+          "dialogue": [
+            {
+              "speaker": "Boomer",
+              "text": "Delivery complete. Snack investigation… postponed."
+            }
+          ],
+          "prompt": "Original polished 3D family animation. Leo is the established orange Spinosaurus with long snout, blue sail orange ribs, blue/orange superhero suit, lightning chest emblem and tool belt. Keep Leo visible, preserve all reference identities, outfits, limb counts and proportions. Real articulated acting, expressive faces, clear weight shifts and prop contact; never a moving still. Scene 1, shot 4, location Bubbleville town square. Continue naturally from the input frame. Ten seconds of story: Boomer stops the cart with a giant projected bubble. He sniffs one cupcake, then notices Luna watching and closes the tray. Voices: Leo warm buoyant midrange adult male; Snapper gentle soft low male; Luna clear calm young female; Zip bright quick male; Boomer rounded friendly synthetic male; Narrator warm expressive adult female; Townsperson adult male. Preserve these voice identities. Speak only the supplied lines in natural American English, with expressive matching mouth performance; nobody speaks another character's line. Native spoken dialogue and gentle matching foley, no background music. Boomer says: Delivery complete. Snack investigation… postponed. No captions, UI, logos, repeated intros, recaps or end cards. No fade except the final farewell. Compose 16:9. Finish on a natural pose ready for the next shot."
+        },
+        {
+          "id": 5,
+          "duration": 10,
+          "action": "The crew joins Leo beside the stopped cart as festival bunting unfolds overhead. Introduce them through their work.",
+          "dialogue": [
+            {
+              "speaker": "Narrator",
+              "text": "Leo, Zip, Luna and Boomer are preparing Bubbleville’s Friendship Festival. One invitation is still in the basket."
+            }
+          ],
+          "prompt": "Original polished 3D family animation. Leo is the established orange Spinosaurus with long snout, blue sail orange ribs, blue/orange superhero suit, lightning chest emblem and tool belt. Keep Leo visible, preserve all reference identities, outfits, limb counts and proportions. Real articulated acting, expressive faces, clear weight shifts and prop contact; never a moving still. Scene 1, shot 5, location Bubbleville town square. Continue naturally from the input frame. Ten seconds of story: The crew joins Leo beside the stopped cart as festival bunting unfolds overhead. Introduce them through their work. Voices: Leo warm buoyant midrange adult male; Snapper gentle soft low male; Luna clear calm young female; Zip bright quick male; Boomer rounded friendly synthetic male; Narrator warm expressive adult female; Townsperson adult male. Preserve these voice identities. Speak only the supplied lines in natural American English, with expressive matching mouth performance; nobody speaks another character's line. Native spoken dialogue and gentle matching foley, no background music. Narrator says: Leo, Zip, Luna and Boomer are preparing Bubbleville’s Friendship Festival. One invitation is still in the basket. No captions, UI, logos, repeated intros, recaps or end cards. No fade except the final farewell. Compose 16:9. Finish on a natural pose ready for the next shot."
+        },
+        {
+          "id": 6,
+          "duration": 10,
+          "action": "Camera tilts down to three huge, rounded footprints pressed into soft festival confetti. A yellow hat tip appears behind a distant roof.",
+          "dialogue": [
+            {
+              "speaker": "Narrator",
+              "text": "But who left these enormous footprints?"
+            }
+          ],
+          "prompt": "Original polished 3D family animation. Leo is the established orange Spinosaurus with long snout, blue sail orange ribs, blue/orange superhero suit, lightning chest emblem and tool belt. Keep Leo visible, preserve all reference identities, outfits, limb counts and proportions. Real articulated acting, expressive faces, clear weight shifts and prop contact; never a moving still. Scene 1, shot 6, location Bubbleville town square. Continue naturally from the input frame. Ten seconds of story: Camera tilts down to three huge, rounded footprints pressed into soft festival confetti. A yellow hat tip appears behind a distant roof. Voices: Leo warm buoyant midrange adult male; Snapper gentle soft low male; Luna clear calm young female; Zip bright quick male; Boomer rounded friendly synthetic male; Narrator warm expressive adult female; Townsperson adult male. Preserve these voice identities. Speak only the supplied lines in natural American English, with expressive matching mouth performance; nobody speaks another character's line. Native spoken dialogue and gentle matching foley, no background music. Narrator says: But who left these enormous footprints? No captions, UI, logos, repeated intros, recaps or end cards. No fade except the final farewell. Compose 16:9. Finish on a natural pose ready for the next shot."
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "name": "The uninvited guest",
+      "keyframe": "docs/independent-video/keyframes/scene-02.png",
+      "shots": [
+        {
+          "id": 1,
+          "duration": 10,
+          "action": "Snapper peeks around the gate in his oversized yellow hat. He attempts a tiny wave; his huge hand makes it comically obvious.",
+          "dialogue": [
+            {
+              "speaker": "Snapper",
+              "text": "Hello? Is there a little space for someone rather big?"
+            }
+          ],
+          "prompt": "Original polished 3D family animation. Leo is the established orange Spinosaurus with long snout, blue sail orange ribs, blue/orange superhero suit, lightning chest emblem and tool belt. Keep Leo visible, preserve all reference identities, outfits, limb counts and proportions. Real articulated acting, expressive faces, clear weight shifts and prop contact; never a moving still. Scene 2, shot 1, location Wide festival entrance. Continue naturally from the input frame. Ten seconds of story: Snapper peeks around the gate in his oversized yellow hat. He attempts a tiny wave; his huge hand makes it comically obvious. Voices: Leo warm buoyant midrange adult male; Snapper gentle soft low male; Luna clear calm young female; Zip bright quick male; Boomer rounded friendly synthetic male; Narrator warm expressive adult female; Townsperson adult male. Preserve these voice identities. Speak only the supplied lines in natural American English, with expressive matching mouth performance; nobody speaks another character's line. Native spoken dialogue and gentle matching foley, no background music. Snapper says: Hello? Is there a little space for someone rather big? No captions, UI, logos, repeated intros, recaps or end cards. No fade except the final farewell. Compose 16:9. Finish on a natural pose ready for the next shot."
+        },
+        {
+          "id": 2,
+          "duration": 10,
+          "action": "His hat brushes balloon-shaped foam decorations off a low stand. They wobble onto cushions; no popping or loose strings.",
+          "dialogue": [
+            {
+              "speaker": "Townsperson",
+              "text": "An evil crocodile!"
+            },
+            {
+              "speaker": "Luna",
+              "text": "We do not know that. Let us look and listen."
+            }
+          ],
+          "prompt": "Original polished 3D family animation. Leo is the established orange Spinosaurus with long snout, blue sail orange ribs, blue/orange superhero suit, lightning chest emblem and tool belt. Keep Leo visible, preserve all reference identities, outfits, limb counts and proportions. Real articulated acting, expressive faces, clear weight shifts and prop contact; never a moving still. Scene 2, shot 2, location Wide festival entrance. Continue naturally from the input frame. Ten seconds of story: His hat brushes balloon-shaped foam decorations off a low stand. They wobble onto cushions; no popping or loose strings. Voices: Leo warm buoyant midrange adult male; Snapper gentle soft low male; Luna clear calm young female; Zip bright quick male; Boomer rounded friendly synthetic male; Narrator warm expressive adult female; Townsperson adult male. Preserve these voice identities. Speak only the supplied lines in natural American English, with expressive matching mouth performance; nobody speaks another character's line. Native spoken dialogue and gentle matching foley, no background music. Townsperson says: An evil crocodile! Luna says: We do not know that. Let us look and listen. No captions, UI, logos, repeated intros, recaps or end cards. No fade except the final farewell. Compose 16:9. Finish on a natural pose ready for the next shot."
+        },
+        {
+          "id": 3,
+          "duration": 10,
+          "action": "Adults guide the crowd calmly to a broad viewing space. Zip secures a wobbling cardboard arch from the ground.",
+          "dialogue": [
+            {
+              "speaker": "Leo",
+              "text": "Give him room, everyone. We can ask what happened."
+            }
+          ],
+          "prompt": "Original polished 3D family animation. Leo is the established orange Spinosaurus with long snout, blue sail orange ribs, blue/orange superhero suit, lightning chest emblem and tool belt. Keep Leo visible, preserve all reference identities, outfits, limb counts and proportions. Real articulated acting, expressive faces, clear weight shifts and prop contact; never a moving still. Scene 2, shot 3, location Wide festival entrance. Continue naturally from the input frame. Ten seconds of story: Adults guide the crowd calmly to a broad viewing space. Zip secures a wobbling cardboard arch from the ground. Voices: Leo warm buoyant midrange adult male; Snapper gentle soft low male; Luna clear calm young female; Zip bright quick male; Boomer rounded friendly synthetic male; Narrator warm expressive adult female; Townsperson adult male. Preserve these voice identities. Speak only the supplied lines in natural American English, with expressive matching mouth performance; nobody speaks another character's line. Native spoken dialogue and gentle matching foley, no background music. Leo says: Give him room, everyone. We can ask what happened. No captions, UI, logos, repeated intros, recaps or end cards. No fade except the final farewell. Compose 16:9. Finish on a natural pose ready for the next shot."
+        },
+        {
+          "id": 4,
+          "duration": 10,
+          "action": "Snapper tries replacing the foam decorations; each is too small for his fingers. He sighs and drops his shoulders.",
+          "dialogue": [
+            {
+              "speaker": "Snapper",
+              "text": "I only wanted to help. My hands are not small-party size."
+            }
+          ],
+          "prompt": "Original polished 3D family animation. Leo is the established orange Spinosaurus with long snout, blue sail orange ribs, blue/orange superhero suit, lightning chest emblem and tool belt. Keep Leo visible, preserve all reference identities, outfits, limb counts and proportions. Real articulated acting, expressive faces, clear weight shifts and prop contact; never a moving still. Scene 2, shot 4, location Wide festival entrance. Continue naturally from the input frame. Ten seconds of story: Snapper tries replacing the foam decorations; each is too small for his fingers. He sighs and drops his shoulders. Voices: Leo warm buoyant midrange adult male; Snapper gentle soft low male; Luna clear calm young female; Zip bright quick male; Boomer rounded friendly synthetic male; Narrator warm expressive adult female; Townsperson adult male. Preserve these voice identities. Speak only the supplied lines in natural American English, with expressive matching mouth performance; nobody speaks another character's line. Native spoken dialogue and gentle matching foley, no background music. Snapper says: I only wanted to help. My hands are not small-party size. No captions, UI, logos, repeated intros, recaps or end cards. No fade except the final farewell. Compose 16:9. Finish on a natural pose ready for the next shot."
+        },
+        {
+          "id": 5,
+          "duration": 10,
+          "action": "Insert: the envelope reads SNAPPER, POND COTTAGE. It was caught under the invitation basket’s lining.",
+          "dialogue": [
+            {
+              "speaker": "Luna",
+              "text": "Your invitation stayed in our basket. We missed it. I am sorry."
+            }
+          ],
+          "prompt": "Original polished 3D family animation. Leo is the established orange Spinosaurus with long snout, blue sail orange ribs, blue/orange superhero suit, lightning chest emblem and tool belt. Keep Leo visible, preserve all reference identities, outfits, limb counts and proportions. Real articulated acting, expressive faces, clear weight shifts and prop contact; never a moving still. Scene 2, shot 5, location Wide festival entrance. Continue naturally from the input frame. Ten seconds of story: Insert: the envelope reads SNAPPER, POND COTTAGE. It was caught under the invitation basket’s lining. Voices: Leo warm buoyant midrange adult male; Snapper gentle soft low male; Luna clear calm young female; Zip bright quick male; Boomer rounded friendly synthetic male; Narrator warm expressive adult female; Townsperson adult male. Preserve these voice identities. Speak only the supplied lines in natural American English, with expressive matching mouth performance; nobody speaks another character's line. Native spoken dialogue and gentle matching foley, no background music. Luna says: Your invitation stayed in our basket. We missed it. I am sorry. No captions, UI, logos, repeated intros, recaps or end cards. No fade except the final farewell. Compose 16:9. Finish on a natural pose ready for the next shot."
+        },
+        {
+          "id": 6,
+          "duration": 10,
+          "action": "Leo steps forward at a respectful distance. Snapper clutches his drawing of the festival.",
+          "dialogue": [
+            {
+              "speaker": "Narrator",
+              "text": "Snapper was missed by mistake. How could Leo begin a friendly conversation?"
+            }
+          ],
+          "prompt": "Original polished 3D family animation. Leo is the established orange Spinosaurus with long snout, blue sail orange ribs, blue/orange superhero suit, lightning chest emblem and tool belt. Keep Leo visible, preserve all reference identities, outfits, limb counts and proportions. Real articulated acting, expressive faces, clear weight shifts and prop contact; never a moving still. Scene 2, shot 6, location Wide festival entrance. Continue naturally from the input frame. Ten seconds of story: Leo steps forward at a respectful distance. Snapper clutches his drawing of the festival. Voices: Leo warm buoyant midrange adult male; Snapper gentle soft low male; Luna clear calm young female; Zip bright quick male; Boomer rounded friendly synthetic male; Narrator warm expressive adult female; Townsperson adult male. Preserve these voice identities. Speak only the supplied lines in natural American English, with expressive matching mouth performance; nobody speaks another character's line. Native spoken dialogue and gentle matching foley, no background music. Narrator says: Snapper was missed by mistake. How could Leo begin a friendly conversation? No captions, UI, logos, repeated intros, recaps or end cards. No fade except the final farewell. Compose 16:9. Finish on a natural pose ready for the next shot."
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "name": "A friendly first step",
+      "keyframe": "docs/independent-video/keyframes/scene-03.png",
+      "shots": [
+        {
+          "id": 1,
+          "duration": 10,
+          "action": "Leo and Snapper face each other gently. Leo considers how to begin a kind conversation; Snapper holds his party drawing. Leo visibly thinks, then turns toward Snapper.",
+          "dialogue": [
+            {
+              "speaker": "Narrator",
+              "text": "What should Leo do? Ask what is wrong, hide in the cart, or try a silly dance?"
+            }
+          ],
+          "prompt": "Original polished 3D family animation. Leo is the established orange Spinosaurus with long snout, blue sail orange ribs, blue/orange superhero suit, lightning chest emblem and tool belt. Keep Leo visible, preserve all reference identities, outfits, limb counts and proportions. Real articulated acting, expressive faces, clear weight shifts and prop contact; never a moving still. Scene 3, shot 1, location Festival entrance clearing. Continue naturally from the input frame. Ten seconds of story: Leo and Snapper face each other gently. Leo considers how to begin a kind conversation; Snapper holds his party drawing. Leo visibly thinks, then turns toward Snapper. Voices: Leo warm buoyant midrange adult male; Snapper gentle soft low male; Luna clear calm young female; Zip bright quick male; Boomer rounded friendly synthetic male; Narrator warm expressive adult female; Townsperson adult male. Preserve these voice identities. Speak only the supplied lines in natural American English, with expressive matching mouth performance; nobody speaks another character's line. Native spoken dialogue and gentle matching foley, no background music. Narrator says: What should Leo do? Ask what is wrong, hide in the cart, or try a silly dance? No captions, UI, logos, repeated intros, recaps or end cards. No fade except the final farewell. Compose 16:9. Finish on a natural pose ready for the next shot."
+        },
+        {
+          "id": 2,
+          "duration": 10,
+          "action": "Leo takes a thoughtful breath, lowers his hands and gives Snapper room. Snapper adjusts his hat shyly. Quiet reflective acting while viewers think; no cards or interface.",
+          "dialogue": [],
+          "prompt": "Original polished 3D family animation. Leo is the established orange Spinosaurus with long snout, blue sail orange ribs, blue/orange superhero suit, lightning chest emblem and tool belt. Keep Leo visible, preserve all reference identities, outfits, limb counts and proportions. Real articulated acting, expressive faces, clear weight shifts and prop contact; never a moving still. Scene 3, shot 2, location Festival entrance clearing. Continue naturally from the input frame. Ten seconds of story: Leo takes a thoughtful breath, lowers his hands and gives Snapper room. Snapper adjusts his hat shyly. Quiet reflective acting while viewers think; no cards or interface. Voices: Leo warm buoyant midrange adult male; Snapper gentle soft low male; Luna clear calm young female; Zip bright quick male; Boomer rounded friendly synthetic male; Narrator warm expressive adult female; Townsperson adult male. Preserve these voice identities. Speak only the supplied lines in natural American English, with expressive matching mouth performance; nobody speaks another character's line. Native spoken dialogue and gentle matching foley, no background music. No spoken dialogue.  No captions, UI, logos, repeated intros, recaps or end cards. No fade except the final farewell. Compose 16:9. Finish on a natural pose ready for the next shot."
+        },
+        {
+          "id": 3,
+          "duration": 10,
+          "action": "Leo chooses to ask kindly from a respectful distance, then stops talking and listens. Snapper slowly relaxes his shoulders.",
+          "dialogue": [
+            {
+              "speaker": "Leo",
+              "text": "However we start, I would like to hear how you feel."
+            }
+          ],
+          "prompt": "Original polished 3D family animation. Leo is the established orange Spinosaurus with long snout, blue sail orange ribs, blue/orange superhero suit, lightning chest emblem and tool belt. Keep Leo visible, preserve all reference identities, outfits, limb counts and proportions. Real articulated acting, expressive faces, clear weight shifts and prop contact; never a moving still. Scene 3, shot 3, location Festival entrance clearing. Continue naturally from the input frame. Ten seconds of story: Leo chooses to ask kindly from a respectful distance, then stops talking and listens. Snapper slowly relaxes his shoulders. Voices: Leo warm buoyant midrange adult male; Snapper gentle soft low male; Luna clear calm young female; Zip bright quick male; Boomer rounded friendly synthetic male; Narrator warm expressive adult female; Townsperson adult male. Preserve these voice identities. Speak only the supplied lines in natural American English, with expressive matching mouth performance; nobody speaks another character's line. Native spoken dialogue and gentle matching foley, no background music. Leo says: However we start, I would like to hear how you feel. No captions, UI, logos, repeated intros, recaps or end cards. No fade except the final farewell. Compose 16:9. Finish on a natural pose ready for the next shot."
+        },
+        {
+          "id": 4,
+          "duration": 10,
+          "action": "All branches meet on the same two-shot; props are back in neutral positions. Snapper holds up his handmade drawing of a party.",
+          "dialogue": [
+            {
+              "speaker": "Snapper",
+              "text": "I saw everybody coming. But nobody asked me."
+            }
+          ],
+          "prompt": "Original polished 3D family animation. Leo is the established orange Spinosaurus with long snout, blue sail orange ribs, blue/orange superhero suit, lightning chest emblem and tool belt. Keep Leo visible, preserve all reference identities, outfits, limb counts and proportions. Real articulated acting, expressive faces, clear weight shifts and prop contact; never a moving still. Scene 3, shot 4, location Festival entrance clearing. Continue naturally from the input frame. Ten seconds of story: All branches meet on the same two-shot; props are back in neutral positions. Snapper holds up his handmade drawing of a party. Voices: Leo warm buoyant midrange adult male; Snapper gentle soft low male; Luna clear calm young female; Zip bright quick male; Boomer rounded friendly synthetic male; Narrator warm expressive adult female; Townsperson adult male. Preserve these voice identities. Speak only the supplied lines in natural American English, with expressive matching mouth performance; nobody speaks another character's line. Native spoken dialogue and gentle matching foley, no background music. Snapper says: I saw everybody coming. But nobody asked me. No captions, UI, logos, repeated intros, recaps or end cards. No fade except the final farewell. Compose 16:9. Finish on a natural pose ready for the next shot."
+        },
+        {
+          "id": 5,
+          "duration": 10,
+          "action": "Leo offers the recovered invitation upside down, corrects it, and apologizes. Snapper notices the envelope-shaped cake topper.",
+          "dialogue": [
+            {
+              "speaker": "Leo",
+              "text": "I am sorry we missed you. Here is your invitation, right way up! That cake is for everybody."
+            }
+          ],
+          "prompt": "Original polished 3D family animation. Leo is the established orange Spinosaurus with long snout, blue sail orange ribs, blue/orange superhero suit, lightning chest emblem and tool belt. Keep Leo visible, preserve all reference identities, outfits, limb counts and proportions. Real articulated acting, expressive faces, clear weight shifts and prop contact; never a moving still. Scene 3, shot 5, location Festival entrance clearing. Continue naturally from the input frame. Ten seconds of story: Leo offers the recovered invitation upside down, corrects it, and apologizes. Snapper notices the envelope-shaped cake topper. Voices: Leo warm buoyant midrange adult male; Snapper gentle soft low male; Luna clear calm young female; Zip bright quick male; Boomer rounded friendly synthetic male; Narrator warm expressive adult female; Townsperson adult male. Preserve these voice identities. Speak only the supplied lines in natural American English, with expressive matching mouth performance; nobody speaks another character's line. Native spoken dialogue and gentle matching foley, no background music. Leo says: I am sorry we missed you. Here is your invitation, right way up! That cake is for everybody. No captions, UI, logos, repeated intros, recaps or end cards. No fade except the final farewell. Compose 16:9. Finish on a natural pose ready for the next shot."
+        },
+        {
+          "id": 6,
+          "duration": 10,
+          "action": "Snapper compares the tiny paper invitation and giant envelope topper. His hat rotates as he thinks.",
+          "dialogue": [
+            {
+              "speaker": "Snapper",
+              "text": "A giant invitation! That one must be mine."
+            }
+          ],
+          "prompt": "Original polished 3D family animation. Leo is the established orange Spinosaurus with long snout, blue sail orange ribs, blue/orange superhero suit, lightning chest emblem and tool belt. Keep Leo visible, preserve all reference identities, outfits, limb counts and proportions. Real articulated acting, expressive faces, clear weight shifts and prop contact; never a moving still. Scene 3, shot 6, location Festival entrance clearing. Continue naturally from the input frame. Ten seconds of story: Snapper compares the tiny paper invitation and giant envelope topper. His hat rotates as he thinks. Voices: Leo warm buoyant midrange adult male; Snapper gentle soft low male; Luna clear calm young female; Zip bright quick male; Boomer rounded friendly synthetic male; Narrator warm expressive adult female; Townsperson adult male. Preserve these voice identities. Speak only the supplied lines in natural American English, with expressive matching mouth performance; nobody speaks another character's line. Native spoken dialogue and gentle matching foley, no background music. Snapper says: A giant invitation! That one must be mine. No captions, UI, logos, repeated intros, recaps or end cards. No fade except the final farewell. Compose 16:9. Finish on a natural pose ready for the next shot."
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "name": "The cake and the clues",
+      "keyframe": "docs/independent-video/keyframes/scene-04.png",
+      "shots": [
+        {
+          "id": 1,
+          "duration": 10,
+          "action": "Snapper lifts the entire sturdy cake tray, keeping it level. He begins a comically slow waddling trot on a closed, flat path.",
+          "dialogue": [
+            {
+              "speaker": "Snapper",
+              "text": "I will keep my invitation safe!"
+            },
+            {
+              "speaker": "Luna",
+              "text": "That cake is for everybody. Please stop!"
+            }
+          ],
+          "prompt": "Original polished 3D family animation. Leo is the established orange Spinosaurus with long snout, blue sail orange ribs, blue/orange superhero suit, lightning chest emblem and tool belt. Keep Leo visible, preserve all reference identities, outfits, limb counts and proportions. Real articulated acting, expressive faces, clear weight shifts and prop contact; never a moving still. Scene 4, shot 1, location Level parade practice course. Continue naturally from the input frame. Ten seconds of story: Snapper lifts the entire sturdy cake tray, keeping it level. He begins a comically slow waddling trot on a closed, flat path. Voices: Leo warm buoyant midrange adult male; Snapper gentle soft low male; Luna clear calm young female; Zip bright quick male; Boomer rounded friendly synthetic male; Narrator warm expressive adult female; Townsperson adult male. Preserve these voice identities. Speak only the supplied lines in natural American English, with expressive matching mouth performance; nobody speaks another character's line. Native spoken dialogue and gentle matching foley, no background music. Snapper says: I will keep my invitation safe! Luna says: That cake is for everybody. Please stop! No captions, UI, logos, repeated intros, recaps or end cards. No fade except the final farewell. Compose 16:9. Finish on a natural pose ready for the next shot."
+        },
+        {
+          "id": 2,
+          "duration": 10,
+          "action": "Heroes follow on foot at a walk-jog. No traffic, roads, heights or jumping. Leo goes around foam cones in an unnecessarily fancy pattern.",
+          "dialogue": [
+            {
+              "speaker": "Leo",
+              "text": "Good news! My feet remembered where forward is."
+            }
+          ],
+          "prompt": "Original polished 3D family animation. Leo is the established orange Spinosaurus with long snout, blue sail orange ribs, blue/orange superhero suit, lightning chest emblem and tool belt. Keep Leo visible, preserve all reference identities, outfits, limb counts and proportions. Real articulated acting, expressive faces, clear weight shifts and prop contact; never a moving still. Scene 4, shot 2, location Level parade practice course. Continue naturally from the input frame. Ten seconds of story: Heroes follow on foot at a walk-jog. No traffic, roads, heights or jumping. Leo goes around foam cones in an unnecessarily fancy pattern. Voices: Leo warm buoyant midrange adult male; Snapper gentle soft low male; Luna clear calm young female; Zip bright quick male; Boomer rounded friendly synthetic male; Narrator warm expressive adult female; Townsperson adult male. Preserve these voice identities. Speak only the supplied lines in natural American English, with expressive matching mouth performance; nobody speaks another character's line. Native spoken dialogue and gentle matching foley, no background music. Leo says: Good news! My feet remembered where forward is. No captions, UI, logos, repeated intros, recaps or end cards. No fade except the final farewell. Compose 16:9. Finish on a natural pose ready for the next shot."
+        },
+        {
+          "id": 3,
+          "duration": 10,
+          "action": "Show a locked wide puzzle image: star on orange flag at upper left, star on blue crate center, star on green sign lower right.",
+          "dialogue": [
+            {
+              "speaker": "Narrator",
+              "text": "Can you spot three stars? Look closely at the flag, the crate, and the sign. You can point or say them out loud."
+            }
+          ],
+          "prompt": "Original polished 3D family animation. Leo is the established orange Spinosaurus with long snout, blue sail orange ribs, blue/orange superhero suit, lightning chest emblem and tool belt. Keep Leo visible, preserve all reference identities, outfits, limb counts and proportions. Real articulated acting, expressive faces, clear weight shifts and prop contact; never a moving still. Scene 4, shot 3, location Level parade practice course. Continue naturally from the input frame. Ten seconds of story: Show a locked wide puzzle image: star on orange flag at upper left, star on blue crate center, star on green sign lower right. Voices: Leo warm buoyant midrange adult male; Snapper gentle soft low male; Luna clear calm young female; Zip bright quick male; Boomer rounded friendly synthetic male; Narrator warm expressive adult female; Townsperson adult male. Preserve these voice identities. Speak only the supplied lines in natural American English, with expressive matching mouth performance; nobody speaks another character's line. Native spoken dialogue and gentle matching foley, no background music. Narrator says: Can you spot three stars? Look closely at the flag, the crate, and the sign. You can point or say them out loud. No captions, UI, logos, repeated intros, recaps or end cards. No fade except the final farewell. Compose 16:9. Finish on a natural pose ready for the next shot."
+        },
+        {
+          "id": 4,
+          "duration": 10,
+          "action": "Quiet observation window: keep Leo present and naturally blinking, gesturing or shifting his weight; make the relevant props easy to see. Do not freeze the entire frame, show interface cards, or generate words. Keep exactly three indicated objects clearly visible.",
+          "dialogue": [],
+          "prompt": "Original polished 3D family animation. Leo is the established orange Spinosaurus with long snout, blue sail orange ribs, blue/orange superhero suit, lightning chest emblem and tool belt. Keep Leo visible, preserve all reference identities, outfits, limb counts and proportions. Real articulated acting, expressive faces, clear weight shifts and prop contact; never a moving still. Scene 4, shot 4, location Level parade practice course. Continue naturally from the input frame. Ten seconds of story: Quiet observation window: keep Leo present and naturally blinking, gesturing or shifting his weight; make the relevant props easy to see. Do not freeze the entire frame, show interface cards, or generate words. Keep exactly three indicated objects clearly visible. Voices: Leo warm buoyant midrange adult male; Snapper gentle soft low male; Luna clear calm young female; Zip bright quick male; Boomer rounded friendly synthetic male; Narrator warm expressive adult female; Townsperson adult male. Preserve these voice identities. Speak only the supplied lines in natural American English, with expressive matching mouth performance; nobody speaks another character's line. Native spoken dialogue and gentle matching foley, no background music. No spoken dialogue.  No captions, UI, logos, repeated intros, recaps or end cards. No fade except the final farewell. Compose 16:9. Finish on a natural pose ready for the next shot."
+        },
+        {
+          "id": 5,
+          "duration": 10,
+          "action": "Luna points to the three stars in order on the orange flag, blue crate and green sign. Keep every answer visible.",
+          "dialogue": [
+            {
+              "speaker": "Luna",
+              "text": "One on the orange flag, two on the blue crate, three on the green sign. They point toward the pond."
+            }
+          ],
+          "prompt": "Original polished 3D family animation. Leo is the established orange Spinosaurus with long snout, blue sail orange ribs, blue/orange superhero suit, lightning chest emblem and tool belt. Keep Leo visible, preserve all reference identities, outfits, limb counts and proportions. Real articulated acting, expressive faces, clear weight shifts and prop contact; never a moving still. Scene 4, shot 5, location Level parade practice course. Continue naturally from the input frame. Ten seconds of story: Luna points to the three stars in order on the orange flag, blue crate and green sign. Keep every answer visible. Voices: Leo warm buoyant midrange adult male; Snapper gentle soft low male; Luna clear calm young female; Zip bright quick male; Boomer rounded friendly synthetic male; Narrator warm expressive adult female; Townsperson adult male. Preserve these voice identities. Speak only the supplied lines in natural American English, with expressive matching mouth performance; nobody speaks another character's line. Native spoken dialogue and gentle matching foley, no background music. Luna says: One on the orange flag, two on the blue crate, three on the green sign. They point toward the pond. No captions, UI, logos, repeated intros, recaps or end cards. No fade except the final farewell. Compose 16:9. Finish on a natural pose ready for the next shot."
+        },
+        {
+          "id": 6,
+          "duration": 10,
+          "action": "Zip tests his cardboard cake catcher off the path. It harmlessly launches three weightless practice cupcakes; Luna opens her route map.",
+          "dialogue": [
+            {
+              "speaker": "Zip",
+              "text": "My cake catcher has become a cupcake launcher! Boomer, could you catch those?"
+            }
+          ],
+          "prompt": "Original polished 3D family animation. Leo is the established orange Spinosaurus with long snout, blue sail orange ribs, blue/orange superhero suit, lightning chest emblem and tool belt. Keep Leo visible, preserve all reference identities, outfits, limb counts and proportions. Real articulated acting, expressive faces, clear weight shifts and prop contact; never a moving still. Scene 4, shot 6, location Level parade practice course. Continue naturally from the input frame. Ten seconds of story: Zip tests his cardboard cake catcher off the path. It harmlessly launches three weightless practice cupcakes; Luna opens her route map. Voices: Leo warm buoyant midrange adult male; Snapper gentle soft low male; Luna clear calm young female; Zip bright quick male; Boomer rounded friendly synthetic male; Narrator warm expressive adult female; Townsperson adult male. Preserve these voice identities. Speak only the supplied lines in natural American English, with expressive matching mouth performance; nobody speaks another character's line. Native spoken dialogue and gentle matching foley, no background music. Zip says: My cake catcher has become a cupcake launcher! Boomer, could you catch those? No captions, UI, logos, repeated intros, recaps or end cards. No fade except the final farewell. Compose 16:9. Finish on a natural pose ready for the next shot."
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "name": "Three routes, three bubbles",
+      "keyframe": "docs/independent-video/keyframes/scene-05.png",
+      "shots": [
+        {
+          "id": 1,
+          "duration": 10,
+          "action": "Luna gestures across the three safe fantastical ground-level paths. Leo examines the gently wiggling flat bridge mat and nods. Boomer follows his gaze.",
+          "dialogue": [
+            {
+              "speaker": "Narrator",
+              "text": "Which path should the heroes take? The wiggly bridge, singing statues, or rainbow slide?"
+            }
+          ],
+          "prompt": "Original polished 3D family animation. Leo is the established orange Spinosaurus with long snout, blue sail orange ribs, blue/orange superhero suit, lightning chest emblem and tool belt. Keep Leo visible, preserve all reference identities, outfits, limb counts and proportions. Real articulated acting, expressive faces, clear weight shifts and prop contact; never a moving still. Scene 5, shot 1, location Three-way fantasy path junction. Continue naturally from the input frame. Ten seconds of story: Luna gestures across the three safe fantastical ground-level paths. Leo examines the gently wiggling flat bridge mat and nods. Boomer follows his gaze. Voices: Leo warm buoyant midrange adult male; Snapper gentle soft low male; Luna clear calm young female; Zip bright quick male; Boomer rounded friendly synthetic male; Narrator warm expressive adult female; Townsperson adult male. Preserve these voice identities. Speak only the supplied lines in natural American English, with expressive matching mouth performance; nobody speaks another character's line. Native spoken dialogue and gentle matching foley, no background music. Narrator says: Which path should the heroes take? The wiggly bridge, singing statues, or rainbow slide? No captions, UI, logos, repeated intros, recaps or end cards. No fade except the final farewell. Compose 16:9. Finish on a natural pose ready for the next shot."
+        },
+        {
+          "id": 2,
+          "duration": 10,
+          "action": "The crew looks from the flat bridge mat to the wide tunnel and low rainbow conveyor, then Leo warmly points toward the flat bridge. Gentle purposeful acting without cards.",
+          "dialogue": [],
+          "prompt": "Original polished 3D family animation. Leo is the established orange Spinosaurus with long snout, blue sail orange ribs, blue/orange superhero suit, lightning chest emblem and tool belt. Keep Leo visible, preserve all reference identities, outfits, limb counts and proportions. Real articulated acting, expressive faces, clear weight shifts and prop contact; never a moving still. Scene 5, shot 2, location Three-way fantasy path junction. Continue naturally from the input frame. Ten seconds of story: The crew looks from the flat bridge mat to the wide tunnel and low rainbow conveyor, then Leo warmly points toward the flat bridge. Gentle purposeful acting without cards. Voices: Leo warm buoyant midrange adult male; Snapper gentle soft low male; Luna clear calm young female; Zip bright quick male; Boomer rounded friendly synthetic male; Narrator warm expressive adult female; Townsperson adult male. Preserve these voice identities. Speak only the supplied lines in natural American English, with expressive matching mouth performance; nobody speaks another character's line. Native spoken dialogue and gentle matching foley, no background music. No spoken dialogue.  No captions, UI, logos, repeated intros, recaps or end cards. No fade except the final farewell. Compose 16:9. Finish on a natural pose ready for the next shot."
+        },
+        {
+          "id": 3,
+          "duration": 10,
+          "action": "The heroes walk across the flat purple bridge mat; it gently ripples beneath their feet and Leo comically balances with his arms. Feet remain near ground level. They arrive by the fenced garden.",
+          "dialogue": [
+            {
+              "speaker": "Leo",
+              "text": "Every path has its own sort of wiggle!"
+            }
+          ],
+          "prompt": "Original polished 3D family animation. Leo is the established orange Spinosaurus with long snout, blue sail orange ribs, blue/orange superhero suit, lightning chest emblem and tool belt. Keep Leo visible, preserve all reference identities, outfits, limb counts and proportions. Real articulated acting, expressive faces, clear weight shifts and prop contact; never a moving still. Scene 5, shot 3, location Three-way fantasy path junction. Continue naturally from the input frame. Ten seconds of story: The heroes walk across the flat purple bridge mat; it gently ripples beneath their feet and Leo comically balances with his arms. Feet remain near ground level. They arrive by the fenced garden. Voices: Leo warm buoyant midrange adult male; Snapper gentle soft low male; Luna clear calm young female; Zip bright quick male; Boomer rounded friendly synthetic male; Narrator warm expressive adult female; Townsperson adult male. Preserve these voice identities. Speak only the supplied lines in natural American English, with expressive matching mouth performance; nobody speaks another character's line. Native spoken dialogue and gentle matching foley, no background music. Leo says: Every path has its own sort of wiggle! No captions, UI, logos, repeated intros, recaps or end cards. No fade except the final farewell. Compose 16:9. Finish on a natural pose ready for the next shot."
+        },
+        {
+          "id": 4,
+          "duration": 10,
+          "action": "All routes meet beside the pond. Boomer catches three cupcakes in separate bubbles. Frame only those three bubbles.",
+          "dialogue": [
+            {
+              "speaker": "Narrator",
+              "text": "At the pond, Boomer catches the cupcakes. How many cupcake bubbles can you see? One, two, or three?"
+            }
+          ],
+          "prompt": "Original polished 3D family animation. Leo is the established orange Spinosaurus with long snout, blue sail orange ribs, blue/orange superhero suit, lightning chest emblem and tool belt. Keep Leo visible, preserve all reference identities, outfits, limb counts and proportions. Real articulated acting, expressive faces, clear weight shifts and prop contact; never a moving still. Scene 5, shot 4, location Three-way fantasy path junction. Continue naturally from the input frame. Ten seconds of story: All routes meet beside the pond. Boomer catches three cupcakes in separate bubbles. Frame only those three bubbles. Voices: Leo warm buoyant midrange adult male; Snapper gentle soft low male; Luna clear calm young female; Zip bright quick male; Boomer rounded friendly synthetic male; Narrator warm expressive adult female; Townsperson adult male. Preserve these voice identities. Speak only the supplied lines in natural American English, with expressive matching mouth performance; nobody speaks another character's line. Native spoken dialogue and gentle matching foley, no background music. Narrator says: At the pond, Boomer catches the cupcakes. How many cupcake bubbles can you see? One, two, or three? No captions, UI, logos, repeated intros, recaps or end cards. No fade except the final farewell. Compose 16:9. Finish on a natural pose ready for the next shot."
+        },
+        {
+          "id": 5,
+          "duration": 10,
+          "action": "Quiet observation window: keep Leo present and naturally blinking, gesturing or shifting his weight; make the relevant props easy to see. Do not freeze the entire frame, show interface cards, or generate words. Keep exactly three indicated objects clearly visible.",
+          "dialogue": [],
+          "prompt": "Original polished 3D family animation. Leo is the established orange Spinosaurus with long snout, blue sail orange ribs, blue/orange superhero suit, lightning chest emblem and tool belt. Keep Leo visible, preserve all reference identities, outfits, limb counts and proportions. Real articulated acting, expressive faces, clear weight shifts and prop contact; never a moving still. Scene 5, shot 5, location Three-way fantasy path junction. Continue naturally from the input frame. Ten seconds of story: Quiet observation window: keep Leo present and naturally blinking, gesturing or shifting his weight; make the relevant props easy to see. Do not freeze the entire frame, show interface cards, or generate words. Keep exactly three indicated objects clearly visible. Voices: Leo warm buoyant midrange adult male; Snapper gentle soft low male; Luna clear calm young female; Zip bright quick male; Boomer rounded friendly synthetic male; Narrator warm expressive adult female; Townsperson adult male. Preserve these voice identities. Speak only the supplied lines in natural American English, with expressive matching mouth performance; nobody speaks another character's line. Native spoken dialogue and gentle matching foley, no background music. No spoken dialogue.  No captions, UI, logos, repeated intros, recaps or end cards. No fade except the final farewell. Compose 16:9. Finish on a natural pose ready for the next shot."
+        },
+        {
+          "id": 6,
+          "duration": 10,
+          "action": "Count all three bubbles, then Boomer briefly catches himself in a fourth empty bubble at paw height. He lands gently.",
+          "dialogue": [
+            {
+              "speaker": "Boomer",
+              "text": "Three cupcake bubbles! And one surprised dog. Returning to floor settings. Someone sounds sad nearby."
+            }
+          ],
+          "prompt": "Original polished 3D family animation. Leo is the established orange Spinosaurus with long snout, blue sail orange ribs, blue/orange superhero suit, lightning chest emblem and tool belt. Keep Leo visible, preserve all reference identities, outfits, limb counts and proportions. Real articulated acting, expressive faces, clear weight shifts and prop contact; never a moving still. Scene 5, shot 6, location Three-way fantasy path junction. Continue naturally from the input frame. Ten seconds of story: Count all three bubbles, then Boomer briefly catches himself in a fourth empty bubble at paw height. He lands gently. Voices: Leo warm buoyant midrange adult male; Snapper gentle soft low male; Luna clear calm young female; Zip bright quick male; Boomer rounded friendly synthetic male; Narrator warm expressive adult female; Townsperson adult male. Preserve these voice identities. Speak only the supplied lines in natural American English, with expressive matching mouth performance; nobody speaks another character's line. Native spoken dialogue and gentle matching foley, no background music. Boomer says: Three cupcake bubbles! And one surprised dog. Returning to floor settings. Someone sounds sad nearby. No captions, UI, logos, repeated intros, recaps or end cards. No fade except the final farewell. Compose 16:9. Finish on a natural pose ready for the next shot."
+        }
+      ]
+    },
+    {
+      "id": 6,
+      "name": "Listen to Snapper",
+      "keyframe": "docs/independent-video/keyframes/scene-06.png",
+      "shots": [
+        {
+          "id": 1,
+          "duration": 10,
+          "action": "Wide establishes a decorative fence between the group and the pond. Snapper sits on dry grass, cake untouched on its tray.",
+          "dialogue": [
+            {
+              "speaker": "Leo",
+              "text": "May we sit nearby?"
+            },
+            {
+              "speaker": "Snapper",
+              "text": "Yes. I would like that."
+            }
+          ],
+          "prompt": "Original polished 3D family animation. Leo is the established orange Spinosaurus with long snout, blue sail orange ribs, blue/orange superhero suit, lightning chest emblem and tool belt. Keep Leo visible, preserve all reference identities, outfits, limb counts and proportions. Real articulated acting, expressive faces, clear weight shifts and prop contact; never a moving still. Scene 6, shot 1, location Dry garden beside fenced pond. Continue naturally from the input frame. Ten seconds of story: Wide establishes a decorative fence between the group and the pond. Snapper sits on dry grass, cake untouched on its tray. Voices: Leo warm buoyant midrange adult male; Snapper gentle soft low male; Luna clear calm young female; Zip bright quick male; Boomer rounded friendly synthetic male; Narrator warm expressive adult female; Townsperson adult male. Preserve these voice identities. Speak only the supplied lines in natural American English, with expressive matching mouth performance; nobody speaks another character's line. Native spoken dialogue and gentle matching foley, no background music. Leo says: May we sit nearby? Snapper says: Yes. I would like that. No captions, UI, logos, repeated intros, recaps or end cards. No fade except the final farewell. Compose 16:9. Finish on a natural pose ready for the next shot."
+        },
+        {
+          "id": 2,
+          "duration": 10,
+          "action": "Close on his hands resting beside, not gripping, the cake tray. Nobody laughs at his sadness.",
+          "dialogue": [
+            {
+              "speaker": "Snapper",
+              "text": "I thought taking the cake would make everyone notice me. Now I feel worse."
+            }
+          ],
+          "prompt": "Original polished 3D family animation. Leo is the established orange Spinosaurus with long snout, blue sail orange ribs, blue/orange superhero suit, lightning chest emblem and tool belt. Keep Leo visible, preserve all reference identities, outfits, limb counts and proportions. Real articulated acting, expressive faces, clear weight shifts and prop contact; never a moving still. Scene 6, shot 2, location Dry garden beside fenced pond. Continue naturally from the input frame. Ten seconds of story: Close on his hands resting beside, not gripping, the cake tray. Nobody laughs at his sadness. Voices: Leo warm buoyant midrange adult male; Snapper gentle soft low male; Luna clear calm young female; Zip bright quick male; Boomer rounded friendly synthetic male; Narrator warm expressive adult female; Townsperson adult male. Preserve these voice identities. Speak only the supplied lines in natural American English, with expressive matching mouth performance; nobody speaks another character's line. Native spoken dialogue and gentle matching foley, no background music. Snapper says: I thought taking the cake would make everyone notice me. Now I feel worse. No captions, UI, logos, repeated intros, recaps or end cards. No fade except the final farewell. Compose 16:9. Finish on a natural pose ready for the next shot."
+        },
+        {
+          "id": 3,
+          "duration": 10,
+          "action": "Close two-shot of Leo listening to Snapper, who gestures toward the distant party and looks down with lonely eyes. Allow reflective space. No feeling cards or interface.",
+          "dialogue": [
+            {
+              "speaker": "Narrator",
+              "text": "Snapper told us he wanted a friend. How do you think he felt: lonely, excited, or sleepy?"
+            }
+          ],
+          "prompt": "Original polished 3D family animation. Leo is the established orange Spinosaurus with long snout, blue sail orange ribs, blue/orange superhero suit, lightning chest emblem and tool belt. Keep Leo visible, preserve all reference identities, outfits, limb counts and proportions. Real articulated acting, expressive faces, clear weight shifts and prop contact; never a moving still. Scene 6, shot 3, location Dry garden beside fenced pond. Continue naturally from the input frame. Ten seconds of story: Close two-shot of Leo listening to Snapper, who gestures toward the distant party and looks down with lonely eyes. Allow reflective space. No feeling cards or interface. Voices: Leo warm buoyant midrange adult male; Snapper gentle soft low male; Luna clear calm young female; Zip bright quick male; Boomer rounded friendly synthetic male; Narrator warm expressive adult female; Townsperson adult male. Preserve these voice identities. Speak only the supplied lines in natural American English, with expressive matching mouth performance; nobody speaks another character's line. Native spoken dialogue and gentle matching foley, no background music. Narrator says: Snapper told us he wanted a friend. How do you think he felt: lonely, excited, or sleepy? No captions, UI, logos, repeated intros, recaps or end cards. No fade except the final farewell. Compose 16:9. Finish on a natural pose ready for the next shot."
+        },
+        {
+          "id": 4,
+          "duration": 10,
+          "action": "Snapper softly breathes and adjusts his hat, Leo gives him time and Luna sits nearby supportively. Small genuine facial and hand performance during a quiet response window.",
+          "dialogue": [],
+          "prompt": "Original polished 3D family animation. Leo is the established orange Spinosaurus with long snout, blue sail orange ribs, blue/orange superhero suit, lightning chest emblem and tool belt. Keep Leo visible, preserve all reference identities, outfits, limb counts and proportions. Real articulated acting, expressive faces, clear weight shifts and prop contact; never a moving still. Scene 6, shot 4, location Dry garden beside fenced pond. Continue naturally from the input frame. Ten seconds of story: Snapper softly breathes and adjusts his hat, Leo gives him time and Luna sits nearby supportively. Small genuine facial and hand performance during a quiet response window. Voices: Leo warm buoyant midrange adult male; Snapper gentle soft low male; Luna clear calm young female; Zip bright quick male; Boomer rounded friendly synthetic male; Narrator warm expressive adult female; Townsperson adult male. Preserve these voice identities. Speak only the supplied lines in natural American English, with expressive matching mouth performance; nobody speaks another character's line. Native spoken dialogue and gentle matching foley, no background music. No spoken dialogue.  No captions, UI, logos, repeated intros, recaps or end cards. No fade except the final farewell. Compose 16:9. Finish on a natural pose ready for the next shot."
+        },
+        {
+          "id": 5,
+          "duration": 10,
+          "action": "Snapper names his feeling. Luna acknowledges it and points toward the shared cake tray; Leo offers to carry one side.",
+          "dialogue": [
+            {
+              "speaker": "Luna",
+              "text": "Snapper felt lonely. Feelings matter, and choices matter too. Let us return the cake and make things right."
+            }
+          ],
+          "prompt": "Original polished 3D family animation. Leo is the established orange Spinosaurus with long snout, blue sail orange ribs, blue/orange superhero suit, lightning chest emblem and tool belt. Keep Leo visible, preserve all reference identities, outfits, limb counts and proportions. Real articulated acting, expressive faces, clear weight shifts and prop contact; never a moving still. Scene 6, shot 5, location Dry garden beside fenced pond. Continue naturally from the input frame. Ten seconds of story: Snapper names his feeling. Luna acknowledges it and points toward the shared cake tray; Leo offers to carry one side. Voices: Leo warm buoyant midrange adult male; Snapper gentle soft low male; Luna clear calm young female; Zip bright quick male; Boomer rounded friendly synthetic male; Narrator warm expressive adult female; Townsperson adult male. Preserve these voice identities. Speak only the supplied lines in natural American English, with expressive matching mouth performance; nobody speaks another character's line. Native spoken dialogue and gentle matching foley, no background music. Luna says: Snapper felt lonely. Feelings matter, and choices matter too. Let us return the cake and make things right. No captions, UI, logos, repeated intros, recaps or end cards. No fade except the final farewell. Compose 16:9. Finish on a natural pose ready for the next shot."
+        },
+        {
+          "id": 6,
+          "duration": 10,
+          "action": "Snapper apologizes and lifts the cake carefully. A playful gust carries lightweight festival flowers across the sky.",
+          "dialogue": [
+            {
+              "speaker": "Snapper",
+              "text": "I am sorry I took the cake. I will bring it back. Oh! The decorations are flying away!"
+            }
+          ],
+          "prompt": "Original polished 3D family animation. Leo is the established orange Spinosaurus with long snout, blue sail orange ribs, blue/orange superhero suit, lightning chest emblem and tool belt. Keep Leo visible, preserve all reference identities, outfits, limb counts and proportions. Real articulated acting, expressive faces, clear weight shifts and prop contact; never a moving still. Scene 6, shot 6, location Dry garden beside fenced pond. Continue naturally from the input frame. Ten seconds of story: Snapper apologizes and lifts the cake carefully. A playful gust carries lightweight festival flowers across the sky. Voices: Leo warm buoyant midrange adult male; Snapper gentle soft low male; Luna clear calm young female; Zip bright quick male; Boomer rounded friendly synthetic male; Narrator warm expressive adult female; Townsperson adult male. Preserve these voice identities. Speak only the supplied lines in natural American English, with expressive matching mouth performance; nobody speaks another character's line. Native spoken dialogue and gentle matching foley, no background music. Snapper says: I am sorry I took the cake. I will bring it back. Oh! The decorations are flying away! No captions, UI, logos, repeated intros, recaps or end cards. No fade except the final farewell. Compose 16:9. Finish on a natural pose ready for the next shot."
+        }
+      ]
+    },
+    {
+      "id": 7,
+      "name": "The teamwork rescue",
+      "keyframe": "docs/independent-video/keyframes/scene-07.png",
+      "shots": [
+        {
+          "id": 1,
+          "duration": 10,
+          "action": "Leo looks at Boomer's bubbles, Zip's floating cardboard cradle and Snapper's tail. The three friends show how each tool works with a tiny gesture, without UI cards.",
+          "dialogue": [
+            {
+              "speaker": "Narrator",
+              "text": "Which tool could help? Boomer's bubbles, Zip's floating cradle, or Snapper's gentle tail fan? Let us try the bubbles first."
+            }
+          ],
+          "prompt": "Original polished 3D family animation. Leo is the established orange Spinosaurus with long snout, blue sail orange ribs, blue/orange superhero suit, lightning chest emblem and tool belt. Keep Leo visible, preserve all reference identities, outfits, limb counts and proportions. Real articulated acting, expressive faces, clear weight shifts and prop contact; never a moving still. Scene 7, shot 1, location Open decoration collection lawn. Continue naturally from the input frame. Ten seconds of story: Leo looks at Boomer's bubbles, Zip's floating cardboard cradle and Snapper's tail. The three friends show how each tool works with a tiny gesture, without UI cards. Voices: Leo warm buoyant midrange adult male; Snapper gentle soft low male; Luna clear calm young female; Zip bright quick male; Boomer rounded friendly synthetic male; Narrator warm expressive adult female; Townsperson adult male. Preserve these voice identities. Speak only the supplied lines in natural American English, with expressive matching mouth performance; nobody speaks another character's line. Native spoken dialogue and gentle matching foley, no background music. Narrator says: Which tool could help? Boomer's bubbles, Zip's floating cradle, or Snapper's gentle tail fan? Let us try the bubbles first. No captions, UI, logos, repeated intros, recaps or end cards. No fade except the final farewell. Compose 16:9. Finish on a natural pose ready for the next shot."
+        },
+        {
+          "id": 2,
+          "duration": 10,
+          "action": "Boomer makes one small bubble toward a fluttering paper flower while the others watch with encouraging smiles; silent response window with real movement.",
+          "dialogue": [],
+          "prompt": "Original polished 3D family animation. Leo is the established orange Spinosaurus with long snout, blue sail orange ribs, blue/orange superhero suit, lightning chest emblem and tool belt. Keep Leo visible, preserve all reference identities, outfits, limb counts and proportions. Real articulated acting, expressive faces, clear weight shifts and prop contact; never a moving still. Scene 7, shot 2, location Open decoration collection lawn. Continue naturally from the input frame. Ten seconds of story: Boomer makes one small bubble toward a fluttering paper flower while the others watch with encouraging smiles; silent response window with real movement. Voices: Leo warm buoyant midrange adult male; Snapper gentle soft low male; Luna clear calm young female; Zip bright quick male; Boomer rounded friendly synthetic male; Narrator warm expressive adult female; Townsperson adult male. Preserve these voice identities. Speak only the supplied lines in natural American English, with expressive matching mouth performance; nobody speaks another character's line. Native spoken dialogue and gentle matching foley, no background music. No spoken dialogue.  No captions, UI, logos, repeated intros, recaps or end cards. No fade except the final farewell. Compose 16:9. Finish on a natural pose ready for the next shot."
+        },
+        {
+          "id": 3,
+          "duration": 10,
+          "action": "Boomer's bubble catches one flower and squeaks. Snapper's tiny tail breeze settles a second flower gently on Leo's head. Leo notices and smiles warmly.",
+          "dialogue": [
+            {
+              "speaker": "Leo",
+              "text": "A promising start. Also, a lovely new hairstyle."
+            }
+          ],
+          "prompt": "Original polished 3D family animation. Leo is the established orange Spinosaurus with long snout, blue sail orange ribs, blue/orange superhero suit, lightning chest emblem and tool belt. Keep Leo visible, preserve all reference identities, outfits, limb counts and proportions. Real articulated acting, expressive faces, clear weight shifts and prop contact; never a moving still. Scene 7, shot 3, location Open decoration collection lawn. Continue naturally from the input frame. Ten seconds of story: Boomer's bubble catches one flower and squeaks. Snapper's tiny tail breeze settles a second flower gently on Leo's head. Leo notices and smiles warmly. Voices: Leo warm buoyant midrange adult male; Snapper gentle soft low male; Luna clear calm young female; Zip bright quick male; Boomer rounded friendly synthetic male; Narrator warm expressive adult female; Townsperson adult male. Preserve these voice identities. Speak only the supplied lines in natural American English, with expressive matching mouth performance; nobody speaks another character's line. Native spoken dialogue and gentle matching foley, no background music. Leo says: A promising start. Also, a lovely new hairstyle. No captions, UI, logos, repeated intros, recaps or end cards. No fade except the final farewell. Compose 16:9. Finish on a natural pose ready for the next shot."
+        },
+        {
+          "id": 4,
+          "duration": 10,
+          "action": "Snapper fans from a marked empty zone, directing flowers into Boomer’s bubbles. Zip’s impossible floating cradle guides them into a basket.",
+          "dialogue": [
+            {
+              "speaker": "Luna",
+              "text": "A little breeze, a gentle catch, and a safe landing. Together!"
+            }
+          ],
+          "prompt": "Original polished 3D family animation. Leo is the established orange Spinosaurus with long snout, blue sail orange ribs, blue/orange superhero suit, lightning chest emblem and tool belt. Keep Leo visible, preserve all reference identities, outfits, limb counts and proportions. Real articulated acting, expressive faces, clear weight shifts and prop contact; never a moving still. Scene 7, shot 4, location Open decoration collection lawn. Continue naturally from the input frame. Ten seconds of story: Snapper fans from a marked empty zone, directing flowers into Boomer’s bubbles. Zip’s impossible floating cradle guides them into a basket. Voices: Leo warm buoyant midrange adult male; Snapper gentle soft low male; Luna clear calm young female; Zip bright quick male; Boomer rounded friendly synthetic male; Narrator warm expressive adult female; Townsperson adult male. Preserve these voice identities. Speak only the supplied lines in natural American English, with expressive matching mouth performance; nobody speaks another character's line. Native spoken dialogue and gentle matching foley, no background music. Luna says: A little breeze, a gentle catch, and a safe landing. Together! No captions, UI, logos, repeated intros, recaps or end cards. No fade except the final farewell. Compose 16:9. Finish on a natural pose ready for the next shot."
+        },
+        {
+          "id": 5,
+          "duration": 10,
+          "action": "Luna maps a wide parade route while Snapper offers his large basket. Leo gives him the sign after asking.",
+          "dialogue": [
+            {
+              "speaker": "Luna",
+              "text": "Let us have an Everyone Is Invited parade. You can join, watch, or rest. Snapper, will you help?"
+            }
+          ],
+          "prompt": "Original polished 3D family animation. Leo is the established orange Spinosaurus with long snout, blue sail orange ribs, blue/orange superhero suit, lightning chest emblem and tool belt. Keep Leo visible, preserve all reference identities, outfits, limb counts and proportions. Real articulated acting, expressive faces, clear weight shifts and prop contact; never a moving still. Scene 7, shot 5, location Open decoration collection lawn. Continue naturally from the input frame. Ten seconds of story: Luna maps a wide parade route while Snapper offers his large basket. Leo gives him the sign after asking. Voices: Leo warm buoyant midrange adult male; Snapper gentle soft low male; Luna clear calm young female; Zip bright quick male; Boomer rounded friendly synthetic male; Narrator warm expressive adult female; Townsperson adult male. Preserve these voice identities. Speak only the supplied lines in natural American English, with expressive matching mouth performance; nobody speaks another character's line. Native spoken dialogue and gentle matching foley, no background music. Luna says: Let us have an Everyone Is Invited parade. You can join, watch, or rest. Snapper, will you help? No captions, UI, logos, repeated intros, recaps or end cards. No fade except the final farewell. Compose 16:9. Finish on a natural pose ready for the next shot."
+        },
+        {
+          "id": 6,
+          "duration": 10,
+          "action": "A flowing preparation montage: Snapper carries flowers, Boomer delivers invitations, Zip repairs the cake, Luna lights signs, Leo dances.",
+          "dialogue": [
+            {
+              "speaker": "Leo",
+              "text": "Together, we can make room for everyone. My feet are making room for a very silly dance!"
+            }
+          ],
+          "prompt": "Original polished 3D family animation. Leo is the established orange Spinosaurus with long snout, blue sail orange ribs, blue/orange superhero suit, lightning chest emblem and tool belt. Keep Leo visible, preserve all reference identities, outfits, limb counts and proportions. Real articulated acting, expressive faces, clear weight shifts and prop contact; never a moving still. Scene 7, shot 6, location Open decoration collection lawn. Continue naturally from the input frame. Ten seconds of story: A flowing preparation montage: Snapper carries flowers, Boomer delivers invitations, Zip repairs the cake, Luna lights signs, Leo dances. Voices: Leo warm buoyant midrange adult male; Snapper gentle soft low male; Luna clear calm young female; Zip bright quick male; Boomer rounded friendly synthetic male; Narrator warm expressive adult female; Townsperson adult male. Preserve these voice identities. Speak only the supplied lines in natural American English, with expressive matching mouth performance; nobody speaks another character's line. Native spoken dialogue and gentle matching foley, no background music. Leo says: Together, we can make room for everyone. My feet are making room for a very silly dance! No captions, UI, logos, repeated intros, recaps or end cards. No fade except the final farewell. Compose 16:9. Finish on a natural pose ready for the next shot."
+        }
+      ]
+    },
+    {
+      "id": 8,
+      "name": "The balloon roadblock",
+      "keyframe": "docs/independent-video/keyframes/scene-08.png",
+      "shots": [
+        {
+          "id": 1,
+          "duration": 10,
+          "action": "Show three large balloon-shaped transparent display pockets: coral circle, blue oval, yellow star. A drawn key is visible inside the blue pocket; it is a symbol, not a loose object.",
+          "dialogue": [
+            {
+              "speaker": "Narrator",
+              "text": "Which balloon has the hidden key? Look at the red circle, blue oval, and yellow star."
+            }
+          ],
+          "prompt": "Original polished 3D family animation. Leo is the established orange Spinosaurus with long snout, blue sail orange ribs, blue/orange superhero suit, lightning chest emblem and tool belt. Keep Leo visible, preserve all reference identities, outfits, limb counts and proportions. Real articulated acting, expressive faces, clear weight shifts and prop contact; never a moving still. Scene 8, shot 1, location Closed parade lane. Continue naturally from the input frame. Ten seconds of story: Show three large balloon-shaped transparent display pockets: coral circle, blue oval, yellow star. A drawn key is visible inside the blue pocket; it is a symbol, not a loose object. Voices: Leo warm buoyant midrange adult male; Snapper gentle soft low male; Luna clear calm young female; Zip bright quick male; Boomer rounded friendly synthetic male; Narrator warm expressive adult female; Townsperson adult male. Preserve these voice identities. Speak only the supplied lines in natural American English, with expressive matching mouth performance; nobody speaks another character's line. Native spoken dialogue and gentle matching foley, no background music. Narrator says: Which balloon has the hidden key? Look at the red circle, blue oval, and yellow star. No captions, UI, logos, repeated intros, recaps or end cards. No fade except the final farewell. Compose 16:9. Finish on a natural pose ready for the next shot."
+        },
+        {
+          "id": 2,
+          "duration": 10,
+          "action": "Hold the three colored display pockets clearly in frame while Leo scans them with his eyes and points thoughtfully; gentle blinking and body movement, no generated interface.",
+          "dialogue": [],
+          "prompt": "Original polished 3D family animation. Leo is the established orange Spinosaurus with long snout, blue sail orange ribs, blue/orange superhero suit, lightning chest emblem and tool belt. Keep Leo visible, preserve all reference identities, outfits, limb counts and proportions. Real articulated acting, expressive faces, clear weight shifts and prop contact; never a moving still. Scene 8, shot 2, location Closed parade lane. Continue naturally from the input frame. Ten seconds of story: Hold the three colored display pockets clearly in frame while Leo scans them with his eyes and points thoughtfully; gentle blinking and body movement, no generated interface. Voices: Leo warm buoyant midrange adult male; Snapper gentle soft low male; Luna clear calm young female; Zip bright quick male; Boomer rounded friendly synthetic male; Narrator warm expressive adult female; Townsperson adult male. Preserve these voice identities. Speak only the supplied lines in natural American English, with expressive matching mouth performance; nobody speaks another character's line. Native spoken dialogue and gentle matching foley, no background music. No spoken dialogue.  No captions, UI, logos, repeated intros, recaps or end cards. No fade except the final farewell. Compose 16:9. Finish on a natural pose ready for the next shot."
+        },
+        {
+          "id": 3,
+          "duration": 10,
+          "action": "Leo points to the blue oval and camera moves closer to the key drawing. Luna explains the picture points to a matching control on the rack.",
+          "dialogue": [
+            {
+              "speaker": "Luna",
+              "text": "The blue oval has the key symbol. It matches this release button."
+            }
+          ],
+          "prompt": "Original polished 3D family animation. Leo is the established orange Spinosaurus with long snout, blue sail orange ribs, blue/orange superhero suit, lightning chest emblem and tool belt. Keep Leo visible, preserve all reference identities, outfits, limb counts and proportions. Real articulated acting, expressive faces, clear weight shifts and prop contact; never a moving still. Scene 8, shot 3, location Closed parade lane. Continue naturally from the input frame. Ten seconds of story: Leo points to the blue oval and camera moves closer to the key drawing. Luna explains the picture points to a matching control on the rack. Voices: Leo warm buoyant midrange adult male; Snapper gentle soft low male; Luna clear calm young female; Zip bright quick male; Boomer rounded friendly synthetic male; Narrator warm expressive adult female; Townsperson adult male. Preserve these voice identities. Speak only the supplied lines in natural American English, with expressive matching mouth performance; nobody speaks another character's line. Native spoken dialogue and gentle matching foley, no background music. Luna says: The blue oval has the key symbol. It matches this release button. No captions, UI, logos, repeated intros, recaps or end cards. No fade except the final farewell. Compose 16:9. Finish on a natural pose ready for the next shot."
+        },
+        {
+          "id": 4,
+          "duration": 10,
+          "action": "Zip presses the large rack button; hinged sections unfold slowly into flower shapes. No popping, sharp tools or actual locks.",
+          "dialogue": [
+            {
+              "speaker": "Zip",
+              "text": "Not a breaking problem. An unfolding problem!"
+            }
+          ],
+          "prompt": "Original polished 3D family animation. Leo is the established orange Spinosaurus with long snout, blue sail orange ribs, blue/orange superhero suit, lightning chest emblem and tool belt. Keep Leo visible, preserve all reference identities, outfits, limb counts and proportions. Real articulated acting, expressive faces, clear weight shifts and prop contact; never a moving still. Scene 8, shot 4, location Closed parade lane. Continue naturally from the input frame. Ten seconds of story: Zip presses the large rack button; hinged sections unfold slowly into flower shapes. No popping, sharp tools or actual locks. Voices: Leo warm buoyant midrange adult male; Snapper gentle soft low male; Luna clear calm young female; Zip bright quick male; Boomer rounded friendly synthetic male; Narrator warm expressive adult female; Townsperson adult male. Preserve these voice identities. Speak only the supplied lines in natural American English, with expressive matching mouth performance; nobody speaks another character's line. Native spoken dialogue and gentle matching foley, no background music. Zip says: Not a breaking problem. An unfolding problem! No captions, UI, logos, repeated intros, recaps or end cards. No fade except the final farewell. Compose 16:9. Finish on a natural pose ready for the next shot."
+        },
+        {
+          "id": 5,
+          "duration": 10,
+          "action": "Snapper gently rolls the separated lightweight racks onto the marked lawn while Boomer guards the clear walkway.",
+          "dialogue": [
+            {
+              "speaker": "Snapper",
+              "text": "Balloons saved. Path open. May I lead the next part?"
+            }
+          ],
+          "prompt": "Original polished 3D family animation. Leo is the established orange Spinosaurus with long snout, blue sail orange ribs, blue/orange superhero suit, lightning chest emblem and tool belt. Keep Leo visible, preserve all reference identities, outfits, limb counts and proportions. Real articulated acting, expressive faces, clear weight shifts and prop contact; never a moving still. Scene 8, shot 5, location Closed parade lane. Continue naturally from the input frame. Ten seconds of story: Snapper gently rolls the separated lightweight racks onto the marked lawn while Boomer guards the clear walkway. Voices: Leo warm buoyant midrange adult male; Snapper gentle soft low male; Luna clear calm young female; Zip bright quick male; Boomer rounded friendly synthetic male; Narrator warm expressive adult female; Townsperson adult male. Preserve these voice identities. Speak only the supplied lines in natural American English, with expressive matching mouth performance; nobody speaks another character's line. Native spoken dialogue and gentle matching foley, no background music. Snapper says: Balloons saved. Path open. May I lead the next part? No captions, UI, logos, repeated intros, recaps or end cards. No fade except the final farewell. Compose 16:9. Finish on a natural pose ready for the next shot."
+        },
+        {
+          "id": 6,
+          "duration": 10,
+          "action": "Leo offers Snapper the parade sign. The balloons now form a decorative arch around a broad, unobstructed entrance.",
+          "dialogue": [
+            {
+              "speaker": "Leo",
+              "text": "Lead the way, festival helper."
+            }
+          ],
+          "prompt": "Original polished 3D family animation. Leo is the established orange Spinosaurus with long snout, blue sail orange ribs, blue/orange superhero suit, lightning chest emblem and tool belt. Keep Leo visible, preserve all reference identities, outfits, limb counts and proportions. Real articulated acting, expressive faces, clear weight shifts and prop contact; never a moving still. Scene 8, shot 6, location Closed parade lane. Continue naturally from the input frame. Ten seconds of story: Leo offers Snapper the parade sign. The balloons now form a decorative arch around a broad, unobstructed entrance. Voices: Leo warm buoyant midrange adult male; Snapper gentle soft low male; Luna clear calm young female; Zip bright quick male; Boomer rounded friendly synthetic male; Narrator warm expressive adult female; Townsperson adult male. Preserve these voice identities. Speak only the supplied lines in natural American English, with expressive matching mouth performance; nobody speaks another character's line. Native spoken dialogue and gentle matching foley, no background music. Leo says: Lead the way, festival helper. No captions, UI, logos, repeated intros, recaps or end cards. No fade except the final farewell. Compose 16:9. Finish on a natural pose ready for the next shot."
+        }
+      ]
+    },
+    {
+      "id": 9,
+      "name": "Welcome, friend",
+      "keyframe": "docs/independent-video/keyframes/scene-09.png",
+      "shots": [
+        {
+          "id": 1,
+          "duration": 10,
+          "action": "Snapper enters slowly carrying the parade sign, hat upright. Townspeople smile and clap; nobody surrounds or touches him without invitation.",
+          "dialogue": [
+            {
+              "speaker": "Narrator",
+              "text": "Bubbleville has a new festival helper. And a very large yellow hat."
+            }
+          ],
+          "prompt": "Original polished 3D family animation. Leo is the established orange Spinosaurus with long snout, blue sail orange ribs, blue/orange superhero suit, lightning chest emblem and tool belt. Keep Leo visible, preserve all reference identities, outfits, limb counts and proportions. Real articulated acting, expressive faces, clear weight shifts and prop contact; never a moving still. Scene 9, shot 1, location Festival stage and shared tables. Continue naturally from the input frame. Ten seconds of story: Snapper enters slowly carrying the parade sign, hat upright. Townspeople smile and clap; nobody surrounds or touches him without invitation. Voices: Leo warm buoyant midrange adult male; Snapper gentle soft low male; Luna clear calm young female; Zip bright quick male; Boomer rounded friendly synthetic male; Narrator warm expressive adult female; Townsperson adult male. Preserve these voice identities. Speak only the supplied lines in natural American English, with expressive matching mouth performance; nobody speaks another character's line. Native spoken dialogue and gentle matching foley, no background music. Narrator says: Bubbleville has a new festival helper. And a very large yellow hat. No captions, UI, logos, repeated intros, recaps or end cards. No fade except the final farewell. Compose 16:9. Finish on a natural pose ready for the next shot."
+        },
+        {
+          "id": 2,
+          "duration": 10,
+          "action": "The townsperson from Scene 3 steps forward. The apology is specific and addressed to Snapper.",
+          "dialogue": [
+            {
+              "speaker": "Townsperson",
+              "text": "I called you evil before I knew you. That was unfair. I am sorry."
+            }
+          ],
+          "prompt": "Original polished 3D family animation. Leo is the established orange Spinosaurus with long snout, blue sail orange ribs, blue/orange superhero suit, lightning chest emblem and tool belt. Keep Leo visible, preserve all reference identities, outfits, limb counts and proportions. Real articulated acting, expressive faces, clear weight shifts and prop contact; never a moving still. Scene 9, shot 2, location Festival stage and shared tables. Continue naturally from the input frame. Ten seconds of story: The townsperson from Scene 3 steps forward. The apology is specific and addressed to Snapper. Voices: Leo warm buoyant midrange adult male; Snapper gentle soft low male; Luna clear calm young female; Zip bright quick male; Boomer rounded friendly synthetic male; Narrator warm expressive adult female; Townsperson adult male. Preserve these voice identities. Speak only the supplied lines in natural American English, with expressive matching mouth performance; nobody speaks another character's line. Native spoken dialogue and gentle matching foley, no background music. Townsperson says: I called you evil before I knew you. That was unfair. I am sorry. No captions, UI, logos, repeated intros, recaps or end cards. No fade except the final farewell. Compose 16:9. Finish on a natural pose ready for the next shot."
+        },
+        {
+          "id": 3,
+          "duration": 10,
+          "action": "Snapper nods, then looks toward the shared cake table. He speaks without a joke interrupting the apology.",
+          "dialogue": [
+            {
+              "speaker": "Snapper",
+              "text": "I am sorry I took the cake. It belongs to everyone. I helped bring it back."
+            }
+          ],
+          "prompt": "Original polished 3D family animation. Leo is the established orange Spinosaurus with long snout, blue sail orange ribs, blue/orange superhero suit, lightning chest emblem and tool belt. Keep Leo visible, preserve all reference identities, outfits, limb counts and proportions. Real articulated acting, expressive faces, clear weight shifts and prop contact; never a moving still. Scene 9, shot 3, location Festival stage and shared tables. Continue naturally from the input frame. Ten seconds of story: Snapper nods, then looks toward the shared cake table. He speaks without a joke interrupting the apology. Voices: Leo warm buoyant midrange adult male; Snapper gentle soft low male; Luna clear calm young female; Zip bright quick male; Boomer rounded friendly synthetic male; Narrator warm expressive adult female; Townsperson adult male. Preserve these voice identities. Speak only the supplied lines in natural American English, with expressive matching mouth performance; nobody speaks another character's line. Native spoken dialogue and gentle matching foley, no background music. Snapper says: I am sorry I took the cake. It belongs to everyone. I helped bring it back. No captions, UI, logos, repeated intros, recaps or end cards. No fade except the final farewell. Compose 16:9. Finish on a natural pose ready for the next shot."
+        },
+        {
+          "id": 4,
+          "duration": 10,
+          "action": "Luna thanks him for repairing the mistake. An adult serves cake at the table; there is no reward conditional on forgiving immediately.",
+          "dialogue": [
+            {
+              "speaker": "Luna",
+              "text": "Thank you for making it right. We can keep learning together."
+            }
+          ],
+          "prompt": "Original polished 3D family animation. Leo is the established orange Spinosaurus with long snout, blue sail orange ribs, blue/orange superhero suit, lightning chest emblem and tool belt. Keep Leo visible, preserve all reference identities, outfits, limb counts and proportions. Real articulated acting, expressive faces, clear weight shifts and prop contact; never a moving still. Scene 9, shot 4, location Festival stage and shared tables. Continue naturally from the input frame. Ten seconds of story: Luna thanks him for repairing the mistake. An adult serves cake at the table; there is no reward conditional on forgiving immediately. Voices: Leo warm buoyant midrange adult male; Snapper gentle soft low male; Luna clear calm young female; Zip bright quick male; Boomer rounded friendly synthetic male; Narrator warm expressive adult female; Townsperson adult male. Preserve these voice identities. Speak only the supplied lines in natural American English, with expressive matching mouth performance; nobody speaks another character's line. Native spoken dialogue and gentle matching foley, no background music. Luna says: Thank you for making it right. We can keep learning together. No captions, UI, logos, repeated intros, recaps or end cards. No fade except the final farewell. Compose 16:9. Finish on a natural pose ready for the next shot."
+        },
+        {
+          "id": 5,
+          "duration": 10,
+          "action": "Boomer politely receives his own pretend robot snack. Everyone settles into a comfortable seated or standing place for the song.",
+          "dialogue": [
+            {
+              "speaker": "Narrator",
+              "text": "Friendship schedule: ongoing! For our song, clap softly twice and wave, imagine the movements, or just listen."
+            }
+          ],
+          "prompt": "Original polished 3D family animation. Leo is the established orange Spinosaurus with long snout, blue sail orange ribs, blue/orange superhero suit, lightning chest emblem and tool belt. Keep Leo visible, preserve all reference identities, outfits, limb counts and proportions. Real articulated acting, expressive faces, clear weight shifts and prop contact; never a moving still. Scene 9, shot 5, location Festival stage and shared tables. Continue naturally from the input frame. Ten seconds of story: Boomer politely receives his own pretend robot snack. Everyone settles into a comfortable seated or standing place for the song. Voices: Leo warm buoyant midrange adult male; Snapper gentle soft low male; Luna clear calm young female; Zip bright quick male; Boomer rounded friendly synthetic male; Narrator warm expressive adult female; Townsperson adult male. Preserve these voice identities. Speak only the supplied lines in natural American English, with expressive matching mouth performance; nobody speaks another character's line. Native spoken dialogue and gentle matching foley, no background music. Narrator says: Friendship schedule: ongoing! For our song, clap softly twice and wave, imagine the movements, or just listen. No captions, UI, logos, repeated intros, recaps or end cards. No fade except the final farewell. Compose 16:9. Finish on a natural pose ready for the next shot."
+        },
+        {
+          "id": 6,
+          "duration": 10,
+          "action": "The group prepares for a friendly song. Leo slowly demonstrates two soft claps and a wave; Snapper mirrors him, Luna smiles and Boomer gently bounces on his paws. No speech.",
+          "dialogue": [],
+          "prompt": "Original polished 3D family animation. Leo is the established orange Spinosaurus with long snout, blue sail orange ribs, blue/orange superhero suit, lightning chest emblem and tool belt. Keep Leo visible, preserve all reference identities, outfits, limb counts and proportions. Real articulated acting, expressive faces, clear weight shifts and prop contact; never a moving still. Scene 9, shot 6, location Festival stage and shared tables. Continue naturally from the input frame. Ten seconds of story: The group prepares for a friendly song. Leo slowly demonstrates two soft claps and a wave; Snapper mirrors him, Luna smiles and Boomer gently bounces on his paws. No speech. Voices: Leo warm buoyant midrange adult male; Snapper gentle soft low male; Luna clear calm young female; Zip bright quick male; Boomer rounded friendly synthetic male; Narrator warm expressive adult female; Townsperson adult male. Preserve these voice identities. Speak only the supplied lines in natural American English, with expressive matching mouth performance; nobody speaks another character's line. Native spoken dialogue and gentle matching foley, no background music. No spoken dialogue.  No captions, UI, logos, repeated intros, recaps or end cards. No fade except the final farewell. Compose 16:9. Finish on a natural pose ready for the next shot."
+        }
+      ]
+    },
+    {
+      "id": 10,
+      "name": "Everyone belongs",
+      "keyframe": "docs/independent-video/keyframes/scene-10.png",
+      "shots": [
+        {
+          "id": 1,
+          "duration": 10,
+          "action": "Leo and Snapper sing together warmly while Zip Luna and Boomer wave. Perform an original simple major-key children's melody at 96 BPM. Two soft claps and a wave. No generated text.",
+          "dialogue": [
+            {
+              "speaker": "All (sung)",
+              "text": "There is room beside me, there is room for you. / Ask a little question. Try a kinder view."
+            }
+          ],
+          "prompt": "Original polished 3D family animation. Leo is the established orange Spinosaurus with long snout, blue sail orange ribs, blue/orange superhero suit, lightning chest emblem and tool belt. Keep Leo visible, preserve all reference identities, outfits, limb counts and proportions. Real articulated acting, expressive faces, clear weight shifts and prop contact; never a moving still. Scene 10, shot 1, location Accessible festival performance area. Continue naturally from the input frame. Ten seconds of story: Leo and Snapper sing together warmly while Zip Luna and Boomer wave. Perform an original simple major-key children's melody at 96 BPM. Two soft claps and a wave. No generated text. Voices: Leo warm buoyant midrange adult male; Snapper gentle soft low male; Luna clear calm young female; Zip bright quick male; Boomer rounded friendly synthetic male; Narrator warm expressive adult female; Townsperson adult male. Preserve these voice identities. Speak only the supplied lines in natural American English, with expressive matching mouth performance; nobody speaks another character's line. Native warm original singing and gentle instrumental accompaniment as directed. All (sung) says: There is room beside me, there is room for you. Ask a little question. Try a kinder view. No captions, UI, logos, repeated intros, recaps or end cards. No fade except the final farewell. Compose 16:9. Finish on a natural pose ready for the next shot."
+        },
+        {
+          "id": 2,
+          "duration": 10,
+          "action": "Continue the SAME original simple melody, major key at 96 BPM. Leo, Snapper, Luna and Zip sing the chorus with warm natural expressions and synchronized gentle claps. Boomer bounces happily.",
+          "dialogue": [
+            {
+              "speaker": "All (sung)",
+              "text": "Clap, clap, wave hello. / Kindness is a seed we grow. / Side by side, we sing our song. / Everyone belongs!"
+            }
+          ],
+          "prompt": "Original polished 3D family animation. Leo is the established orange Spinosaurus with long snout, blue sail orange ribs, blue/orange superhero suit, lightning chest emblem and tool belt. Keep Leo visible, preserve all reference identities, outfits, limb counts and proportions. Real articulated acting, expressive faces, clear weight shifts and prop contact; never a moving still. Scene 10, shot 2, location Accessible festival performance area. Continue naturally from the input frame. Ten seconds of story: Continue the SAME original simple melody, major key at 96 BPM. Leo, Snapper, Luna and Zip sing the chorus with warm natural expressions and synchronized gentle claps. Boomer bounces happily. Voices: Leo warm buoyant midrange adult male; Snapper gentle soft low male; Luna clear calm young female; Zip bright quick male; Boomer rounded friendly synthetic male; Narrator warm expressive adult female; Townsperson adult male. Preserve these voice identities. Speak only the supplied lines in natural American English, with expressive matching mouth performance; nobody speaks another character's line. Native warm original singing and gentle instrumental accompaniment as directed. All (sung) says: Clap, clap, wave hello. Kindness is a seed we grow. Side by side, we sing our song. Everyone belongs! No captions, UI, logos, repeated intros, recaps or end cards. No fade except the final farewell. Compose 16:9. Finish on a natural pose ready for the next shot."
+        },
+        {
+          "id": 3,
+          "duration": 10,
+          "action": "Ten-second musical reply window: continue gentle instrumental reprise of the same major-key 96 BPM tune. Leo and Snapper slowly clap twice and wave; other friends join. No speech or lyrics.",
+          "dialogue": [],
+          "prompt": "Original polished 3D family animation. Leo is the established orange Spinosaurus with long snout, blue sail orange ribs, blue/orange superhero suit, lightning chest emblem and tool belt. Keep Leo visible, preserve all reference identities, outfits, limb counts and proportions. Real articulated acting, expressive faces, clear weight shifts and prop contact; never a moving still. Scene 10, shot 3, location Accessible festival performance area. Continue naturally from the input frame. Ten seconds of story: Ten-second musical reply window: continue gentle instrumental reprise of the same major-key 96 BPM tune. Leo and Snapper slowly clap twice and wave; other friends join. No speech or lyrics. Voices: Leo warm buoyant midrange adult male; Snapper gentle soft low male; Luna clear calm young female; Zip bright quick male; Boomer rounded friendly synthetic male; Narrator warm expressive adult female; Townsperson adult male. Preserve these voice identities. Speak only the supplied lines in natural American English, with expressive matching mouth performance; nobody speaks another character's line. Native warm original singing and gentle instrumental accompaniment as directed. No spoken dialogue.  No captions, UI, logos, repeated intros, recaps or end cards. No fade except the final farewell. Compose 16:9. Finish on a natural pose ready for the next shot."
+        },
+        {
+          "id": 4,
+          "duration": 10,
+          "action": "The music resolves. Leo’s parade ribbon gets gently pinned beneath Snapper’s cushion; a fantastical low bounce lands Leo on foam props.",
+          "dialogue": [
+            {
+              "speaker": "Leo",
+              "text": "Ask before judging. Listen and help. And check where your parade ribbon is before sitting down!"
+            }
+          ],
+          "prompt": "Original polished 3D family animation. Leo is the established orange Spinosaurus with long snout, blue sail orange ribs, blue/orange superhero suit, lightning chest emblem and tool belt. Keep Leo visible, preserve all reference identities, outfits, limb counts and proportions. Real articulated acting, expressive faces, clear weight shifts and prop contact; never a moving still. Scene 10, shot 4, location Accessible festival performance area. Continue naturally from the input frame. Ten seconds of story: The music resolves. Leo’s parade ribbon gets gently pinned beneath Snapper’s cushion; a fantastical low bounce lands Leo on foam props. Voices: Leo warm buoyant midrange adult male; Snapper gentle soft low male; Luna clear calm young female; Zip bright quick male; Boomer rounded friendly synthetic male; Narrator warm expressive adult female; Townsperson adult male. Preserve these voice identities. Speak only the supplied lines in natural American English, with expressive matching mouth performance; nobody speaks another character's line. Native spoken dialogue and gentle matching foley, no background music. Leo says: Ask before judging. Listen and help. And check where your parade ribbon is before sitting down! No captions, UI, logos, repeated intros, recaps or end cards. No fade except the final farewell. Compose 16:9. Finish on a natural pose ready for the next shot."
+        },
+        {
+          "id": 5,
+          "duration": 10,
+          "action": "Snapper frees Leo's ribbon from the cushion and helps him up. Leo smiles, accepts and turns toward the viewer with the whole crew. One warm farewell; no pictures or text.",
+          "dialogue": [
+            {
+              "speaker": "Narrator",
+              "text": "What adventure will Leo and his friends find next? Imagine your own, or share an idea with a grown-up. See you next time!"
+            }
+          ],
+          "prompt": "Original polished 3D family animation. Leo is the established orange Spinosaurus with long snout, blue sail orange ribs, blue/orange superhero suit, lightning chest emblem and tool belt. Keep Leo visible, preserve all reference identities, outfits, limb counts and proportions. Real articulated acting, expressive faces, clear weight shifts and prop contact; never a moving still. Scene 10, shot 5, location Accessible festival performance area. Continue naturally from the input frame. Ten seconds of story: Snapper frees Leo's ribbon from the cushion and helps him up. Leo smiles, accepts and turns toward the viewer with the whole crew. One warm farewell; no pictures or text. Voices: Leo warm buoyant midrange adult male; Snapper gentle soft low male; Luna clear calm young female; Zip bright quick male; Boomer rounded friendly synthetic male; Narrator warm expressive adult female; Townsperson adult male. Preserve these voice identities. Speak only the supplied lines in natural American English, with expressive matching mouth performance; nobody speaks another character's line. Native spoken dialogue and gentle matching foley, no background music. Narrator says: What adventure will Leo and his friends find next? Imagine your own, or share an idea with a grown-up. See you next time! No captions, UI, logos, repeated intros, recaps or end cards. No fade except the final farewell. Compose 16:9. Finish on a natural pose ready for the next shot."
+        },
+        {
+          "id": 6,
+          "duration": 10,
+          "action": "Concluding full-body group shot: Leo and Snapper wave goodbye with Luna Zip and Boomer. The same gentle original major-key musical theme resolves softly. Hold warm smiles with natural blinking and tail movement, then a gentle final fade only at the end.",
+          "dialogue": [],
+          "prompt": "Original polished 3D family animation. Leo is the established orange Spinosaurus with long snout, blue sail orange ribs, blue/orange superhero suit, lightning chest emblem and tool belt. Keep Leo visible, preserve all reference identities, outfits, limb counts and proportions. Real articulated acting, expressive faces, clear weight shifts and prop contact; never a moving still. Scene 10, shot 6, location Accessible festival performance area. Continue naturally from the input frame. Ten seconds of story: Concluding full-body group shot: Leo and Snapper wave goodbye with Luna Zip and Boomer. The same gentle original major-key musical theme resolves softly. Hold warm smiles with natural blinking and tail movement, then a gentle final fade only at the end. Voices: Leo warm buoyant midrange adult male; Snapper gentle soft low male; Luna clear calm young female; Zip bright quick male; Boomer rounded friendly synthetic male; Narrator warm expressive adult female; Townsperson adult male. Preserve these voice identities. Speak only the supplied lines in natural American English, with expressive matching mouth performance; nobody speaks another character's line. Native warm original singing and gentle instrumental accompaniment as directed. No spoken dialogue.  No captions, UI, logos, repeated intros, recaps or end cards. No fade except the final farewell. Compose 16:9. Finish on a natural pose ready for the next shot."
+        }
+      ]
+    }
+  ]
+}
