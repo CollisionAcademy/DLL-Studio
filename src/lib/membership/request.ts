@@ -14,7 +14,12 @@ export async function requestJson<T>(
   const response = await fetch(url, init);
   const result = await response.json();
   // Clerk must receive this hint unchanged to open verification and retry.
-  if (response.status === 428 && result?.clerk_error) return result;
+  if (
+    [403, 428].includes(response.status) &&
+    result?.clerk_error?.type === "forbidden" &&
+    result.clerk_error.reason === "reverification-error"
+  )
+    return result;
   if (!response.ok) {
     throw new AccountRequestError(
       result.error || "Please try again.",

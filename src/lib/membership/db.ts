@@ -1,11 +1,12 @@
 import "server-only";
 import { Pool, type PoolClient } from "pg";
+import { databaseUrl } from "./database-url";
 let pool: Pool | undefined;
 export function db() {
   if (!process.env.DATABASE_URL)
     throw new Error("Membership database is not configured.");
   return (pool ??= new Pool({
-    connectionString: process.env.DATABASE_URL,
+    connectionString: databaseUrl(process.env.DATABASE_URL),
     max: 5,
     connectionTimeoutMillis: 8000,
     statement_timeout: 15000,

@@ -1,13 +1,16 @@
 import nextEnv from "@next/env";
 import pg from "pg";
 import { readFile } from "node:fs/promises";
+import { databaseUrl } from "../src/lib/membership/database-url.ts";
 nextEnv.loadEnvConfig(process.cwd());
 if (!process.env.DATABASE_URL)
   throw new Error(
     "Set DATABASE_URL to the intended DLL database before running migrations.",
   );
 const client = new pg.Client({
-  connectionString: process.env.DIRECT_URL || process.env.DATABASE_URL,
+  connectionString: databaseUrl(
+    process.env.DIRECT_URL || process.env.DATABASE_URL,
+  ),
 });
 await client.connect();
 try {
