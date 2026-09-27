@@ -28,6 +28,15 @@ export function Header({
   return (
     <header className="site-header">
       <div className="header-inner">
+        <div className="header-account">
+          {authenticationEnabled ? (
+            <AccountNav onNavigate={() => setOpen(false)} />
+          ) : (
+            <Link href="/login" onClick={() => setOpen(false)}>
+              Member login
+            </Link>
+          )}
+        </div>
         <Link
           href="/"
           aria-label="DLL Studio home"
@@ -44,19 +53,8 @@ export function Header({
           {open ? <X /> : <Menu />}
         </button>
         <nav className={open ? "nav open" : "nav"} aria-label="Main navigation">
-          {authenticationEnabled ? (
-            <AccountNav onNavigate={() => setOpen(false)} />
-          ) : (
-            <Link href="/login" onClick={() => setOpen(false)}>
-              Member login
-            </Link>
-          )}
-          <Link
-            href="/membership"
-            onClick={() => setOpen(false)}
-            className={path === "/membership" ? "active" : ""}
-          >
-            Membership
+          <Link href="/member" onClick={() => setOpen(false)} className={path.startsWith("/member") && !path.startsWith("/membership") ? "active" : ""}>
+            Member clubhouse
           </Link>
           <Link
             href="/#characters"
@@ -86,6 +84,9 @@ export function Header({
           >
             For grown-ups <ArrowUpRight size={15} />
           </Link>
+          <Link href="/shop" onClick={() => setOpen(false)} className={path === "/shop" ? "active" : ""}>
+            Shop
+          </Link>
         </nav>
         <Link href="/play" className="button button-yellow header-play">
           <Gamepad2 size={19} /> Let’s play
@@ -103,8 +104,8 @@ export function Footer() {
         </Link>
         <p>Little characters. Big possibilities.</p>
         <div>
-          <Link href="/membership">Membership</Link>
-          <Link href="/shop">DLL Shop</Link>
+          <Link href="/member">Member clubhouse</Link>
+          <Link href="/shop">Shop</Link>
           <Link href="/parent">Parent account</Link>
           <Link href="/grown-ups">For grown-ups</Link>
           <Link href="/privacy">Privacy</Link>

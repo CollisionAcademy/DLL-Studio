@@ -8,7 +8,6 @@ export default function sitemap(): MetadataRoute.Sitemap {
     "/adventures/captain-giggle/index.html",
     "/grown-ups",
     "/privacy",
-    "/membership",
     "/shop",
     "/parents/safety",
     ...characters.map((c) => `/characters/${c.id}`),
