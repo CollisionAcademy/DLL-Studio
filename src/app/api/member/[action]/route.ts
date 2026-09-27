@@ -42,7 +42,7 @@ export async function GET(
     const { action } = await context.params;
     if (!["dashboard", "parent", "content"].includes(action))
       throw new AccessError("Not found.", 404);
-    const user = await account(action === "parent");
+    const user = await account();
     if (action === "content") {
       if (!hasEntitlement(user.plan, "member_content"))
         throw new AccessError("A membership unlocks these stories.");

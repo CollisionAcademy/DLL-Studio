@@ -2,6 +2,7 @@
 import Link from "next/link";
 import { useState } from "react";
 import { useReverification } from "@clerk/nextjs";
+import { requestJson } from "@/lib/membership/request";
 type ReviewVideo = {
   id: string;
   kind: string;
@@ -19,15 +20,13 @@ export default function ReviewPage() {
   );
   const [busy, setBusy] = useState(false);
   const verifiedFetch = useReverification((init?: RequestInit) =>
-    fetch("/api/admin/videos", init),
+    requestJson<{ videos: ReviewVideo[] }>("/api/admin/videos", init),
   );
   async function load() {
     setBusy(true);
     try {
-      const response = await verifiedFetch();
-      if (!response) return;
-      const data = await response.json();
-      if (!response.ok) throw Error(data.error || "Please sign in again.");
+      const data = await verifiedFetch();
+      if (!data) return;
       setVideos(data.videos);
       setStatus(
         data.videos.length
@@ -43,7 +42,7 @@ export default function ReviewPage() {
   async function review(id: string, approve: boolean, form: FormData) {
     setBusy(true);
     try {
-      const response = await verifiedFetch({
+      const data = await verifiedFetch({
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({
@@ -53,9 +52,7 @@ export default function ReviewPage() {
           reviewed: form.get("reviewed") === "on",
         }),
       });
-      if (!response) return;
-      const data = await response.json();
-      if (!response.ok) throw Error(data.error || "Review could not be saved.");
+      if (!data) return;
       await load();
     } catch (e) {
       setStatus(e instanceof Error ? e.message : "Please try again.");

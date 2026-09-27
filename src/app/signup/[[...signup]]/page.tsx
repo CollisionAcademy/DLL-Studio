@@ -1,9 +1,4 @@
-import { SiteAuth } from "@/components/membership/site-auth";
-import { AccountLayout } from "@/components/membership/account-layout";
+import { redirect } from "next/navigation";
 export default function Signup() {
-  return (
-    <AccountLayout>
-      <SiteAuth signup />
-    </AccountLayout>
-  );
+  redirect("/login");
 }

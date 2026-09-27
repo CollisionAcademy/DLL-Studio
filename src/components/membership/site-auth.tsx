@@ -1,17 +1,15 @@
 "use client";
 import Image from "next/image";
 import Link from "next/link";
-import { SignIn, SignUp, useUser } from "@clerk/nextjs";
+import { SignIn, useUser } from "@clerk/nextjs";
 
-export function SiteAuth({ signup = false }: { signup?: boolean }) {
+export function SiteAuth() {
   const { isLoaded, isSignedIn } = useUser();
   return (
     <main id="main" className="page-wrap dll-auth-page">
       <section className="dll-auth-welcome">
         <span className="eyebrow">YOUR DLL STUDIO ACCOUNT</span>
-        <h1>
-          {signup ? "A home for your crew." : "Welcome back to the crew."}
-        </h1>
+        <h1>Welcome to the crew.</h1>
         <p>
           One parent account for your family’s stories, games, and little
           adventures.
@@ -24,9 +22,7 @@ export function SiteAuth({ signup = false }: { signup?: boolean }) {
       </section>
       <section
         className="dll-auth-form"
-        aria-label={
-          signup ? "Create your DLL Studio account" : "DLL Studio sign-in"
-        }
+        aria-label={"DLL Studio sign-in and registration"}
       >
         {isLoaded && isSignedIn ? (
           <div className="member-panel">
@@ -35,22 +31,16 @@ export function SiteAuth({ signup = false }: { signup?: boolean }) {
               Open my DLL account
             </Link>
           </div>
-        ) : signup ? (
-          <SignUp routing="hash" />
         ) : (
-          <SignIn routing="hash" />
+          <SignIn routing="hash" withSignUp />
         )}
         <p className="dll-auth-help">
-          {signup
-            ? "For parents and guardians. Choose a password of at least 8 characters."
-            : "Use your DLL Studio account email and password. Forgot it? Choose “Forgot password?” in the form."}
+          Enter your email to sign in or create an account. New here? We’ll
+          guide you through registration right here.
         </p>
         <p className="dll-auth-help">
-          {signup ? (
-            <Link href="/login">Already part of the crew? Sign in</Link>
-          ) : (
-            <Link href="/signup">New to DLL Studio? Create your account</Link>
-          )}
+          One account for membership and parent settings. Accounts are for
+          parents and guardians; children can explore with you.
         </p>
       </section>
     </main>

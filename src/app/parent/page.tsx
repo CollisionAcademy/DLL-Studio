@@ -1,12 +1,11 @@
 "use client";
 import { useState } from "react";
 import Link from "next/link";
-import { UserButton } from "@clerk/nextjs";
 import { useAccount } from "@/components/membership/use-account";
 import { characters } from "@/lib/characters";
 import { hasEntitlement, plans, planKeys } from "@/lib/membership/plans";
 export default function ParentPage() {
-  const { data, error, busy, load, act } = useAccount(true);
+  const { data, error, needsSignIn, busy, load, act } = useAccount(true);
   const [message, setMessage] = useState("");
   const [script, setScript] = useState("");
   const [requestKey, setRequestKey] = useState<string | null>(null);
@@ -19,11 +18,12 @@ export default function ParentPage() {
     <main id="main" className="page-wrap member-page">
       <div className="member-top">
         <span className="eyebrow">THE GROWN-UP SEAT</span>
-        <UserButton />
       </div>
       <h1>Your family’s adventures.</h1>
       <p>
         Manage membership, birthday surprises, and stories you create together.
+        Your member login also opens these settings. For protected changes, we
+        may ask you to confirm it’s you.
       </p>
       <nav className="member-nav">
         <Link href="/member">Member clubhouse</Link>
@@ -32,7 +32,7 @@ export default function ParentPage() {
       </nav>
       {error && (
         <div role="alert" className="member-notice">
-          {error} <Link href="/login">Parent sign-in →</Link>
+          {error} {needsSignIn && <Link href="/login">Sign in →</Link>}
         </div>
       )}
       {message && (
@@ -41,13 +41,15 @@ export default function ParentPage() {
         </p>
       )}
       {!data ? (
-        <button
-          disabled={busy}
-          onClick={() => void load()}
-          className="button button-blue"
-        >
-          {busy ? "Opening…" : "Unlock parent controls"}
-        </button>
+        needsSignIn ? null : (
+          <button
+            disabled={busy}
+            onClick={() => void load()}
+            className="button button-blue"
+          >
+            {busy ? "Opening…" : "Try again"}
+          </button>
+        )
       ) : (
         <>
           {!data.parent?.parent_confirmed_at && (

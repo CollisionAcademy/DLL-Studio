@@ -15,10 +15,7 @@ export function AccountNav({ onNavigate }: { onNavigate: () => void }) {
   return (
     <div className="account-nav">
       <Link href="/login" onClick={onNavigate}>
-        Parent login
-      </Link>
-      <Link href="/signup" className="account-signup" onClick={onNavigate}>
-        Create account
+        Member login
       </Link>
     </div>
   );

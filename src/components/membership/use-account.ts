@@ -1,7 +1,9 @@
 "use client";
 import { useCallback, useEffect, useState } from "react";
 import { useReverification } from "@clerk/nextjs";
+import { requestJson, AccountRequestError } from "@/lib/membership/request";
 import type { PlanKey } from "@/lib/membership/plans";
+type ActionResult = { url?: string; message: string };
 export type Dashboard = {
   plan: PlanKey;
   isAdmin: boolean;
@@ -27,40 +29,53 @@ export type Dashboard = {
 export function useAccount(parent = false) {
   const [data, setData] = useState<Dashboard | null>(null);
   const [error, setError] = useState("");
-  const [busy, setBusy] = useState(!parent);
-  const verifiedFetch = useReverification((url: string, init?: RequestInit) =>
-    fetch(url, init),
+  const [needsSignIn, setNeedsSignIn] = useState(false);
+  const [busy, setBusy] = useState(true);
+  const verifiedFetch = useReverification(requestJson<ActionResult>);
+  const load = useCallback(
+    async (signal?: AbortSignal) => {
+      try {
+        const result = await requestJson<Dashboard>(
+          `/api/member/${parent ? "parent" : "dashboard"}`,
+          { signal },
+        );
+        if (!signal?.aborted) {
+          setData(result);
+          setError("");
+          setNeedsSignIn(false);
+        }
+      } catch (error) {
+        if (!signal?.aborted) {
+          setError(
+            error instanceof Error ? error.message : "Please try again.",
+          );
+          setNeedsSignIn(
+            error instanceof AccountRequestError && error.status === 401,
+          );
+        }
+      } finally {
+        if (!signal?.aborted) setBusy(false);
+      }
+    },
+    [parent],
   );
-  const load = useCallback(async () => {
-    setBusy(true);
-    setError("");
-    try {
-      const response = await verifiedFetch(
-        `/api/member/${parent ? "parent" : "dashboard"}`,
-      );
-      if (!response) return;
-      const result = await response.json();
-      if (!response.ok)
-        throw Error(result.error || "Please verify your parent sign-in.");
-      setData(result);
-    } catch (error) {
-      setError(error instanceof Error ? error.message : "Please try again.");
-    } finally {
-      setBusy(false);
-    }
-  }, [parent, verifiedFetch]);
-  // Parent data is loaded only by an explicit click so reverification never opens unexpectedly.
   useEffect(() => {
-    if (parent) return;
     const controller = new AbortController();
-    fetch("/api/member/dashboard", { signal: controller.signal })
-      .then(async (response) => {
-        const result = await response.json();
-        if (!response.ok) throw Error(result.error || "Please sign in.");
-        setData(result);
+    requestJson<Dashboard>(`/api/member/${parent ? "parent" : "dashboard"}`, {
+      signal: controller.signal,
+    })
+      .then((result) => {
+        if (!controller.signal.aborted) setData(result);
       })
       .catch((error) => {
-        if (!controller.signal.aborted) setError(error.message);
+        if (!controller.signal.aborted) {
+          setError(
+            error instanceof Error ? error.message : "Please try again.",
+          );
+          setNeedsSignIn(
+            error instanceof AccountRequestError && error.status === 401,
+          );
+        }
       })
       .finally(() => {
         if (!controller.signal.aborted) setBusy(false);
@@ -70,8 +85,9 @@ export function useAccount(parent = false) {
   async function act(action: string, body: unknown, billing = false) {
     setBusy(true);
     setError("");
+    setNeedsSignIn(false);
     try {
-      const response = await verifiedFetch(
+      const result = await verifiedFetch(
         `/api/${billing ? "billing" : "member"}/${action}`,
         {
           method: "POST",
@@ -79,9 +95,7 @@ export function useAccount(parent = false) {
           body: JSON.stringify(body),
         },
       );
-      if (!response) return null;
-      const result = await response.json();
-      if (!response.ok) throw Error(result.error || "Please try again.");
+      if (!result) return null;
       if (result.url) {
         window.location.assign(result.url);
         return result;
@@ -90,10 +104,18 @@ export function useAccount(parent = false) {
       return result;
     } catch (error) {
       setError(error instanceof Error ? error.message : "Please try again.");
+      setNeedsSignIn(
+        error instanceof AccountRequestError && error.status === 401,
+      );
       return null;
     } finally {
       setBusy(false);
     }
   }
-  return { data, error, busy, load, act };
+  async function refresh() {
+    setBusy(true);
+    setError("");
+    await load();
+  }
+  return { data, error, needsSignIn, busy, load: refresh, act };
 }

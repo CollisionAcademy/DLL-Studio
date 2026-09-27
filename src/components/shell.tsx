@@ -48,7 +48,7 @@ export function Header({
             <AccountNav onNavigate={() => setOpen(false)} />
           ) : (
             <Link href="/login" onClick={() => setOpen(false)}>
-              Parent login
+              Member login
             </Link>
           )}
           <Link
