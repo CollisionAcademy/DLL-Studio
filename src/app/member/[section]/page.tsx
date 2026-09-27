@@ -1,3 +1,4 @@
+import { ActivityRoom } from "@/components/membership/activity-room";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { entitled, AccessError } from "@/lib/membership/access";
@@ -12,7 +13,7 @@ const sections: Record<string, { title: string; feature: Entitlement }> = {
   episodes: { title: "The watch nook", feature: "member_content" },
   stories: { title: "The story vault", feature: "story_vault" },
   activities: {
-    title: "A little adventure, off screen",
+    title: "The imagination room",
     feature: "activities",
   },
   vote: { title: "Every idea counts", feature: "voting" },
@@ -71,22 +72,7 @@ export default async function MemberSection({
               </article>
             </>
           )}
-          {section === "activities" && (
-            <section className="member-panel">
-              <h2>The Together Challenge</h2>
-              <p>
-                A printable text activity with drawing prompts, a word search,
-                and a story to invent together.
-              </p>
-              <a
-                download
-                className="button button-blue"
-                href="/api/member/media/activity-sheet"
-              >
-                Download the activity
-              </a>
-            </section>
-          )}
+          {section === "activities" && <ActivityRoom />}
           {section === "vote" && <MemberPoll />}
         </>
       )}

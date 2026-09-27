@@ -45,8 +45,8 @@ const destinations: {
   },
   {
     href: "activities",
-    title: "Make time for play",
-    description: "Download an activity and take the adventure off screen.",
+    title: "The imagination room",
+    description: "Chat with the crew, color by numbers, play tic-tac-toe, and find matching friends.",
     icon: "✎",
     feature: "activities",
   },
