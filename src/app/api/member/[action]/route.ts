@@ -223,8 +223,8 @@ export async function POST(
         return Response.json({
           id: await reserveVideo(user.id, input.data, user.isAdmin),
           message: user.isAdmin
-            ? "Your administrator story is in the safety review queue. No membership credit is required."
-            : "Your story is in the safety review queue. One credit is reserved.",
+            ? "Submission sent! Your video will appear on your shelf automatically. No membership credit is required."
+            : "Submission sent! One credit is reserved. Your video will appear on your shelf automatically.",
         });
       } else if (action === "publish") {
         const input = z
@@ -238,7 +238,7 @@ export async function POST(
           [input.data.id, user.id, input.data.permission],
         );
         if (!result.rowCount)
-          throw new AccessError("That reviewed video is not available.", 404);
+          throw new AccessError("That video is not available.", 404);
         await db().query(
           "INSERT INTO dll.audit(actor,action,target) VALUES($1,$2,$3)",
           [

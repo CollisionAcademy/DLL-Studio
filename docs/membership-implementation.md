@@ -1,3 +1,5 @@
+> September 27 update: automated membership videos now use the workflow in [automatic-videos.md](automatic-videos.md). It supersedes the manual-review delivery and unscheduled-worker notes below. Public publishing still requires a separate staff action.
+
 # DLL Studios membership implementation
 
 ## Findings and brand review

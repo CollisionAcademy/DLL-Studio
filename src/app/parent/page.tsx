@@ -2,16 +2,21 @@
 import { useState } from "react";
 import Link from "next/link";
 import { useAccount } from "@/components/membership/use-account";
+import { videoStateLabel } from "@/lib/membership/video-status";
 import { characters } from "@/lib/characters";
 import { hasEntitlement, plans, planKeys } from "@/lib/membership/plans";
 export default function ParentPage() {
   const { data, error, needsSignIn, busy, load, act } = useAccount(true);
+  const limitReached = Boolean(
+    data && !data.isAdmin && data.credits.remaining <= 0,
+  );
+  const [submissionMessage, setSubmissionMessage] = useState("");
   const [message, setMessage] = useState("");
   const [script, setScript] = useState("");
   const [requestKey, setRequestKey] = useState<string | null>(null);
   async function submit(action: string, body: unknown) {
     const result = await act(action, body);
-    if (result) setMessage(result.message);
+    if (result && action !== "video") setMessage(result.message);
     return result;
   }
   return (
@@ -235,9 +240,24 @@ export default function ParentPage() {
                       ? ` · current period ends ${new Date(data.credits.ends_at).toLocaleDateString()}`
                       : ""}
                   </p>
+                  {submissionMessage && (
+                    <p role="status" className="member-notice">
+                      {submissionMessage}
+                    </p>
+                  )}
+                  {limitReached && (
+                    <p className="member-notice" role="status">
+                      Your video allowance for this billing month is used. Sent
+                      submissions are on your video shelf below.
+                      {data.credits.ends_at
+                        ? ` New credits arrive after your paid renewal on ${new Date(data.credits.ends_at).toLocaleDateString()}.`
+                        : " New credits arrive after your next paid renewal."}
+                    </p>
+                  )}
                   <form
                     onSubmit={async (e) => {
                       e.preventDefault();
+                      if (limitReached || busy) return;
                       const f = new FormData(e.currentTarget);
                       const key = requestKey || crypto.randomUUID();
                       setRequestKey(key);
@@ -247,56 +267,65 @@ export default function ParentPage() {
                         requestKey: key,
                       });
                       if (result) {
+                        setSubmissionMessage(result.message);
                         setScript("");
                         setRequestKey(null);
                       }
                     }}
                   >
-                    <label>
-                      Story’s star
-                      <select name="character">
-                        {characters.map((c) => (
-                          <option key={c.id} value={c.id}>
-                            {c.name}
-                          </option>
-                        ))}
-                      </select>
-                    </label>
-                    <label>
-                      A gentle adventure idea
-                      <textarea
-                        required
-                        maxLength={500}
-                        value={script}
-                        onChange={(e) => {
-                          setScript(e.target.value);
-                          setRequestKey(null);
-                        }}
-                        placeholder="Leo builds a wobbly tower, then discovers a wider base helps it stand."
-                      />
-                    </label>
-                    <span className="character-count">
-                      {script.length}/500 characters
-                    </span>
-                    <p>
-                      Parent submissions only. Use fictional DLL characters;
-                      leave out real names, addresses, schools, and personal
-                      details. The finished adventure is approximately 15
-                      seconds. Rejected or confirmed failed requests release the
-                      reserved credit.
-                    </p>
-                    <button
-                      disabled={
-                        busy || (!data.isAdmin && data.credits.remaining < 1)
-                      }
-                      className="button button-yellow"
+                    <fieldset
+                      disabled={busy || limitReached}
+                      className={`story-submission${limitReached ? " is-exhausted" : ""}`}
                     >
-                      {busy
-                        ? "Saving…"
-                        : data.isAdmin
-                          ? "Submit story · administrator"
-                          : "Submit story · 1 credit"}
-                    </button>
+                      <legend className="sr-only">
+                        Submit a custom adventure
+                      </legend>
+                      <label>
+                        Story’s star
+                        <select name="character">
+                          {characters.map((c) => (
+                            <option key={c.id} value={c.id}>
+                              {c.name}
+                            </option>
+                          ))}
+                        </select>
+                      </label>
+                      <label>
+                        A gentle adventure idea
+                        <textarea
+                          required
+                          maxLength={500}
+                          value={script}
+                          onChange={(e) => {
+                            setScript(e.target.value);
+                            setRequestKey(null);
+                          }}
+                          placeholder="Leo builds a wobbly tower, then discovers a wider base helps it stand."
+                        />
+                      </label>
+                      <span className="character-count">
+                        {script.length}/500 characters
+                      </span>
+                      <p>
+                        Parent submissions only. Use fictional DLL characters;
+                        leave out real names, addresses, schools, and personal
+                        details. The finished adventure is approximately 15
+                        seconds. Rejected or confirmed failed requests release
+                        the reserved credit.
+                      </p>
+                      <button
+                        disabled={
+                          busy || (!data.isAdmin && data.credits.remaining < 1)
+                        }
+                        className="button button-yellow"
+                      >
+                        {busy
+                          ? "Saving…"
+                          : data.isAdmin
+                            ? "Submit story · administrator"
+                            : "Submit story · 1 credit"}
+                      </button>
+                    </fieldset>
                   </form>
                 </>
               ) : (
@@ -307,8 +336,9 @@ export default function ParentPage() {
           <section className="member-panel">
             <h2>Your video shelf.</h2>
             <p>
-              Finished videos stay private. Publishing permission is optional
-              and still requires a separate staff publishing step.
+              Finished videos are added here automatically and stay private.
+              Publishing permission is optional and still requires a separate
+              staff publishing step.
             </p>
             {!data.videos.length && (
               <p>
@@ -325,8 +355,7 @@ export default function ParentPage() {
                       : "Custom adventure"}
                   </h3>
                   <p>
-                    {v.duration_seconds} seconds ·{" "}
-                    {v.state.replaceAll("_", " ")}
+                    {v.duration_seconds} seconds · {videoStateLabel(v.state)}
                   </p>
                   {v.state === "ready" && (
                     <>
@@ -334,7 +363,7 @@ export default function ParentPage() {
                         controls
                         preload="none"
                         src={`/api/member/media/${v.id}`}
-                        aria-label="Your reviewed DLL video"
+                        aria-label="Your private DLL video"
                       />
                       <label className="checkbox-label">
                         <input

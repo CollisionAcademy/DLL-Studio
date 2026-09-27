@@ -2,6 +2,7 @@
 import { useCallback, useEffect, useState } from "react";
 import { useReverification } from "@clerk/nextjs";
 import { requestJson, AccountRequestError } from "@/lib/membership/request";
+import { hasPendingVideos } from "@/lib/membership/video-status";
 import type { PlanKey } from "@/lib/membership/plans";
 type ActionResult = { url?: string; message: string };
 export type Dashboard = {
@@ -82,6 +83,31 @@ export function useAccount(parent = false) {
       });
     return () => controller.abort();
   }, [parent]);
+  const pending = Boolean(data && hasPendingVideos(data.videos));
+  useEffect(() => {
+    if (!pending) return;
+    const controller = new AbortController();
+    let inFlight = false;
+    const timer = window.setInterval(async () => {
+      if (document.hidden || inFlight) return;
+      inFlight = true;
+      try {
+        const result = await requestJson<Dashboard>(
+          `/api/member/${parent ? "parent" : "dashboard"}`,
+          { signal: controller.signal },
+        );
+        if (!controller.signal.aborted) setData(result);
+      } catch {
+        /* Keep the shelf visible; retry on the next interval. */
+      } finally {
+        inFlight = false;
+      }
+    }, 15000);
+    return () => {
+      window.clearInterval(timer);
+      controller.abort();
+    };
+  }, [parent, pending]);
   async function act(action: string, body: unknown, billing = false) {
     setBusy(true);
     setError("");

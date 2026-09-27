@@ -7,6 +7,7 @@ import {
 import { db } from "@/lib/membership/db";
 import { providerUrl } from "@/lib/membership/fal";
 import { hasEntitlement } from "@/lib/membership/plans";
+import { readPrivateVideo } from "@/lib/membership/video-storage";
 import { z } from "zod";
 export async function GET(
   _request: Request,
@@ -58,12 +59,18 @@ export async function GET(
     }
     const row = (
       await db().query(
-        "SELECT asset_url FROM dll.video_requests WHERE id=$1 AND household_id=$2 AND state='ready' AND staff_approved_at IS NOT NULL",
+        "SELECT asset_url FROM dll.video_requests WHERE id=$1 AND household_id=$2 AND state='ready' AND (staff_approved_at IS NOT NULL OR auto_delivered_at IS NOT NULL)",
         [id, user.id],
       )
     ).rows[0];
     if (!row?.asset_url)
       throw new AccessError("That video is not ready to watch.", 404);
+    if (
+      new URL(row.asset_url).hostname.endsWith(
+        ".private.blob.vercel-storage.com",
+      )
+    )
+      return await readPrivateVideo(row.asset_url);
     const response = await fetch(providerUrl(row.asset_url, true), {
       redirect: "error",
       signal: AbortSignal.timeout(15000),

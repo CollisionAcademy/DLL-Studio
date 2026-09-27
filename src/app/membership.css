@@ -760,3 +760,10 @@
     font-size: 14px;
   }
 }
+
+.story-submission { border: 0; padding: 0; margin: 0; min-width: 0; transition: opacity .3s ease; }
+.story-submission.is-exhausted { opacity: .45; }
+.story-submission:disabled { cursor: not-allowed; }
+@media (prefers-reduced-motion: reduce) { .story-submission { transition: none; } }
+
+.story-submission legend { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip-path: inset(50%); white-space: nowrap; border: 0; }
