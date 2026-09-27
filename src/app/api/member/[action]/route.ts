@@ -59,7 +59,7 @@ export async function GET(
       );
     }
     await ensureBirthday(user.id, user.isAdmin);
-    const [credits, badges, boxes, videos] = await Promise.all([
+    const [credits, badges, boxes, videos, rewards] = await Promise.all([
       db().query(
         "SELECT p.video_limit,p.ends_at,p.video_limit-COALESCE(sum(l.quantity),0)::int AS remaining FROM dll.service_periods p LEFT JOIN dll.credit_ledger l ON l.period_id=p.id WHERE p.household_id=$1 AND p.starts_at<=now() AND p.ends_at>now() GROUP BY p.id ORDER BY p.starts_at DESC LIMIT 1",
         [user.id],
@@ -74,6 +74,10 @@ export async function GET(
       ),
       db().query(
         "SELECT id,kind,state,duration_seconds,parent_publish,created_at FROM dll.video_requests WHERE household_id=$1 ORDER BY created_at DESC LIMIT 30",
+        [user.id],
+      ),
+      db().query(
+        "SELECT COALESCE(sum(points),0)::int AS points,count(*)::int AS count,(SELECT COALESCE(sum(remaining_cents),0)::int FROM dll.store_rewards WHERE household_id=$1) AS balance FROM dll.character_challenges WHERE household_id=$1 AND completed_at IS NOT NULL",
         [user.id],
       ),
     ]);
@@ -93,6 +97,9 @@ export async function GET(
         entitlements: plans[user.plan].entitlements,
         credits: credits.rows[0] || { remaining: 0, video_limit: 0 },
         badges: badges.rows,
+        characterPoints: rewards.rows[0].points,
+        characterBadgeCount: rewards.rows[0].count,
+        storeCreditCents: rewards.rows[0].balance,
         boxes: action === "parent" ? boxes.rows : [],
         videos: videos.rows,
         parent,

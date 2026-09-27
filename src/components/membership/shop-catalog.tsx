@@ -2,7 +2,11 @@ import Link from "next/link";
 import { products } from "@/lib/membership/shop";
 export function ShopCatalog() {
   return (
-    <section id="merchandise" className="page-wrap member-page" aria-labelledby="merchandise-title">
+    <section
+      id="merchandise"
+      className="page-wrap member-page"
+      aria-labelledby="merchandise-title"
+    >
       <span className="eyebrow">FOR GROWN-UPS · CATALOG PREVIEW</span>
       <h2 id="merchandise-title">
         A little DLL.
@@ -12,6 +16,14 @@ export function ShopCatalog() {
         Every individual product is planned under $50. These are proposed
         products and prices; purchases open once inventory and fulfillment are
         ready.
+      </p>
+      <p>
+        Collect all 25 character badges to earn $10 in merchandise credit. Each
+        completed collection earns another reward. Credit is saved until
+        merchandise checkout opens.{" "}
+        <Link href="/parent" className="text-button">
+          Grown-ups: view your store credit →
+        </Link>
       </p>
       <div className="member-destinations">
         {products.map((p) => (

@@ -14,6 +14,14 @@ const destinations: {
   feature: Entitlement;
 }[] = [
   {
+    href: "badges",
+    title: "Badges & rewards",
+    description:
+      "Collect 25 character badges, earn $10 in store credit, and start a new collection.",
+    icon: "🏆",
+    feature: "badges",
+  },
+  {
     href: "play",
     title: "Play With the Crew",
     description:
@@ -77,8 +85,11 @@ export default function MemberHome() {
               {data.isAdmin ? "DLL Administrator" : plans[data.plan].name}
             </strong>
             <span>
-              {data.badges.reduce((sum, b) => sum + b.points, 0)} adventure
-              points · {data.badges.length} badges
+              {data.badges.reduce((sum, b) => sum + b.points, 0) +
+                (data.characterPoints || 0)}{" "}
+              adventure points ·{" "}
+              {data.badges.length + (data.characterBadgeCount || 0)} badges
+              earned
             </span>
           </div>
           <div className="member-destinations">
@@ -127,6 +138,9 @@ export default function MemberHome() {
           </section>
           <section className="member-panel">
             <h2>Your little celebrations.</h2>
+            <Link href="/member/badges" className="text-button">
+              Open your badge collection & Trophy Book →
+            </Link>
             {data.badges.length ? (
               data.badges.map((b) => (
                 <p key={b.badge_id}>

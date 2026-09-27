@@ -8,6 +8,9 @@ type ActionResult = { url?: string; message: string };
 export type Dashboard = {
   plan: PlanKey;
   isAdmin: boolean;
+  characterPoints?: number;
+  characterBadgeCount?: number;
+  storeCreditCents?: number;
   credits: { remaining: number; video_limit: number; ends_at?: string };
   badges: { badge_id: string; points: number }[];
   boxes: { id: number; item_count: number; state: string }[];

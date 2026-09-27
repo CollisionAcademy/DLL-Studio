@@ -7,7 +7,7 @@ export function AccountNav({ onNavigate }: { onNavigate: () => void }) {
     return (
       <div className="account-nav">
         <Link href="/parent" onClick={onNavigate}>
-          My account
+          Grown Up Fun
         </Link>
         <UserButton />
       </div>

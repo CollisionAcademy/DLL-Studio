@@ -25,6 +25,25 @@ export default function ParentPage() {
         <span className="eyebrow">THE GROWN-UP SEAT</span>
       </div>
       <h1>Your family’s adventures.</h1>
+      {data && (
+        <section className="member-panel">
+          <h2>Your store rewards</h2>
+          <p>
+            <strong>
+              ${((data.storeCreditCents || 0) / 100).toFixed(2)} merchandise
+              credit saved
+            </strong>
+          </p>
+          <p>
+            Each complete set of 25 character badges earns $10. Unused credit
+            stays on your account. Merchandise checkout is coming soon; credit
+            excludes memberships, video credits, shipping, and taxes.
+          </p>
+          <Link className="text-button" href="/member/badges">
+            Badge collection & Trophy Book →
+          </Link>
+        </section>
+      )}
       <p>
         Manage membership, birthday surprises, and stories you create together.
         Your member login also opens these settings. For protected changes, we
