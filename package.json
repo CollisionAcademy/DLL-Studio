@@ -15,6 +15,7 @@
     "@clerk/nextjs": "^7.9.7",
     "@fontsource/fredoka": "^5.2.5",
     "@fontsource/nunito-sans": "^5.2.5",
+    "@vercel/analytics": "^2.0.1",
     "@vercel/blob": "^2.8.0",
     "@vercel/speed-insights": "^2.0.0",
     "lucide-react": "^0.468.0",
