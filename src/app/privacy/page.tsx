@@ -15,8 +15,10 @@ export default function Privacy() {
       <p>
         Games run in your browser. Scores and progress are not uploaded or
         stored by the app. Character images and videos are served as website
-        files. There are no advertising trackers or analytics scripts added by
-        DLL Studio, and no social-media video embeds.
+        files. We use Vercel Web Analytics to measure page visits and Vercel
+        Speed Insights to measure website performance. We do not send game
+        scores, character conversations, or video scripts to these analytics
+        tools. There are no advertising trackers or social-media video embeds.
       </p>
       <h2>Character conversations</h2>
       <p>

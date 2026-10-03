@@ -43,6 +43,12 @@ export async function GET(
       ).rows[0];
       if (!hasEntitlement(user.plan, "member_content") || !content?.asset_url)
         throw new AccessError("This content is not available.", 404);
+      if (
+        new URL(content.asset_url).hostname.endsWith(
+          ".private.blob.vercel-storage.com",
+        )
+      )
+        return await readPrivateVideo(content.asset_url);
       // Only trusted provider media is accepted. Content links never go into public HTML.
       const response = await fetch(providerUrl(content.asset_url, true), {
         redirect: "error",

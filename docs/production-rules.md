@@ -2,6 +2,20 @@
 
 User direction, saved September 25, 2026. Apply to all future DLL Studio video work.
 
+## Mandatory character-reference rule — October 1, 2026
+
+The user reported losing 3,000 credits when a Halloween script produced replacement characters. Apply this rule to all future DLL Studio scripts, storyboards, images, and videos:
+
+- Use `C:/dev/dll_studio/characters/dll_characters.jpeg` as the canonical full-body design sheet and `C:/dev/dll_studio/characters/dll-approved-group-reference.png` as the user-confirmed group reference. Visually inspect relevant references before media generation. The sheet's front/back views depict six characters, not twelve.
+- Every standalone generation prompt must describe the featured characters' species, colors, faces, body shapes, and signature clothing; names alone do not establish identity. Attach actual image references to the generation request. A local path written in a prompt does not attach an image to an external service.
+- Luca is the golden spotted feline with teal number-10 soccer kit; Vienna is the rust-red red panda with cream facial markings, purple explorer jacket and backpack; Doo Wop Dog is the brown-and-white beagle with teal detective coat and plaid detective hat; Bianna is the white duck with orange bill/feet, purple bow tie and saucepan hat; Gramps is the gray-brown elderly owl with feathered face, beak, rust cardigan and blue Italia cap; Leo is the orange dinosaur with blue-and-orange dorsal sail, long tail, blue/orange superhero suit and tool belt. Captain Giggle is Leo, never a separate human superhero.
+- Costumes are removable additions over these designs. Preserve faces, species, proportions, fur/feathers/scales, tails, wings, and Leo's sail. Do not turn Vienna or Bianna into human girls, Gramps into a human wizard, or replace any cast member with a generic animal. No duplicates or fused identities. When the user requests the gang, include all six; shot close-ups may feature subsets. A requested ghost is an additional character, not a replacement cast member.
+- Before any paid video render, verify that the selected workflow supports the required image conditioning, the correct images are actually attached, the start frame visibly matches the cast and costumes, and the selected duration matches the requested shot. If any prerequisite fails, stop before spending video credits and explain what is missing. Prepare a corrected frame first; do not blindly rerun an expensive render. Do not claim a text prompt guarantees identity fidelity.
+- Never use an incorrect prior render as a start frame or continuity reference. Check every returned clip for identity drift before generating its continuation. Use the verified previous end frame when the workflow supports it, alongside canonical references.
+- Check duration in the actual generation controls, not just the prompt. The Halloween short is 30 seconds; if the selected workflow is limited to 15-second clips, produce two continuous 15-second parts and assemble them. Do not squeeze a 30-second script into a 15-second setting.
+
+The historical 10-minute plan below applies to its existing episode, not all future requests. A new explicit duration overrides it for that project.
+
 1. **Every video must contain at least one established DLL Studio character:** Luca, Leo, Vienna, Bianna, Doo Wop Dog, or Gramps. The main character of this adventure is an existing DLL Studio character: **Leo**. Captain Giggle is Leo’s adventure role, not a separate human hero. Preserve approved character designs.
 2. **Deliver a continuous standard episode.** It needs a coherent beginning, developing story and ending, with continuous character, location, voice, music and prop continuity. Do not present a sequence of disconnected three-minute videos as the final episode.
 3. Three-minute pieces are internal production segments. Once complete, assemble them into **one long-form video for social media and YouTube**. Include one opening and one closing; remove repeated intros, recaps, segment titles, end cards, fade-outs and silence at internal joins.

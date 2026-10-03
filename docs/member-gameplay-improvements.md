@@ -16,7 +16,7 @@ Playwright/Edge covered all five rocket rounds, incorrect input, peeking, restar
 
 The browser test is `tests/crew-arcade.browser.mjs`. Set `GAMEPLAY_TEST_URL` to a locally accessible instance rendering `ClubPlay`. This test uses mocked `/api/chat` responses and does not spend API credits. During implementation a temporary development-only component fixture was used and removed before the production build. No authentication bypass is included in the change. Screenshots are in `output/gameplay/`.
 
-Live OpenAI generation and authenticated production access were not tested. Existing OPENAI_API_KEY configuration controls whether tips use generated or fallback text. This work has not been deployed. Other unrelated working-tree changes were present before this task and were preserved.
+Live OpenAI generation and authenticated production access were not tested. Existing OPENAI_API_KEY configuration controls whether tips use generated or fallback text. Gameplay was deployed from commit 24213e2. The subsequent restoration release also includes the previously uncommitted Halloween release support, Web Analytics, and production guidance.
 
 ## Next child playtest
 

@@ -9,6 +9,8 @@ This block is written and re-added by `next dev` — verify at `node_modules/nex
 <!-- END:nextjs-agent-rules -->
 
 ## Standing video rules
+For every DLL Studio script or media prompt, follow the October 1 character-reference rule in docs/production-rules.md. Names alone are insufficient: specify animal identities, attach canonical references to generation requests, and visually check a correct start frame before spending video credits. Never substitute human children, a human wizard, or generic animals for the DLL cast. Use the user's requested duration for each new short.
+
 Read docs/production-rules.md before video work. Every video and production segment must contain an established DLL Studio character. Deliver a continuous standard episode; join internal three-minute production segments into one long-form master. Leo is the existing-character lead for Captain Giggle.
 
 

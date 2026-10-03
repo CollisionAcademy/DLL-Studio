@@ -36,6 +36,12 @@ try {
       "utf8",
     ),
   );
+  await client.query(
+    await readFile(
+      new URL("../migrations/004_content_public_release.sql", import.meta.url),
+      "utf8",
+    ),
+  );
   await client.query("COMMIT");
   console.log(
     "DLL membership migration applied. Existing schemas were not modified.",
