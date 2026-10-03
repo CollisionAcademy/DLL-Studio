@@ -1,4 +1,5 @@
 import type { Character } from "./characters";
+import { getGameTip } from "./game-tips";
 const jokes: Record<string, string> = {
   luca: "Why did the soccer ball bring a suitcase? It was going on a kick-cation! I’ll see myself off the field.",
   leo: "What do you call a dinosaur with a toolbox? A fix-it-saurus! Okay, back to the blueprint.",
@@ -36,6 +37,8 @@ const challenges: Record<string, string> = {
     "Think of one kind thing you could say to a younger or older person. A simple “Thank you for helping” goes a long way. Even I like hearing it.",
 };
 export function storybookReply(c: Character, prompt: string): string {
+  const tip = getGameTip(prompt);
+  if (tip) return tip.fallback;
   switch (prompt) {
     case "hello":
       return `I’m ${c.name}, ${c.role.toLowerCase()}! ${c.short} ${c.motto}`;

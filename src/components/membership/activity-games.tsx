@@ -1,6 +1,11 @@
 "use client";
 import { useState } from "react";
-import { boardResult, characterMove, type Square } from "@/lib/activity-games";
+import {
+  boardResult,
+  characterMove,
+  matchingDeck,
+  type Square,
+} from "@/lib/activity-games";
 import type { Character } from "@/lib/characters";
 
 export function TicTacToe({ character }: { character: Character }) {
@@ -253,40 +258,71 @@ export function ColorTogether({ character }: { character: Character }) {
   );
 }
 
-const memoryCards = ["🌈", "⭐", "🌻", "⭐", "🌈", "🌻"];
 export function MemoryPairs({ character }: { character: Character }) {
+  const [pairs, setPairs] = useState(3);
+  const [cards, setCards] = useState<string[]>([]);
   const [open, setOpen] = useState<number[]>([]);
   const [matched, setMatched] = useState<number[]>([]);
-  const [round, setRound] = useState(0);
-  const cards = round % 2 ? [...memoryCards].reverse() : memoryCards;
+  const [moves, setMoves] = useState(0);
+  const complete = cards.length > 0 && matched.length === cards.length;
+  function start(count: number) {
+    setPairs(count);
+    setCards(matchingDeck(count));
+    setOpen([]);
+    setMatched([]);
+    setMoves(0);
+  }
   function flip(i: number) {
-    if (open.includes(i) || matched.includes(i)) return;
-    const next = open.length === 2 ? [i] : [...open, i];
+    if (open.includes(i) || matched.includes(i) || open.length === 2) return;
+    const next = [...open, i];
     setOpen(next);
-    if (next.length === 2 && cards[next[0]] === cards[next[1]]) {
-      setMatched([...matched, ...next]);
-      setOpen([]);
+    if (next.length === 2) {
+      setMoves((m) => m + 1);
+      if (cards[next[0]] === cards[next[1]]) {
+        setMatched((m) => [...m, ...next]);
+        setOpen([]);
+      }
     }
   }
   return (
     <section aria-label="Memory pairs game">
-      <h3>Little clues with {character.name}</h3>
-      <p>
-        Turn over two cards. Can you find their matching friends? No timer, no
-        hurry.
-      </p>
+      <h3>Picture detectives</h3>
+      <p>Help {character.name} find the pairs. Choose your challenge!</p>
+      <div className="drawing-choices" aria-label="Matching difficulty">
+        {[3, 4, 6].map((n) => (
+          <button key={n} aria-pressed={pairs === n} onClick={() => start(n)}>
+            {n === 3 ? "Easy" : n === 4 ? "Tricky" : "Super"} · {n} pairs
+          </button>
+        ))}
+      </div>
       <p role="status" className="activity-status">
-        {matched.length === 6
-          ? "All three pairs found! A wonderful bit of noticing."
-          : open.length === 2
-            ? "Two different pictures. Pick another card to try again."
-            : `${matched.length / 2} of 3 pairs found. Pick a card.`}
+        {complete
+          ? `Case cracked! ${pairs} pairs in ${moves} turns. ${character.name} cheers for you!`
+          : !cards.length
+            ? "Ready, detective? Every new board is shuffled."
+            : open.length === 2
+              ? "Different pictures! Remember their places, then turn them back."
+              : `${matched.length / 2} / ${pairs} pairs · ${moves} turns. Choose a card.`}
       </p>
-      <div className="memory-board">
+      {cards.length > 0 && (
+        <progress
+          aria-label="Pairs found"
+          value={matched.length / 2}
+          max={pairs}
+        />
+      )}
+      <div
+        className="memory-board"
+        style={{
+          gridTemplateColumns: `repeat(${pairs === 3 ? 3 : 4}, minmax(0, 1fr))`,
+        }}
+      >
         {cards.map((card, i) => (
           <button
             key={i}
-            disabled={matched.includes(i)}
+            disabled={
+              matched.includes(i) || open.includes(i) || open.length === 2
+            }
             aria-label={`Card ${i + 1}: ${matched.includes(i) ? "matched " + card : open.includes(i) ? card : "face down"}`}
             onClick={() => flip(i)}
           >
@@ -294,16 +330,26 @@ export function MemoryPairs({ character }: { character: Character }) {
           </button>
         ))}
       </div>
-      <button
-        className="button button-blue"
-        onClick={() => {
-          setOpen([]);
-          setMatched([]);
-          setRound(round + 1);
-        }}
-      >
-        New matching game
-      </button>
+      {open.length === 2 && (
+        <button className="button button-blue" onClick={() => setOpen([])}>
+          Turn these back
+        </button>
+      )}
+      <div className="drawing-choices">
+        <button onClick={() => start(pairs)}>
+          {cards.length ? "Shuffle a new board" : "Start matching"}
+        </button>
+        {complete && pairs < 6 && (
+          <button onClick={() => start(pairs === 3 ? 4 : 6)}>
+            Try more pairs →
+          </button>
+        )}
+      </div>
+      {complete && (
+        <p className="crew-celebration">
+          ★ Detective mission complete! Play again or pick another game.
+        </p>
+      )}
     </section>
   );
 }

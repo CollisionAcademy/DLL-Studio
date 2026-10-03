@@ -3,6 +3,7 @@ import { createHash } from "node:crypto";
 import { getCharacter, chatPrompts } from "@/lib/characters";
 import { validateChatInput, isSuitableReply } from "@/lib/chat-policy.mjs";
 import { storybookReply } from "@/lib/storybook";
+import { getGameTip } from "@/lib/game-tips";
 export const runtime = "nodejs";
 export const maxDuration = 30;
 const cache = new Map<string, { reply: string; expires: number }>();
@@ -74,7 +75,9 @@ async function generate(
         store: false,
         max_output_tokens: 220,
         instructions: `You write short, wholesome fictional dialogue for DLL Studio, a children's cartoon world for ages 5-9. You are the fictional ${character.animal} character ${character.name}. Personality: ${character.bio}. Be warm, playful and simple. Reply in first person, 2-4 short sentences, at most 75 words, plain text. This is a preset topic selected by a child, not free text. Never ask for personal information, names, locations, school, contact details, photos or secrets. Never claim you are real, human, a therapist, or a replacement for friends, family or trusted adults. Never encourage dependency, secrecy, dangerous activity, leaving home, purchases or use of tools/electricity/chemicals. No links, contact info, frightening/violent/sexual content, insults, medical advice or copyrighted characters. Challenges must be safe seated imagination or observation, never physical exertion. If telling a joke use gentle wordplay. Stories should feature these fictional animal friends and simple kindness. Gramps can be mildly grumbly but is never mean or ageist. Do not ask a follow-up question or invite typing.`,
-        input: chatPrompts.find((p) => p.id === promptId)!.label,
+        input:
+          getGameTip(promptId)?.prompt ??
+          chatPrompts.find((p) => p.id === promptId)!.label,
       }),
     });
     if (!response.ok) return null;
@@ -120,7 +123,8 @@ export async function POST(request: NextRequest) {
     allowed.add("http://localhost:3000");
     allowed.add("http://127.0.0.1:3000");
     const host = request.headers.get("host");
-    if (host && /^(localhost|127\.0\.0\.1):\d+$/.test(host)) allowed.add(`http://${host}`);
+    if (host && /^(localhost|127\.0\.0\.1):\d+$/.test(host))
+      allowed.add(`http://${host}`);
   }
   if (process.env.VERCEL_URL) allowed.add(`https://${process.env.VERCEL_URL}`);
   if (process.env.VERCEL_PROJECT_PRODUCTION_URL)

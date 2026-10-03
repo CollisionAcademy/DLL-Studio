@@ -54,3 +54,19 @@ test("rejects oversized or invalid generated replies", () => {
   for (const text of [null, {}, "", "x".repeat(1201)])
     assert.equal(isSuitableReply(text), false);
 });
+import { gameTips } from "../src/lib/game-tips.ts";
+test("every gameplay tip has a valid preset, a safe fallback, and no invented board knowledge", () => {
+  for (const [promptId, tip] of Object.entries(gameTips)) {
+    assert.equal(validateChatInput({ characterId: "leo", promptId }), true);
+    assert.equal(isSuitableReply(tip.fallback), true);
+    assert.match(tip.prompt, /cannot see/);
+  }
+  assert.equal(
+    validateChatInput({
+      characterId: "leo",
+      promptId: "game-memory",
+      board: [],
+    }),
+    false,
+  );
+});

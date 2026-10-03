@@ -1,4 +1,17 @@
 export type Square = "X" | "O" | null;
+export function shuffle<T>(items: readonly T[], random = Math.random): T[] {
+  const result = [...items];
+  for (let i = result.length - 1; i > 0; i--) {
+    const j = Math.floor(random() * (i + 1));
+    [result[i], result[j]] = [result[j], result[i]];
+  }
+  return result;
+}
+export const pairPictures = ["🌈", "⭐", "🌻", "🚀", "🎈", "⚽"];
+export function matchingDeck(pairs: number, random = Math.random) {
+  const pictures = shuffle(pairPictures, random).slice(0, pairs);
+  return shuffle([...pictures, ...pictures], random);
+}
 export const winningLines = [
   [0, 1, 2],
   [3, 4, 5],

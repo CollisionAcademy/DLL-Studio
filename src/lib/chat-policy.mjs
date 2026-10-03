@@ -7,6 +7,9 @@ export const characterIds = new Set([
   "gramps",
 ]);
 export const promptIds = new Set([
+  "game-sequence",
+  "game-memory",
+  "game-tic",
   "hello",
   "story",
   "joke",

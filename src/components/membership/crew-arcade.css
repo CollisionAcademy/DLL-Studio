@@ -1,0 +1,189 @@
+.crew-arcade {
+  --character-color: #087b64;
+  --character-pale: #d8f3de;
+}
+.crew-arcade-heading {
+  display: flex;
+  gap: 18px;
+  align-items: center;
+}
+.crew-arcade-heading img {
+  border-radius: 50%;
+}
+.crew-arcade-heading h2 {
+  margin: 4px 0;
+}
+.crew-game-menu {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 12px;
+  margin-top: 22px;
+}
+.crew-game-menu button {
+  display: grid;
+  gap: 6px;
+  text-align: left;
+  border: 2px solid #cad5df;
+  border-radius: 18px;
+  padding: 18px;
+  background: #fffdf8;
+  color: #203b49;
+}
+.crew-game-menu button[aria-pressed="true"] {
+  border-color: var(--character-color);
+  background: var(--character-pale);
+}
+.crew-game-menu button > span {
+  font-size: 30px;
+}
+.crew-game-menu small {
+  font-size: 13px;
+}
+.crew-reset-note {
+  font-size: 13px;
+  color: #536577;
+}
+.crew-game-layout {
+  display: grid;
+  grid-template-columns: minmax(0, 1.5fr) minmax(0, 1fr);
+  gap: 28px;
+  align-items: start;
+  margin-top: 24px;
+}
+.crew-coach {
+  border-radius: 20px;
+  background: var(--character-pale);
+  padding: 24px;
+}
+.crew-coach .button {
+  margin-top: 18px;
+  display: block;
+  white-space: normal;
+}
+.crew-coach small {
+  display: block;
+}
+.crew-mission-progress {
+  display: flex;
+  gap: 10px;
+  margin: 20px 0;
+}
+.crew-mission-progress span {
+  display: grid;
+  place-items: center;
+  width: 38px;
+  height: 38px;
+  border: 2px solid #cad5df;
+  border-radius: 50%;
+}
+.crew-mission-progress span[data-done="true"] {
+  background: #ffda52;
+  border-color: #967312;
+  color: #203b49;
+}
+.rocket-code {
+  list-style: none;
+  padding: 0;
+  display: flex;
+  gap: 6px;
+  margin: 22px 0;
+}
+.rocket-code li {
+  flex: 1;
+  display: grid;
+  place-items: center;
+  min-height: 55px;
+  border: 2px dashed #8d9dab;
+  border-radius: 12px;
+  font-size: clamp(20px, 3vw, 30px);
+  background: #f5f6fa;
+}
+.rocket-controls {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 8px;
+}
+.rocket-controls button {
+  display: grid;
+  gap: 4px;
+  place-items: center;
+  padding: 12px 4px;
+  border: 2px solid #cad5df;
+  border-radius: 14px;
+  background: #fffdf8;
+  color: #203b49;
+}
+.rocket-controls button span {
+  font-size: 30px;
+}
+.rocket-controls button:disabled {
+  opacity: 0.45;
+  cursor: default;
+}
+.crew-arcade button:not(:disabled):active {
+  transform: translateY(2px);
+}
+.crew-arcade button:focus-visible {
+  outline: 3px solid #2949d5;
+  outline-offset: 3px;
+}
+.crew-arcade .drawing-choices button {
+  min-height: 44px;
+  padding: 10px 14px;
+  font-size: 14px;
+}
+.crew-celebration {
+  padding: 16px;
+  background: #fff2b6;
+  color: #203b49;
+  border-radius: 14px;
+  font-weight: 800;
+}
+.crew-arcade progress {
+  width: 100%;
+  accent-color: var(--character-color);
+}
+@media (max-width: 700px) {
+  .crew-game-layout {
+    grid-template-columns: 1fr;
+  }
+  .crew-game-menu {
+    gap: 6px;
+  }
+  .crew-game-menu button {
+    padding: 12px 8px;
+  }
+  .crew-game-menu small {
+    display: none;
+  }
+  .crew-game-menu strong {
+    font-size: 13px;
+  }
+  .crew-arcade-heading img {
+    width: 58px;
+    height: 58px;
+  }
+  .crew-arcade .memory-board button {
+    font-size: 30px;
+    min-height: 48px;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .crew-arcade button:not(:disabled):active {
+    transform: none;
+  }
+}
+.crew-pal-picker summary {
+  cursor: pointer;
+  font-weight: 800;
+  min-height: 44px;
+  display: list-item;
+  align-content: center;
+}
+.crew-pal-picker .crew-choice {
+  margin-top: 16px;
+}
+.crew-pal-picker summary:focus-visible {
+  outline: 3px solid #2949d5;
+  outline-offset: 4px;
+}

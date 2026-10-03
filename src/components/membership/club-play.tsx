@@ -1,5 +1,6 @@
 "use client";
 import Image from "next/image";
+import { CrewArcade } from "./crew-arcade";
 import { useState } from "react";
 import { characters } from "@/lib/characters";
 import { storybookReply } from "@/lib/storybook";
@@ -36,8 +37,8 @@ export function ClubPlay() {
   const [node, setNode] = useState<keyof typeof choiceNodes>("start");
   return (
     <>
-      <section className="member-panel">
-        <h2>Who’s in your crew today?</h2>
+      <details className="member-panel crew-pal-picker">
+        <summary>Playing with {character.name} · Choose a pal</summary>
         <div className="crew-choice">
           {characters.map((c) => (
             <button
@@ -58,6 +59,12 @@ export function ClubPlay() {
             </button>
           ))}
         </div>
+        <p className="crew-reset-note">
+          Choose a pal for your games. Switching pals starts a fresh mission.
+        </p>
+      </details>
+      <CrewArcade character={character} />
+      <section className="member-panel">
         <h3>{character.name} has a little something to share.</h3>
         <div className="chat-choices">
           {[
@@ -112,159 +119,6 @@ export function ClubPlay() {
           ))}
         </div>
       </section>
-      <div className="member-columns">
-        <TicTacToe />
-        <RockPaperScissors />
-      </div>
-      <WordGame />
     </>
-  );
-}
-export function winner(board: (string | null)[]) {
-  for (const [a, b, c] of [
-    [0, 1, 2],
-    [3, 4, 5],
-    [6, 7, 8],
-    [0, 3, 6],
-    [1, 4, 7],
-    [2, 5, 8],
-    [0, 4, 8],
-    [2, 4, 6],
-  ])
-    if (board[a] && board[a] === board[b] && board[a] === board[c])
-      return board[a];
-  return null;
-}
-function TicTacToe() {
-  const [board, setBoard] = useState<(string | null)[]>(Array(9).fill(null));
-  const won = winner(board);
-  function move(index: number) {
-    if (board[index] || won) return;
-    const next = [...board];
-    next[index] = "★";
-    if (!winner(next)) {
-      const empty = next
-        .map((v, i) => (v === null ? i : -1))
-        .filter((i) => i >= 0);
-      if (empty.length) next[empty[0]] = "●";
-    }
-    setBoard(next);
-  }
-  return (
-    <section className="member-panel">
-      <h2>Tic-Tac-Toe</h2>
-      <p>You’re ★. The crew is ●.</p>
-      <div className="tic-board">
-        {board.map((value, i) => (
-          <button
-            key={i}
-            aria-label={`Square ${i + 1}: ${value || "empty"}`}
-            disabled={Boolean(value || won)}
-            onClick={() => move(i)}
-          >
-            {value || "·"}
-          </button>
-        ))}
-      </div>
-      <p role="status">
-        {won
-          ? `${won} made a line. Great game!`
-          : board.every(Boolean)
-            ? "A tie! Everyone played a part."
-            : "Pick an empty square."}
-      </p>
-      <button
-        className="text-button"
-        onClick={() => setBoard(Array(9).fill(null))}
-      >
-        Play again
-      </button>
-    </section>
-  );
-}
-function RockPaperScissors() {
-  const [result, setResult] = useState("Pick one. The crew will pick too!");
-  const choices = ["Rock", "Paper", "Scissors"];
-  return (
-    <section className="member-panel">
-      <h2>Rock, Paper, Scissors</h2>
-      <p>A little friendly surprise.</p>
-      <div className="chat-choices">
-        {choices.map((c, i) => (
-          <button
-            key={c}
-            onClick={() => {
-              const other = Math.floor(Math.random() * 3);
-              setResult(
-                `You picked ${c.toLowerCase()}. The crew picked ${choices[other].toLowerCase()}. ${i === other ? "It’s a tie!" : (i - other + 3) % 3 === 1 ? "You win this round!" : "The crew wins this round!"} Thanks for playing together.`,
-              );
-            }}
-          >
-            {c}
-          </button>
-        ))}
-      </div>
-      <p className="storybook-bubble" role="status">
-        {result}
-      </p>
-    </section>
-  );
-}
-function WordGame() {
-  const [result, setResult] = useState("");
-  const [selected, setSelected] = useState<number[]>([]);
-  const grid = "CREWAPLAYBKINDCDOGSD";
-  return (
-    <section className="member-panel">
-      <h2>Words with friends.</h2>
-      <p>Which word means helping and caring?</p>
-      <div className="chat-choices">
-        {["KIND", "WOBBLE", "HAT"].map((w) => (
-          <button
-            key={w}
-            onClick={() =>
-              setResult(
-                w === "KIND"
-                  ? "KIND! The crew loves a little kindness."
-                  : "That’s a fun word too. Try KIND!",
-              )
-            }
-          >
-            {w}
-          </button>
-        ))}
-      </div>
-      <p role="status">{result}</p>
-      <h3>Find CREW, PLAY, and KIND.</h3>
-      <p>Tap letters across a row. Tap again to clear a letter.</p>
-      <div className="word-grid">
-        {[...grid].map((letter, i) => (
-          <button
-            key={i}
-            aria-label={`Row ${Math.floor(i / 5) + 1}, column ${(i % 5) + 1}: ${letter}`}
-            aria-pressed={selected.includes(i)}
-            onClick={() =>
-              setSelected((s) =>
-                s.includes(i) ? s.filter((n) => n !== i) : [...s, i],
-              )
-            }
-          >
-            {letter}
-          </button>
-        ))}
-      </div>
-      <p aria-live="polite">
-        {[
-          [0, 1, 2, 3],
-          [5, 6, 7, 8],
-          [10, 11, 12, 13],
-        ].every((row) => row.every((i) => selected.includes(i)))
-          ? "You found the crew’s three words!"
-          : "Take your time. Look one row at a time."}
-      </p>
-      <button className="text-button" onClick={() => setSelected([])}>
-        Start again
-      </button>
-    </section>
   );
 }
