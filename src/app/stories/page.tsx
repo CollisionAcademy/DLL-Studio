@@ -5,7 +5,7 @@ import { publicStoryVaultQuery } from "@/lib/membership/public-content-query";
 import type { ShelfItem } from "@/lib/membership/content-shelf";
 
 export const dynamic = "force-dynamic";
-export const metadata = { title: "The story vault | DLL Studio" };
+export const metadata = { title: "The story vault" };
 export default async function StoriesPage() {
   let items: ShelfItem[] = [];
   let unavailable = false;

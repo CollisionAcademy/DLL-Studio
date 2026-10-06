@@ -1,6 +1,11 @@
 import type { NextConfig } from "next";
 const config: NextConfig = {
   poweredByHeader: false,
+  async redirects() {
+    return [
+      { source: "/member/stories", destination: "/stories", permanent: false },
+    ];
+  },
   async headers() {
     return [
       {
