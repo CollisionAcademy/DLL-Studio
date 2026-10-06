@@ -70,6 +70,7 @@ export default function MemberHome() {
       <nav className="member-nav">
         <Link href="/parent">Grown-up controls</Link>
         <Link href="/">The free DLL world</Link>
+        <Link href="/stories">The story vault · free for everyone</Link>
       </nav>
       {error && (
         <div role="alert" className="member-notice">
@@ -98,9 +99,11 @@ export default function MemberHome() {
             {destinations.map((d) => (
               <Link
                 href={
-                  hasEntitlement(data.plan, d.feature)
-                    ? `/member/${d.href}`
-                    : "/membership"
+                  d.href === "stories"
+                    ? "/stories"
+                    : hasEntitlement(data.plan, d.feature)
+                      ? `/member/${d.href}`
+                      : "/membership"
                 }
                 className="member-destination"
                 key={d.href}
@@ -109,7 +112,7 @@ export default function MemberHome() {
                 <h2>{d.title}</h2>
                 <p>{d.description}</p>
                 <b>
-                  {hasEntitlement(data.plan, d.feature)
+                  {d.href === "stories" || hasEntitlement(data.plan, d.feature)
                     ? "Let’s explore →"
                     : "Grown-ups: explore memberships →"}
                 </b>

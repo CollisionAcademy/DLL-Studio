@@ -51,7 +51,7 @@ try {
       .toLowerCase()
       .replace(/[^a-z0-9]+/g, "-")
       .replace(/^-|-$/g, "");
-    // Reuse the established Halloween entry and its public-release schedule.
+    // Reuse the established Halloween entry rather than duplicating it.
     const id = /^dll-studio-the-halloween-ghost-30-second/.test(slug)
       ? "halloween-ghost-2026"
       : `vault-${slug}-${hash.slice(0, 12)}`;
@@ -101,16 +101,21 @@ try {
       const anonymous = await fetch(url);
       await anonymous.body?.cancel();
       if (anonymous.ok) throw Error(`Storage must be private for ${id}`);
-      // New library entries are member-only. Existing approvals and dates stay intact.
+      // The user requested that these source videos be available to everyone.
+      // Only the verified imported IDs are published, never household requests.
       await client.query(
-        `INSERT INTO dll.content(id,title,kind,asset_url,approved_at,member_at)
-        VALUES($1,$2,'episode',$3,now(),now()) ON CONFLICT(id) DO NOTHING`,
+        `INSERT INTO dll.content(id,title,kind,asset_url,approved_at,member_at,public_at)
+        VALUES($1,$2,'episode',$3,now(),now(),now())
+        ON CONFLICT(id) DO UPDATE SET public_at=LEAST(COALESCE(dll.content.public_at,now()),now()),
+          member_at=LEAST(dll.content.member_at,now()), approved_at=COALESCE(dll.content.approved_at,now())
+        WHERE dll.content.asset_url=EXCLUDED.asset_url AND dll.content.kind='episode'`,
         [id, title, url],
       );
       const saved = (
-        await client.query("SELECT asset_url FROM dll.content WHERE id=$1", [
-          id,
-        ])
+        await client.query(
+          "SELECT asset_url FROM dll.content WHERE id=$1 AND kind='episode' AND approved_at IS NOT NULL AND member_at<=now() AND public_at<=now()",
+          [id],
+        )
       ).rows[0];
       if (saved?.asset_url !== url)
         throw Error(`Concurrent change to ${id}; left unchanged`);

@@ -13,7 +13,7 @@ const free = {
   activities: false,
   voting: false,
   badges: false,
-  story_vault: false,
+  story_vault: true,
 };
 const club = {
   ...free,

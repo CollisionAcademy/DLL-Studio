@@ -151,7 +151,7 @@ export default function ShopPage() {
           </span>
           <h3>More “one more story.”</h3>
           <p>
-            A members-only story vault, new episodes, and little moments to
+            A free story vault, new episodes, and little moments to
             enjoy together.
           </p>
         </div>

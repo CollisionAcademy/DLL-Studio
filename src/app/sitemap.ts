@@ -5,6 +5,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     "",
     "/play",
     "/story-lab",
+    "/stories",
     "/adventures/captain-giggle/index.html",
     "/grown-ups",
     "/privacy",

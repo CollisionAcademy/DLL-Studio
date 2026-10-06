@@ -32,8 +32,8 @@ export default async function PublicEpisode({
           Halloween!
         </p>
       </article>
-      <Link href="/member/episodes" className="button button-blue">
-        Visit the members’ Watch Nook
+      <Link href="/stories" className="button button-blue">
+        Explore the story vault
       </Link>
     </main>
   );

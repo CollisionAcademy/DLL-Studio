@@ -1,6 +1,6 @@
 import { ActivityRoom } from "@/components/membership/activity-room";
 import Link from "next/link";
-import { notFound } from "next/navigation";
+import { notFound, redirect } from "next/navigation";
 import { entitled, AccessError } from "@/lib/membership/access";
 import { type Entitlement } from "@/lib/membership/plans";
 import { ClubPlay } from "@/components/membership/club-play";
@@ -11,7 +11,6 @@ import {
 const sections: Record<string, { title: string; feature: Entitlement }> = {
   play: { title: "Play With the Crew", feature: "character_play" },
   episodes: { title: "The watch nook", feature: "member_content" },
-  stories: { title: "The story vault", feature: "story_vault" },
   activities: {
     title: "The imagination room",
     feature: "activities",
@@ -24,6 +23,7 @@ export default async function MemberSection({
   params: Promise<{ section: string }>;
 }) {
   const { section } = await params;
+  if (section === "stories") redirect("/stories");
   const config = sections[section];
   if (!config) notFound();
   let error = "";
@@ -57,23 +57,6 @@ export default async function MemberSection({
           {section === "play" && <ClubPlay />}
           {section === "episodes" && (
             <MemberContent key="episodes" kind="episode" />
-          )}
-          {section === "stories" && (
-            <>
-              <p>All your crew’s videos, episodes, and stories in one place.</p>
-              <MemberContent key="vault" kind="vault" />
-              <article className="member-panel">
-                <h2>Leo and the very wobbly flag.</h2>
-                <p>
-                  Leo built a little flag stand. It leaned left. It leaned
-                  right. Bianna leaned along with it and giggled. “What if the
-                  bottom were wider?” asked Vienna. Luca held the flag while Leo
-                  moved two blocks. The flag stood tall. Then Bianna’s hat
-                  tipped sideways. “A little wobble is funny,” she said, “when
-                  friends are there to help.”
-                </p>
-              </article>
-            </>
           )}
           {section === "activities" && <ActivityRoom />}
           {section === "vote" && <MemberPoll />}
