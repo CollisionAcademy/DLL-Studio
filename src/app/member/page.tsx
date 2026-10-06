@@ -39,14 +39,16 @@ const destinations: {
   {
     href: "stories",
     title: "The story vault",
-    description: "Open a little world of funny tales and everyday heroes.",
+    description:
+      "Watch the crew’s videos and episodes, and discover funny tales.",
     icon: "▤",
     feature: "story_vault",
   },
   {
     href: "activities",
     title: "The imagination room",
-    description: "Chat with the crew, color by numbers, play tic-tac-toe, and find matching friends.",
+    description:
+      "Chat with the crew, color by numbers, play tic-tac-toe, and find matching friends.",
     icon: "✎",
     feature: "activities",
   },

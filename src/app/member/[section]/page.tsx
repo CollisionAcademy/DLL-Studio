@@ -58,7 +58,8 @@ export default async function MemberSection({
           {section === "episodes" && <MemberContent kind="episode" />}
           {section === "stories" && (
             <>
-              <MemberContent kind="story" />
+              <p>All your crew’s videos, episodes, and stories in one place.</p>
+              <MemberContent kind="vault" />
               <article className="member-panel">
                 <h2>Leo and the very wobbly flag.</h2>
                 <p>
