@@ -1,6 +1,6 @@
 export function videoResponse(
   stream: ReadableStream<Uint8Array>,
-  source: Headers,
+  source: Pick<Headers, "get">,
 ) {
   const headers = new Headers({
     "Content-Type": "video/mp4",
