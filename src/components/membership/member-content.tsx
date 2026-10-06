@@ -11,8 +11,6 @@ export function MemberContent({ kind }: { kind: ContentShelf }) {
   const [error, setError] = useState("");
   useEffect(() => {
     const controller = new AbortController();
-    setItems(null);
-    setError("");
     fetch("/api/member/content", { signal: controller.signal })
       .then(async (r) => {
         const data = await r.json();
