@@ -5,7 +5,7 @@ import { readPrivateVideo } from "@/lib/membership/video-storage";
 export const dynamic = "force-dynamic";
 
 export async function GET(
-  _request: Request,
+  request: Request,
   { params }: { params: Promise<{ id: string }> },
 ) {
   try {
@@ -16,7 +16,10 @@ export async function GET(
         status: 404,
         headers: { "Cache-Control": "private, no-store" },
       });
-    return await readPrivateVideo(rows[0].asset_url);
+    return await readPrivateVideo(
+      rows[0].asset_url,
+      request.headers.get("range"),
+    );
   } catch {
     return new Response("Video temporarily unavailable", {
       status: 503,

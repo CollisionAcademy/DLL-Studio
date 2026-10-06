@@ -7,8 +7,9 @@ import { databaseUrl } from "../src/lib/membership/database-url.ts";
 // A dry run needs no credentials and changes no hosted content.
 const source = process.argv[2];
 const publish = process.argv.includes("--publish");
+const stage = process.argv.includes("--stage");
 if (!source)
-  throw Error("Use import-story-vault.mjs <video-folder> [--publish]");
+  throw Error("Use import-story-vault.mjs <video-folder> [--publish|--stage]");
 const root = path.resolve(source);
 async function discover(folder) {
   const entries = await readdir(folder, { withFileTypes: true });
@@ -23,20 +24,25 @@ async function discover(folder) {
 const report = [];
 let client;
 let storage;
-if (publish) {
+if (publish || stage) {
   const { default: nextEnv } = await import("@next/env");
   nextEnv.loadEnvConfig(process.cwd());
-  if (!process.env.DATABASE_URL || !process.env.BLOB_READ_WRITE_TOKEN)
+  if (
+    (publish && !process.env.DATABASE_URL) ||
+    !process.env.BLOB_READ_WRITE_TOKEN
+  )
     throw Error(
       "DLL DATABASE_URL and private BLOB_READ_WRITE_TOKEN are required",
     );
   const { default: pg } = await import("pg");
   storage = await import("@vercel/blob");
-  client = new pg.Client({
-    connectionString: databaseUrl(process.env.DATABASE_URL),
-    connectionTimeoutMillis: 15000,
-  });
-  await client.connect();
+  if (publish) {
+    client = new pg.Client({
+      connectionString: databaseUrl(process.env.DATABASE_URL),
+      connectionTimeoutMillis: 15000,
+    });
+    await client.connect();
+  }
 }
 try {
   const files = await discover(root);
@@ -64,12 +70,15 @@ try {
       duration,
       sha256: hash,
     };
-    if (publish) {
-      const existing = (
-        await client.query("SELECT asset_url FROM dll.content WHERE id=$1", [
-          id,
-        ])
-      ).rows[0];
+    if (publish || stage) {
+      const existing = publish
+        ? (
+            await client.query(
+              "SELECT asset_url FROM dll.content WHERE id=$1",
+              [id],
+            )
+          ).rows[0]
+        : undefined;
       let url = existing?.asset_url;
       if (
         url &&
@@ -91,7 +100,12 @@ try {
             contentType: "video/mp4",
           })
         ).url;
-      const stored = await storage.get(url, { access: "private" });
+      let stored;
+      for (let attempt = 0; attempt < 6; attempt++) {
+        stored = await storage.get(url, { access: "private", useCache: false });
+        if (stored?.statusCode === 200) break;
+        await new Promise((resolve) => setTimeout(resolve, 2000));
+      }
       if (!stored || stored.statusCode !== 200)
         throw Error(`Cannot verify ${id}`);
       const uploadedHash = createHash("sha256");
@@ -101,25 +115,31 @@ try {
       const anonymous = await fetch(url);
       await anonymous.body?.cancel();
       if (anonymous.ok) throw Error(`Storage must be private for ${id}`);
-      // The user requested that these source videos be available to everyone.
-      // Only the verified imported IDs are published, never household requests.
-      await client.query(
-        `INSERT INTO dll.content(id,title,kind,asset_url,approved_at,member_at,public_at)
+      entry.asset_url = url;
+      if (publish) {
+        // The user requested that these source videos be available to everyone.
+        // Only the verified imported IDs are published, never household requests.
+        await client.query(
+          `INSERT INTO dll.content(id,title,kind,asset_url,approved_at,member_at,public_at)
         VALUES($1,$2,'episode',$3,now(),now(),now())
         ON CONFLICT(id) DO UPDATE SET public_at=LEAST(COALESCE(dll.content.public_at,now()),now()),
-          member_at=LEAST(dll.content.member_at,now()), approved_at=COALESCE(dll.content.approved_at,now())
+          member_at=LEAST(dll.content.member_at,now()), approved_at=COALESCE(dll.content.approved_at,now()),
+          body=CASE WHEN dll.content.id='halloween-ghost-2026'
+            THEN 'A spooky little adventure with the DLL crew. Free for everyone.'
+            ELSE dll.content.body END
         WHERE dll.content.asset_url=EXCLUDED.asset_url AND dll.content.kind='episode'`,
-        [id, title, url],
-      );
-      const saved = (
-        await client.query(
-          "SELECT asset_url FROM dll.content WHERE id=$1 AND kind='episode' AND approved_at IS NOT NULL AND member_at<=now() AND public_at<=now()",
-          [id],
-        )
-      ).rows[0];
-      if (saved?.asset_url !== url)
-        throw Error(`Concurrent change to ${id}; left unchanged`);
-      entry.imported = true;
+          [id, title, url],
+        );
+        const saved = (
+          await client.query(
+            "SELECT asset_url FROM dll.content WHERE id=$1 AND kind='episode' AND approved_at IS NOT NULL AND member_at<=now() AND public_at<=now()",
+            [id],
+          )
+        ).rows[0];
+        if (saved?.asset_url !== url)
+          throw Error(`Concurrent change to ${id}; left unchanged`);
+        entry.imported = true;
+      }
     }
     report.push(entry);
     console.log(
