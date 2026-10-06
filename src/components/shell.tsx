@@ -77,6 +77,9 @@ export function Header({
           >
             Story Lab
           </Link>
+          <Link href="/stories" onClick={() => setOpen(false)} className={path === "/stories" ? "active" : ""}>
+            Story vault
+          </Link>
           <Link
             href="/grown-ups"
             onClick={() => setOpen(false)}
@@ -105,6 +108,7 @@ export function Footer() {
         <p>Little characters. Big possibilities.</p>
         <div>
           <Link href="/member">Member clubhouse</Link>
+          <Link href="/stories">Story vault</Link>
           <Link href="/shop">Shop</Link>
           <Link href="/parent">Parent account</Link>
           <Link href="/grown-ups">For grown-ups</Link>

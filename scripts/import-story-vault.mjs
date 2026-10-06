@@ -1,0 +1,161 @@
+import { readdir, readFile, writeFile, mkdir } from "node:fs/promises";
+import { createHash } from "node:crypto";
+import path from "node:path";
+import { mp4Duration } from "../src/lib/membership/mp4.ts";
+import { databaseUrl } from "../src/lib/membership/database-url.ts";
+
+// A dry run needs no credentials and changes no hosted content.
+const source = process.argv[2];
+const publish = process.argv.includes("--publish");
+const stage = process.argv.includes("--stage");
+if (!source)
+  throw Error("Use import-story-vault.mjs <video-folder> [--publish|--stage]");
+const root = path.resolve(source);
+async function discover(folder) {
+  const entries = await readdir(folder, { withFileTypes: true });
+  const files = [];
+  for (const entry of entries.sort((a, b) => a.name.localeCompare(b.name))) {
+    const file = path.join(folder, entry.name);
+    if (entry.isDirectory()) files.push(...(await discover(file)));
+    else if (entry.isFile() && /\.mp4$/i.test(entry.name)) files.push(file);
+  }
+  return files;
+}
+const report = [];
+let client;
+let storage;
+if (publish || stage) {
+  const { default: nextEnv } = await import("@next/env");
+  nextEnv.loadEnvConfig(process.cwd());
+  if (
+    (publish && !process.env.DATABASE_URL) ||
+    !process.env.BLOB_READ_WRITE_TOKEN
+  )
+    throw Error(
+      "DLL DATABASE_URL and private BLOB_READ_WRITE_TOKEN are required",
+    );
+  const { default: pg } = await import("pg");
+  storage = await import("@vercel/blob");
+  if (publish) {
+    client = new pg.Client({
+      connectionString: databaseUrl(process.env.DATABASE_URL),
+      connectionTimeoutMillis: 15000,
+    });
+    await client.connect();
+  }
+}
+try {
+  const files = await discover(root);
+  if (!files.length) throw Error("No MP4 videos found");
+  for (const file of files) {
+    const relative = path.relative(root, file).split(path.sep).join("/");
+    const bytes = await readFile(file);
+    const duration = mp4Duration(bytes);
+    const hash = createHash("sha256").update(bytes).digest("hex");
+    const stem = path.basename(file, path.extname(file));
+    const slug = stem
+      .toLowerCase()
+      .replace(/[^a-z0-9]+/g, "-")
+      .replace(/^-|-$/g, "");
+    // Reuse the established Halloween entry rather than duplicating it.
+    const id = /^dll-studio-the-halloween-ghost-30-second/.test(slug)
+      ? "halloween-ghost-2026"
+      : `vault-${slug}-${hash.slice(0, 12)}`;
+    const title = stem.replace(/_/g, " ").replace(/\s*\(\d+\)$/, "");
+    const entry = {
+      id,
+      title,
+      source: relative,
+      bytes: bytes.length,
+      duration,
+      sha256: hash,
+    };
+    if (publish || stage) {
+      const existing = publish
+        ? (
+            await client.query(
+              "SELECT asset_url FROM dll.content WHERE id=$1",
+              [id],
+            )
+          ).rows[0]
+        : undefined;
+      let url = existing?.asset_url;
+      if (
+        url &&
+        !new URL(url).hostname.endsWith(".private.blob.vercel-storage.com")
+      )
+        throw Error(`Existing ${id} uses different storage; left unchanged`);
+      const pathname = `member-episodes/story-vault/${hash}.mp4`;
+      if (!url) {
+        const stored = await storage.get(pathname, { access: "private" });
+        url = stored?.blob.url;
+        await stored?.stream?.cancel();
+      }
+      if (!url)
+        url = (
+          await storage.put(pathname, bytes, {
+            access: "private",
+            addRandomSuffix: false,
+            multipart: true,
+            contentType: "video/mp4",
+          })
+        ).url;
+      let stored;
+      for (let attempt = 0; attempt < 6; attempt++) {
+        stored = await storage.get(url, { access: "private", useCache: false });
+        if (stored?.statusCode === 200) break;
+        await new Promise((resolve) => setTimeout(resolve, 2000));
+      }
+      if (!stored || stored.statusCode !== 200)
+        throw Error(`Cannot verify ${id}`);
+      const uploadedHash = createHash("sha256");
+      for await (const chunk of stored.stream) uploadedHash.update(chunk);
+      if (uploadedHash.digest("hex") !== hash)
+        throw Error(`Stored bytes differ for ${id}; database left unchanged`);
+      const anonymous = await fetch(url);
+      await anonymous.body?.cancel();
+      if (anonymous.ok) throw Error(`Storage must be private for ${id}`);
+      entry.asset_url = url;
+      if (publish) {
+        // The user requested that these source videos be available to everyone.
+        // Only the verified imported IDs are published, never household requests.
+        await client.query(
+          `INSERT INTO dll.content(id,title,kind,asset_url,approved_at,member_at,public_at)
+        VALUES($1,$2,'episode',$3,now(),now(),now())
+        ON CONFLICT(id) DO UPDATE SET public_at=LEAST(COALESCE(dll.content.public_at,now()),now()),
+          member_at=LEAST(dll.content.member_at,now()), approved_at=COALESCE(dll.content.approved_at,now()),
+          body=CASE WHEN dll.content.id='halloween-ghost-2026'
+            THEN 'A spooky little adventure with the DLL crew. Free for everyone.'
+            ELSE dll.content.body END
+        WHERE dll.content.asset_url=EXCLUDED.asset_url AND dll.content.kind='episode'`,
+          [id, title, url],
+        );
+        const saved = (
+          await client.query(
+            "SELECT asset_url FROM dll.content WHERE id=$1 AND kind='episode' AND approved_at IS NOT NULL AND member_at<=now() AND public_at<=now()",
+            [id],
+          )
+        ).rows[0];
+        if (saved?.asset_url !== url)
+          throw Error(`Concurrent change to ${id}; left unchanged`);
+        entry.imported = true;
+      }
+    }
+    report.push(entry);
+    console.log(
+      JSON.stringify({
+        title,
+        duration,
+        bytes: bytes.length,
+        imported: publish,
+      }),
+    );
+  }
+} finally {
+  await client?.end();
+  await mkdir("verification", { recursive: true });
+  await writeFile(
+    "verification/story-vault-import.json",
+    JSON.stringify(report, null, 2),
+  );
+}

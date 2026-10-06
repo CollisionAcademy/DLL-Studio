@@ -1,10 +1,13 @@
 "use client";
 import { useEffect, useState } from "react";
 import { useAccount } from "./use-account";
-export function MemberContent({ kind }: { kind: "episode" | "story" }) {
-  const [items, setItems] = useState<
-    { id: string; title: string; kind: string; body: string | null }[] | null
-  >(null);
+import {
+  selectShelfItems,
+  type ContentShelf,
+  type ShelfItem,
+} from "@/lib/membership/content-shelf";
+export function MemberContent({ kind }: { kind: ContentShelf }) {
+  const [items, setItems] = useState<ShelfItem[] | null>(null);
   const [error, setError] = useState("");
   useEffect(() => {
     const controller = new AbortController();
@@ -12,7 +15,8 @@ export function MemberContent({ kind }: { kind: "episode" | "story" }) {
       .then(async (r) => {
         const data = await r.json();
         if (!r.ok) throw Error(data.error);
-        setItems(data.items.filter((i: { kind: string }) => i.kind === kind));
+        if (!controller.signal.aborted)
+          setItems(selectShelfItems(data.items, kind));
       })
       .catch((e) => {
         if (!controller.signal.aborted) setError(e.message);
@@ -27,8 +31,13 @@ export function MemberContent({ kind }: { kind: "episode" | "story" }) {
         <div className="member-panel">
           <h2>New adventures are on their way.</h2>
           <p>
-            Approved {kind === "episode" ? "episodes" : "stories"} will appear
-            here. In the meantime, explore the crew’s story games.
+            Approved{" "}
+            {kind === "vault"
+              ? "videos, episodes, and stories"
+              : kind === "episode"
+                ? "episodes"
+                : "stories"}{" "}
+            will appear here. In the meantime, explore the crew’s story games.
           </p>
         </div>
       ) : (
@@ -36,7 +45,7 @@ export function MemberContent({ kind }: { kind: "episode" | "story" }) {
           <article className="member-panel" key={i.id}>
             <h2>{i.title}</h2>
             {i.body && <p>{i.body}</p>}
-            {kind === "episode" && (
+            {i.kind === "episode" && (
               <video
                 controls
                 preload="none"
