@@ -5,7 +5,10 @@ import { publicStoryVaultQuery } from "@/lib/membership/public-content-query";
 import type { ShelfItem } from "@/lib/membership/content-shelf";
 
 export const dynamic = "force-dynamic";
-export const metadata = { title: "The story vault" };
+export const metadata = {
+  title: "Watch episodes",
+  description: "Watch DLL Studio episodes and videos starring the crew. Free for everyone, with no account needed.",
+};
 export default async function StoriesPage() {
   let items: ShelfItem[] = [];
   let unavailable = false;
@@ -20,7 +23,7 @@ export default async function StoriesPage() {
         ← Back to the DLL world
       </Link>
       <span className="eyebrow">ADVENTURES FOR EVERYONE</span>
-      <h1>The story vault.</h1>
+      <h1>Watch episodes.</h1>
       <p>
         Watch the crew’s videos and episodes, and discover funny tales. Free for
         everyone—no account needed.

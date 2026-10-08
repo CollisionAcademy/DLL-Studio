@@ -1,7 +1,7 @@
 "use client";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { ArrowUpRight, Gamepad2, Heart, Menu, X } from "lucide-react";
+import { ArrowUpRight, Gamepad2, Heart, Instagram, Menu, Music2, X, Youtube } from "lucide-react";
 import { useState } from "react";
 import { AccountNav } from "./membership/account-nav";
 export function Brand() {
@@ -53,6 +53,9 @@ export function Header({
           {open ? <X /> : <Menu />}
         </button>
         <nav className={open ? "nav open" : "nav"} aria-label="Main navigation">
+          <Link href="/stories" onClick={() => setOpen(false)} className={path === "/stories" || path.startsWith("/watch/") ? "active" : ""}>
+            Watch episodes
+          </Link>
           <Link href="/member" onClick={() => setOpen(false)} className={path.startsWith("/member") && !path.startsWith("/membership") ? "active" : ""}>
             Member clubhouse
           </Link>
@@ -77,9 +80,6 @@ export function Header({
           >
             Story Lab
           </Link>
-          <Link href="/stories" onClick={() => setOpen(false)} className={path === "/stories" ? "active" : ""}>
-            Story vault
-          </Link>
           <Link
             href="/grown-ups"
             onClick={() => setOpen(false)}
@@ -98,7 +98,9 @@ export function Header({
     </header>
   );
 }
-export function Footer() {
+export function Footer({ socialLinks = [] }: {
+  socialLinks?: { platform: "YouTube" | "Instagram" | "TikTok"; url: string }[];
+}) {
   return (
     <footer className="site-footer">
       <div className="footer-main">
@@ -108,13 +110,25 @@ export function Footer() {
         <p>Little characters. Big possibilities.</p>
         <div>
           <Link href="/member">Member clubhouse</Link>
-          <Link href="/stories">Story vault</Link>
+          <Link href="/stories">Watch episodes</Link>
           <Link href="/shop">Shop</Link>
           <Link href="/parent">Parent account</Link>
           <Link href="/grown-ups">For grown-ups</Link>
           <Link href="/privacy">Privacy</Link>
         </div>
       </div>
+      {socialLinks.length > 0 && (
+        <nav className="footer-social" aria-label="DLL Studio social media">
+          {socialLinks.map(({ platform, url }) => {
+            const Icon = platform === "YouTube" ? Youtube : platform === "Instagram" ? Instagram : Music2;
+            return (
+              <a key={platform} href={url} target="_blank" rel="noopener noreferrer" aria-label={`${platform} (opens in a new tab)`}>
+                <Icon size={20} aria-hidden="true" /> {platform}
+              </a>
+            );
+          })}
+        </nav>
+      )}
       <div className="footer-bottom">
         <span>© {new Date().getFullYear()} DLL Studio</span>
         <span>

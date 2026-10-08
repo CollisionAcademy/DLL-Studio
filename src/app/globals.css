@@ -629,6 +629,32 @@ a {
   padding: 35px 40px 17px;
 }
 .footer-main,
+.footer-social {
+  max-width: 1200px;
+  margin: 24px auto 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px 24px;
+}
+.footer-social a {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  min-height: 44px;
+  font-size: 14px;
+  font-weight: 800;
+}
+.footer-social a:hover {
+  color: var(--blue);
+}
+.hero-copy .button-row {
+  justify-content: flex-start;
+}
+@media (max-width: 800px) {
+  .hero-copy .button-row {
+    justify-content: center;
+  }
+}
 .footer-bottom {
   max-width: 1200px;
   margin: auto;

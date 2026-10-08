@@ -26,9 +26,14 @@ export default function Home() {
             Six one-of-a-kind characters.
             <br />A whole lot of adventure. And you!
           </p>
-          <Link className="button button-blue" href="#characters">
-            Find your new favorite <ArrowRight size={20} />
-          </Link>
+          <div className="button-row">
+            <Link className="button button-blue" href="/stories">
+              <Play size={20} /> Watch episodes
+            </Link>
+            <Link className="button button-white" href="#characters">
+              Meet the crew <ArrowRight size={20} />
+            </Link>
+          </div>
           <div className="hero-note">
             <span>✦</span> Come curious. Leave smiling.
           </div>
