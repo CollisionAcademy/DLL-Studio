@@ -4,9 +4,10 @@ import { usePathname } from "next/navigation";
 import { ArrowUpRight, Gamepad2, Heart, Instagram, Menu, Music2, X, Youtube } from "lucide-react";
 import { useState } from "react";
 import { AccountNav } from "./membership/account-nav";
+import { LanguageSelector } from "./language-selector";
 export function Brand() {
   return (
-    <span className="brand">
+    <span className="brand" translate="no">
       <span className="brand-blocks">
         <b>D</b>
         <b>L</b>
@@ -44,6 +45,7 @@ export function Header({
         >
           <Brand />
         </Link>
+        <LanguageSelector />
         <button
           className="menu-toggle icon-button"
           onClick={() => setOpen(!open)}
