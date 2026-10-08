@@ -2,7 +2,7 @@
 
 import { Languages } from "lucide-react";
 import { usePathname } from "next/navigation";
-import { useRef } from "react";
+import { useRef, type MouseEvent } from "react";
 
 const languages = [
   ["es", "Español", "Spanish"],
@@ -24,6 +24,14 @@ export function LanguageSelector() {
   const publicPath = /^\/(?:characters\/[^/]+|watch\/[^/]+|stories|play|story-lab|grown-ups|privacy|parents\/safety)\/?$/.test(pathname)
     ? pathname
     : "/";
+  const originalUrl = `https://dll-studio.com${publicPath}`;
+  function switchLanguage(event: MouseEvent<HTMLAnchorElement>, url: string) {
+    if (event.button !== 0 || event.ctrlKey || event.metaKey || event.shiftKey || event.altKey) return;
+    // Google rewrites anchor destinations on its proxy. Use the original URL
+    // directly so returning to English leaves the translated copy.
+    event.preventDefault();
+    window.location.assign(url);
+  }
   return (
     <details
       ref={menu}
@@ -46,21 +54,22 @@ export function LanguageSelector() {
         <span>Language</span>
       </summary>
       <nav className="language-menu" aria-label="Languages" translate="no">
-        <a href={publicPath} lang="en">English</a>
+        <a href={originalUrl} lang="en" onClick={(event) => switchLanguage(event, originalUrl)}>English</a>
         {languages.map(([code, label, name]) => {
           const params = new URLSearchParams({
             sl: "en",
             tl: code,
-            u: `https://dll-studio.com${publicPath}`,
+            u: originalUrl,
           });
+          const translationUrl = `https://translate.google.com/translate?${params}`;
           return (
             <a
               key={code}
-              href={`https://translate.google.com/translate?${params}`}
+              href={translationUrl}
+              onClick={(event) => switchLanguage(event, translationUrl)}
               lang={code}
               hrefLang={code}
-              target="_blank"
-              aria-label={`${name} via Google Translate (opens in a new tab)`}
+              aria-label={`${name} via Google Translate`}
               rel="noopener noreferrer"
             >
               <span dir="auto">{label}</span>
