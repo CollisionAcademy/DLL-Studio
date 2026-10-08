@@ -817,6 +817,14 @@
   .site-header .header-inner { gap: 8px; }
   .language-menu { right: -52px; }
 }
+@media (max-width: 540px) {
+  .site-header .brand-studio { display: none; }
+  .site-header .header-account { max-width: 96px; }
+  .site-header .header-account a { white-space: normal; overflow-wrap: anywhere; }
+}
+@media (max-width: 380px) {
+  .site-header .header-account { max-width: 70px; }
+}
 .badge-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 210px), 1fr)); gap: 20px; margin-block: 24px; }
 .badge-card { text-align: center; margin: 0; }
 .badge-card img { border-radius: 50%; object-fit: cover; }
