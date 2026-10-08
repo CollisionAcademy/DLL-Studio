@@ -805,6 +805,16 @@
 .youtube-episodes { margin-block: 28px 40px; }
 .youtube-player { display: block; width: 100%; aspect-ratio: 16 / 9; min-height: 200px; border: 0; background: #111; }
 .youtube-episodes > a { margin-top: 12px; }
+.youtube-gallery-heading { margin-block: 32px 20px; font-size: 28px; }
+.youtube-gallery { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 24px; }
+.youtube-episode { padding: 0; border: 1px solid var(--line); border-radius: 8px; overflow: hidden; background: white; color: var(--ink); text-align: left; display: flex; flex-direction: column; }
+.youtube-episode[aria-pressed="true"] { border-color: var(--blue); box-shadow: 0 0 0 2px var(--blue); }
+.youtube-thumbnail { display: block; position: relative; width: 100%; aspect-ratio: 16 / 9; background: #111; }
+.youtube-thumbnail img { object-fit: cover; }
+.youtube-thumbnail > svg { position: absolute; inset: 0; margin: auto; color: white; fill: white; filter: drop-shadow(0 2px 5px #000); }
+.youtube-episode-title { padding: 14px 16px; font-weight: 800; font-size: 15px; line-height: 1.5; overflow-wrap: anywhere; }
+@media (max-width: 800px) { .youtube-gallery { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 20px; } }
+@media (max-width: 540px) { .youtube-gallery { grid-template-columns: 1fr; } }
 .language-selector { position: relative; flex-shrink: 0; }
 .language-selector summary { display: flex; align-items: center; gap: 7px; min-height: 44px; padding: 0 8px; cursor: pointer; list-style: none; font-size: 13px; font-weight: 800; }
 .language-selector summary::-webkit-details-marker { display: none; }
