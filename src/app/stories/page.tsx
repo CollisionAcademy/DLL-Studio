@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { StoryVault } from "@/components/story-vault";
+import { YouTubeEpisodes } from "@/components/youtube-episodes";
 import { db } from "@/lib/membership/db";
 import { publicStoryVaultQuery } from "@/lib/membership/public-content-query";
 import type { ShelfItem } from "@/lib/membership/content-shelf";
@@ -11,11 +12,10 @@ export const metadata = {
 };
 export default async function StoriesPage() {
   let items: ShelfItem[] = [];
-  let unavailable = false;
   try {
-    items = (await db().query<ShelfItem>(publicStoryVaultQuery)).rows;
+    items = (await db().query<ShelfItem>(publicStoryVaultQuery)).rows.filter((item) => item.kind === "story");
   } catch {
-    unavailable = true;
+    // YouTube episodes remain available when the written-story database is offline.
   }
   return (
     <main id="main" className="page-wrap member-page">
@@ -28,13 +28,8 @@ export default async function StoriesPage() {
         Watch the crew’s videos and episodes, and discover funny tales. Free for
         everyone—no account needed.
       </p>
-      {unavailable ? (
-        <p role="alert">
-          The story vault is taking a little break. Please try again soon.
-        </p>
-      ) : (
-        <StoryVault items={items} />
-      )}
+      <YouTubeEpisodes />
+      {items.length > 0 && <StoryVault items={items} />}
       <article className="member-panel">
         <h2>Leo and the very wobbly flag.</h2>
         <p>

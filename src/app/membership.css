@@ -802,6 +802,9 @@
   .membership-page .text-button { white-space: normal; }
 }
 .footer-main > div { flex-wrap: wrap; }
+.youtube-episodes { margin-block: 28px 40px; }
+.youtube-player { display: block; width: 100%; aspect-ratio: 16 / 9; min-height: 200px; border: 0; background: #111; }
+.youtube-episodes > a { margin-top: 12px; }
 .language-selector { position: relative; flex-shrink: 0; }
 .language-selector summary { display: flex; align-items: center; gap: 7px; min-height: 44px; padding: 0 8px; cursor: pointer; list-style: none; font-size: 13px; font-weight: 800; }
 .language-selector summary::-webkit-details-marker { display: none; }

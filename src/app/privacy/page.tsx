@@ -18,7 +18,17 @@ export default function Privacy() {
         files. We use Vercel Web Analytics to measure page visits and Vercel
         Speed Insights to measure website performance. We do not send game
         scores, character conversations, or video scripts to these analytics
-        tools. There are no advertising trackers or social-media video embeds.
+        tools.
+      </p>
+      <h2>YouTube episodes</h2>
+      <p>
+        The Watch episodes page embeds DLL Studio’s YouTube uploads using
+        YouTube’s privacy-enhanced player. Loading the player connects your
+        browser to YouTube and Google, which process connection information
+        and may use storage under their own policies. YouTube may show
+        non-personalized ads. Available captions and audio languages are
+        provided by YouTube. See the{" "}
+        <a href="https://policies.google.com/privacy" target="_blank" rel="noopener noreferrer">Google Privacy Policy</a>.
       </p>
       <h2>Character conversations</h2>
       <p>
