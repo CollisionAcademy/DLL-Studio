@@ -1,6 +1,4 @@
 import type { Metadata } from "next";
-import { Analytics } from "@vercel/analytics/next";
-import { SpeedInsights } from "@vercel/speed-insights/next";
 import "@fontsource/fredoka/500.css";
 import "@fontsource/fredoka/600.css";
 import "@fontsource/nunito-sans/400.css";
@@ -46,8 +44,6 @@ export default function RootLayout({
       <Header authenticationEnabled={enabled} />
       {children}
       <Footer socialLinks={socialLinks} />
-      <Analytics />
-      <SpeedInsights />
     </>
   );
   return (

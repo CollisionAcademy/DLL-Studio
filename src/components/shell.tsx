@@ -56,7 +56,7 @@ export function Header({
         </button>
         <nav className={open ? "nav open" : "nav"} aria-label="Main navigation">
           <Link href="/stories" onClick={() => setOpen(false)} className={path === "/stories" || path.startsWith("/watch/") ? "active" : ""}>
-            Watch episodes
+            Story Vault
           </Link>
           <Link href="/member" onClick={() => setOpen(false)} className={path.startsWith("/member") && !path.startsWith("/membership") ? "active" : ""}>
             Member clubhouse
@@ -112,7 +112,7 @@ export function Footer({ socialLinks = [] }: {
         <p>Little characters. Big possibilities.</p>
         <div>
           <Link href="/member">Member clubhouse</Link>
-          <Link href="/stories">Watch episodes</Link>
+          <Link href="/stories">Story Vault</Link>
           <Link href="/shop">Shop</Link>
           <Link href="/parent">Parent account</Link>
           <Link href="/grown-ups">For grown-ups</Link>

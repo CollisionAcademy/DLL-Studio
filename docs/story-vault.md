@@ -1,19 +1,21 @@
-# Story vault library
+# Story Vault gallery
 
-The story vault at `/stories` is free for everyone, with no account or paid membership required. `/member/stories` redirects there before any account check. It appears in the main menu and footer. It lists published episodes and written stories, and its Play all button advances through the videos once, stopping at the end. Videos can also be chosen individually; Stop play all pauses the player and cancels automatic advance.
+`/stories` is the free public Story Vault. `/member/stories` still redirects there. Membership plans, authentication, billing, private household videos, database publication checks, the Watch Nook, and the Captain Giggle companion are unchanged.
 
-The public shelf and `/api/watch/:id` check approval and publication dates in the database. Household birthday/custom videos remain private. The browser receives public playback routes rather than private storage URLs. The watch nook retains its member content access rules.
+The gallery contains 16 explicit DLL Studio YouTube uploads, with a featured video, category filters, locally hosted thumbnails and a keyboard-accessible video dialog. Opening a video loads a single privacy-enhanced YouTube iframe with `autoplay=0` and no playlist. Press the player's play button to watch. Closing the dialog removes the iframe, stops playback and restores focus. No third-party YouTube requests happen during gallery browsing. Website Analytics and Speed Insights scripts have been removed; no custom viewer tracking was added.
 
-To import the full local DLL video folder, run with a Node version that supports TypeScript imports:
+YouTube controls its player, ads, external links and end suggestions. `rel=0` limits suggestions to the same channel; it does not remove them. Privacy-enhanced mode is not a guarantee of zero third-party processing after opening a player. The page and privacy notice disclose this. The embedded player does not add a comments section or open chat. Channel/site child-directed settings must be maintained by the owner in Google's account tools; this change does not claim those settings were audited.
 
-```sh
-node scripts/import-story-vault.mjs C:/dev/dll_studio/videos
-```
+## Sources checked November 8, 2026 (America/New_York)
 
-The default dry run recursively discovers MP4s, verifies their movie headers and durations, hashes them, and writes `verification/story-vault-import.json`. It needs no secrets and does not upload or change the database. It includes every source file, including highlights, reframes, and numbered parts.
+- Requested Drive folder: `1GUUyuu2o0Yd43KZFAO1JDZBkZ4MrBKSC`. The connected account returned zero files; metadata/permissions lookup returned 404 `notFound`. This does not establish that the folder is empty, public, or deleted. No sharing settings were changed.
+- YouTube: `https://www.youtube.com/@DLL-Studio`. All 16 catalog IDs were checked with YouTube oEmbed; each author URL matched that channel. Source titles and thumbnail provenance are saved by the verification script in ignored `verification/vault-sources.json`.
+- Only small JPEG thumbnails are stored in `public/story-vault/` (about 245 KiB total). No video binaries or Drive credentials are committed.
 
-After authorization to access production credentials, configure only the DLL production `DATABASE_URL` and private `BLOB_READ_WRITE_TOKEN` in the ignored `.env.local`, then run the same command with `--publish`. Do not copy credentials from the unrelated root project. The import uses private multipart storage, verifies the uploaded hash and denies anonymous access to raw storage before inserting each episode. Re-running reuses content hashes and IDs. Per the user's request, every verified source video is approved and published immediately for everyone through the public playback route. This includes the existing `halloween-ghost-2026` entry after its bytes match; unrelated content and household requests are unchanged. Completed imports remain valid if a later file fails; rerun after resolving the failure.
+## Updating the catalog
 
-If the production database secret cannot be exported, use `--stage` with only the storage token. The resulting ignored manifest includes verified private storage URLs. Copy it and `scripts/publish-staged-story-vault.mjs` into an ignored `vault-import/` folder, then invoke `node vault-import/publish-staged-story-vault.mjs vault-import/manifest.json` before the normal build in a one-off Vercel production deployment. The publisher uses Vercel's existing production environment, verifies every file again, and publishes only the manifest IDs in one transaction. Existing entries must have the same video bytes; conflicts abort the entire database import. Never commit the deployment bundle or export production secrets.
+Review each new upload, then add its ID, display title and category to `src/lib/youtube-videos.ts`. Run `node scripts/verify-vault-sources.mjs` to verify channel ownership and fetch thumbnails, and inspect the images. Future uploads are not automatically published from a feed. Run `npm test`, `npm run typecheck`, `npm run lint`, `npm run build` and browser verification before deploying.
 
-Files from Drive can be downloaded into the source folder before import. This does not connect a live Drive sync; future additions require another import. No public sharing changes are needed.
+The historical local/private-storage import helpers remain available in `scripts/import-story-vault.mjs` and `scripts/publish-staged-story-vault.mjs`; this gallery update does not invoke them or modify database content. Avoid public Drive embedding and large video files in Git.
+
+Player references: [YouTube parameters](https://developers.google.com/youtube/player_parameters), [privacy-enhanced embeds](https://support.google.com/youtube/answer/171780).

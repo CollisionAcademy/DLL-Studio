@@ -15,18 +15,19 @@ export default function Privacy() {
       <p>
         Games run in your browser. Scores and progress are not uploaded or
         stored by the app. Character images and videos are served as website
-        files. We use Vercel Web Analytics to measure page visits and Vercel
-        Speed Insights to measure website performance. We do not send game
-        scores, character conversations, or video scripts to these analytics
-        tools.
+        files. We do not load website analytics or performance-tracking scripts.
       </p>
       <h2>YouTube episodes</h2>
       <p>
-        The Watch episodes page embeds DLL Studio’s YouTube uploads using
-        YouTube’s privacy-enhanced player. Loading the player connects your
+        The Story Vault shows locally hosted thumbnails. Browsing the gallery
+        does not connect to YouTube. Only opening a video loads
+        YouTube’s privacy-enhanced player, and playback starts when you press
+        play. Loading the player connects your
         browser to YouTube and Google, which process connection information
         and may use storage under their own policies. YouTube may show
-        non-personalized ads. Available captions and audio languages are
+        non-personalized ads, external links, and suggestions from the same
+        channel. DLL Studio adds no comments, open chat, autoplay, or automatic
+        playlists. Available captions and audio languages are
         provided by YouTube. See the{" "}
         <a href="https://policies.google.com/privacy" target="_blank" rel="noopener noreferrer">Google Privacy Policy</a>.
       </p>

@@ -2,25 +2,25 @@ import Link from "next/link";
 import { YouTubeEpisodes } from "@/components/youtube-episodes";
 import { youtubeVideos } from "@/lib/youtube-videos";
 
-export const dynamic = "force-dynamic";
 export const metadata = {
-  title: "Watch episodes",
-  description: "Watch DLL Studio episodes and videos starring the crew. Free for everyone, with no account needed.",
+  title: "Story Vault",
+  description:
+    "Choose a DLL Studio adventure: funny mysteries, football stories, and spooky fun. Free videos with click-to-play viewing and no automatic playlists.",
 };
-export default async function StoriesPage() {
-  const videos = await youtubeVideos();
+export default function StoriesPage() {
   return (
-    <main id="main" className="page-wrap member-page">
+    <main id="main" className="page-wrap vault-page">
       <Link href="/" className="text-button">
         ← Back to the DLL world
       </Link>
-      <span className="eyebrow">ADVENTURES FOR EVERYONE</span>
-      <h1>Watch episodes.</h1>
-      <p>
-        Watch the crew’s videos and episodes. Free for
-        everyone—no account needed.
-      </p>
-      <YouTubeEpisodes videos={videos} />
+      <div className="vault-intro">
+        <h1>The Story Vault.</h1>
+        <p>
+          Little mysteries. Big laughs. Find an adventure with the DLL crew.
+        </p>
+        <span>Free for every family · No account needed</span>
+      </div>
+      <YouTubeEpisodes videos={youtubeVideos} />
     </main>
   );
 }
