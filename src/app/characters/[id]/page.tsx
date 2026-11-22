@@ -15,10 +15,17 @@ export async function generateMetadata({
 }: {
   params: Promise<{ id: string }>;
 }): Promise<Metadata> {
-  const c = getCharacter((await params).id);
+  const id = (await params).id;
+  const c = getCharacter(id);
   return {
     title: c ? `Meet ${c.name}` : "Character not found",
     description: c?.short,
+    ...(c
+      ? {
+          alternates: { canonical: `/characters/${c.id}` },
+          openGraph: { url: `/characters/${c.id}` },
+        }
+      : {}),
   };
 }
 export default async function CharacterPage({

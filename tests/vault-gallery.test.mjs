@@ -38,6 +38,30 @@ test("every embed is privacy-enhanced, single-video and never autoplays", () => 
   }
 });
 
+test("homepage shorts point at real Story Vault videos", async () => {
+  const source = await readFile(
+    new URL("../src/lib/home-features.ts", import.meta.url),
+    "utf8",
+  );
+  const ids = [...source.matchAll(/"([A-Za-z0-9_-]{11})"/g)]
+    .map((match) => match[1])
+    .filter((id) => youtubeVideos.some((video) => video.id === id));
+  assert.deepEqual(ids, [
+    "ZVPQu1L-Nug",
+    "bAY5G8xrOT8",
+    "2KDh63guWD4",
+    "jksEOv3y9zw",
+    "vlI0XqdVEBE",
+    "M7eBI4HHOjo",
+  ]);
+  for (const id of ids) {
+    assert.ok(youtubeVideos.some((video) => video.id === id));
+    const url = new URL(vaultEmbedUrl(id));
+    assert.equal(url.searchParams.get("autoplay"), "0");
+    assert.equal(url.origin, "https://www.youtube-nocookie.com");
+  }
+});
+
 test("unknown videos cannot become embeds and language input is bounded", () => {
   assert.throws(() => vaultEmbedUrl("not-in-vault"), /Unknown/);
   const id = youtubeVideos[0].id;

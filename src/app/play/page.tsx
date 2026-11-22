@@ -2,7 +2,13 @@ import Image from "next/image";
 import Link from "next/link";
 import { ArrowRight } from "lucide-react";
 import { characters } from "@/lib/characters";
-export const metadata = { title: "The playroom" };
+import { pageMetadata } from "@/lib/page-metadata";
+export const metadata = pageMetadata({
+  path: "/play",
+  title: "The playroom",
+  description:
+    "Six playful DLL Studio games. No downloads, no scores, and no account needed.",
+});
 export default function Playroom() {
   return (
     <main id="main" className="play-page page-wrap">

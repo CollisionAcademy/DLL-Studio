@@ -1,10 +1,12 @@
 import Image from "next/image";
 import { ArrowRight, Heart, Sparkles, MousePointer2 } from "lucide-react";
+import { pageMetadata } from "@/lib/page-metadata";
 
-export const metadata = {
+export const metadata = pageMetadata({
+  path: "/story-lab",
   title: "Story Lab",
   description: "Step into a DLL Studio adventure with Leo. Explore Captain Giggle, an interactive illustrated story about friendship, listening, and making things right.",
-};
+});
 
 export default function StoryLab() {
   return (
