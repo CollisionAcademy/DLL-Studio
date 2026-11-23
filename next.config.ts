@@ -4,6 +4,12 @@ const config: NextConfig = {
   async redirects() {
     return [
       { source: "/member/stories", destination: "/stories", permanent: false },
+      {
+        source: "/:path*",
+        has: [{ type: "host", value: "www.dll-studio.com" }],
+        destination: "https://dll-studio.com/:path*",
+        permanent: true,
+      },
     ];
   },
   async headers() {

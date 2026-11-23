@@ -1,4 +1,6 @@
+import { GrownUpSocial } from "@/components/grown-up-social";
 import { ShopCatalog } from "@/components/membership/shop-catalog";
+import { pageMetadata } from "@/lib/page-metadata";
 import Image from "next/image";
 import Link from "next/link";
 import {
@@ -12,11 +14,12 @@ import {
 } from "lucide-react";
 import { plans, planKeys } from "@/lib/membership/plans";
 import { characters } from "@/lib/characters";
-export const metadata = {
+export const metadata = pageMetadata({
+  path: "/shop",
   title: "Shop — Memberships & little adventures",
   description:
-    "Watch, join, create, and bring the adventure home. Explore DLL Crew, Adventure Club, Super Crew, and Family Pass.",
-};
+    "Watch, join, create, and bring the adventure home. Parent-managed plans: DLL Crew, Adventure Club, Super Crew, and Family Pass.",
+});
 export default function ShopPage() {
   return (
     <main id="main" className="membership-page">
@@ -229,6 +232,9 @@ export default function ShopPage() {
             <p>{a}</p>
           </details>
         ))}
+      </section>
+      <section className="page-wrap">
+        <GrownUpSocial />
       </section>
     </main>
   );

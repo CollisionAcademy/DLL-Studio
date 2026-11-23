@@ -1,24 +1,29 @@
 "use client";
+
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { ArrowUpRight, Gamepad2, Heart, Instagram, Menu, Music2, X, Youtube } from "lucide-react";
+import { Menu, X } from "lucide-react";
 import { useState } from "react";
 import { AccountNav } from "./membership/account-nav";
-import { LanguageSelector } from "./language-selector";
-export function Brand() {
+
+export function Brand({
+  tagline = "A little world of big adventures",
+}: {
+  tagline?: string;
+}) {
   return (
     <span className="brand" translate="no">
-      <span className="brand-blocks">
-        <b>D</b>
-        <b>L</b>
-        <b>L</b>
+      <span className="brand-mark" aria-hidden="true">
+        D
       </span>
-      <span className="brand-studio">
-        STUDIO<span className="brand-spark">✳</span>
+      <span className="brand-name">
+        DLL Studio
+        <small>{tagline}</small>
       </span>
     </span>
   );
 }
+
 export function Header({
   authenticationEnabled = false,
 }: {
@@ -26,116 +31,87 @@ export function Header({
 }) {
   const [open, setOpen] = useState(false);
   const path = usePathname();
+  const close = () => setOpen(false);
+  const onHome = path === "/";
+  const links = [
+    { href: onHome ? "#shorts" : "/#shorts", label: "Shorts", active: false },
+    {
+      href: onHome ? "#crew" : "/#crew",
+      label: "The crew",
+      active: path.startsWith("/characters"),
+    },
+    {
+      href: onHome ? "#vault" : "/stories",
+      label: "Story Vault",
+      active: path === "/stories" || path.startsWith("/watch/"),
+    },
+    {
+      href: onHome ? "#play" : "/play",
+      label: "Play",
+      active: path === "/play",
+    },
+  ];
+
   return (
     <header className="site-header">
-      <div className="header-inner">
-        <div className="header-account">
-          {authenticationEnabled ? (
-            <AccountNav onNavigate={() => setOpen(false)} />
-          ) : (
-            <Link href="/login" onClick={() => setOpen(false)}>
-              Member login
-            </Link>
-          )}
-        </div>
-        <Link
-          href="/"
-          aria-label="DLL Studio home"
-          onClick={() => setOpen(false)}
-        >
+      <div className="header-inner site-wrap">
+        <Link href="/" aria-label="DLL Studio home" onClick={close}>
           <Brand />
         </Link>
-        <LanguageSelector />
-        <button
-          className="menu-toggle icon-button"
-          onClick={() => setOpen(!open)}
-          aria-label={open ? "Close menu" : "Open menu"}
-          aria-expanded={open}
-        >
-          {open ? <X /> : <Menu />}
-        </button>
-        <nav className={open ? "nav open" : "nav"} aria-label="Main navigation">
-          <Link href="/stories" onClick={() => setOpen(false)} className={path === "/stories" || path.startsWith("/watch/") ? "active" : ""}>
-            Story Vault
-          </Link>
-          <Link href="/member" onClick={() => setOpen(false)} className={path.startsWith("/member") && !path.startsWith("/membership") ? "active" : ""}>
-            Member clubhouse
-          </Link>
-          <Link
-            href="/#characters"
-            onClick={() => setOpen(false)}
-            className={path.startsWith("/characters") ? "active" : ""}
-          >
-            Meet the crew
-          </Link>
-          <Link
-            href="/play"
-            onClick={() => setOpen(false)}
-            className={path === "/play" ? "active" : ""}
-          >
-            The playroom
-          </Link>
-          <Link
-            href="/story-lab"
-            onClick={() => setOpen(false)}
-            className={path === "/story-lab" ? "active" : ""}
-          >
-            Story Lab
-          </Link>
-          <Link
-            href="/grown-ups"
-            onClick={() => setOpen(false)}
-            className="parents-link"
-          >
-            For grown-ups <ArrowUpRight size={15} />
-          </Link>
-          <Link href="/shop" onClick={() => setOpen(false)} className={path === "/shop" ? "active" : ""}>
-            Shop
-          </Link>
+        <nav className={open ? "nav open" : "nav"} aria-label="Kids pages">
+          {links.map((link) => (
+            <Link
+              key={link.label}
+              href={link.href}
+              onClick={close}
+              className={link.active ? "active" : undefined}
+              aria-current={link.active ? "page" : undefined}
+            >
+              {link.label}
+            </Link>
+          ))}
         </nav>
-        <Link href="/play" className="button button-yellow header-play">
-          <Gamepad2 size={19} /> Let’s play
-        </Link>
+        <div className="header-actions">
+          {authenticationEnabled ? <AccountNav onNavigate={close} /> : null}
+          <Link href="/#grown-ups" className="btn-grown" onClick={close}>
+            Grown-ups
+            <span> · shop & accounts</span>
+          </Link>
+          <button
+            type="button"
+            className="menu-toggle icon-button"
+            onClick={() => setOpen(!open)}
+            aria-label={open ? "Close menu" : "Open menu"}
+            aria-expanded={open}
+          >
+            {open ? <X /> : <Menu />}
+          </button>
+        </div>
       </div>
     </header>
   );
 }
-export function Footer({ socialLinks = [] }: {
-  socialLinks?: { platform: "YouTube" | "Instagram" | "TikTok"; url: string }[];
-}) {
+
+export function Footer() {
   return (
     <footer className="site-footer">
-      <div className="footer-main">
-        <Link href="/" aria-label="DLL Studio home">
-          <Brand />
-        </Link>
-        <p>Little characters. Big possibilities.</p>
-        <div>
-          <Link href="/member">Member clubhouse</Link>
-          <Link href="/stories">Story Vault</Link>
-          <Link href="/shop">Shop</Link>
-          <Link href="/parent">Parent account</Link>
-          <Link href="/grown-ups">For grown-ups</Link>
-          <Link href="/privacy">Privacy</Link>
+      <div className="site-wrap">
+        <div className="footer-row">
+          <Link href="/" aria-label="DLL Studio home">
+            <Brand tagline="Little characters. Big possibilities." />
+          </Link>
+          <nav className="footer-links" aria-label="Grown-up pages">
+            <Link href="/grown-ups">For grown-ups</Link>
+            <Link href="/privacy">Privacy</Link>
+            <Link href="/parents/safety">Family safety</Link>
+            <Link href="/shop">Shop</Link>
+            <Link href="/login">Parent account</Link>
+          </nav>
         </div>
-      </div>
-      {socialLinks.length > 0 && (
-        <nav className="footer-social" aria-label="DLL Studio social media">
-          {socialLinks.map(({ platform, url }) => {
-            const Icon = platform === "YouTube" ? Youtube : platform === "Instagram" ? Instagram : Music2;
-            return (
-              <a key={platform} href={url} target="_blank" rel="noopener noreferrer" aria-label={`${platform} (opens in a new tab)`}>
-                <Icon size={20} aria-hidden="true" /> {platform}
-              </a>
-            );
-          })}
-        </nav>
-      )}
-      <div className="footer-bottom">
-        <span>© {new Date().getFullYear()} DLL Studio</span>
-        <span>
-          Made with imagination <Heart size={13} aria-hidden="true" />
-        </span>
+        <p className="footer-fine">
+          © {new Date().getFullYear()} DLL Studio. Made for kids. Public play is
+          always free. Purchases and accounts stay with a grown-up.
+        </p>
       </div>
     </footer>
   );

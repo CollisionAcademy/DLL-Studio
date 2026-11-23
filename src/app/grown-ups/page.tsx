@@ -1,5 +1,13 @@
 import Link from "next/link";
-export const metadata = { title: "For grown-ups" };
+import { GrownUpSocial } from "@/components/grown-up-social";
+import { pageMetadata } from "@/lib/page-metadata";
+
+export const metadata = pageMetadata({
+  path: "/grown-ups",
+  title: "For grown-ups",
+  description:
+    "A note for parents and guardians about DLL Studio: free play, character chat, memberships, and official accounts.",
+});
 export default function GrownUps() {
   return (
     <main id="main" className="page-wrap info-page">
@@ -56,9 +64,12 @@ export default function GrownUps() {
         and the Falconetti family name.
       </p>
       <p style={{ marginTop: 24 }}>
-        Read our <Link href="/privacy">privacy information</Link> for more about
-        how the site works.
+        Read our <Link href="/privacy">privacy information</Link> and{" "}
+        <Link href="/parents/safety">family safety</Link> notes. Memberships
+        and the shop stay on the <Link href="/shop">parent shop</Link>. Sign in
+        from the <Link href="/login">parent account</Link>.
       </p>
+      <GrownUpSocial />
       <Link className="button button-blue" style={{ marginTop: 28 }} href="/">
         Back to the crew
       </Link>

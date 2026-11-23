@@ -1,5 +1,13 @@
 import Link from "next/link";
-export const metadata = { title: "Privacy" };
+import { GrownUpSocial } from "@/components/grown-up-social";
+import { pageMetadata } from "@/lib/page-metadata";
+
+export const metadata = pageMetadata({
+  path: "/privacy",
+  title: "Privacy",
+  description:
+    "How DLL Studio works for families: free play without an account, click-to-play videos, and parent-managed memberships.",
+});
 export default function Privacy() {
   return (
     <main id="main" className="page-wrap info-page">
@@ -66,18 +74,12 @@ export default function Privacy() {
       </p>
       <h2>Questions for DLL Studio</h2>
       <p>
-        A grown-up can raise a privacy question or report a concern through the
-        DLL Studio website repository’s{" "}
-        <a
-          href="https://github.com/CollisionAcademy/DLL-Studio/issues"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          issue page
-        </a>
-        . Issues are public: please do not include children’s names, contact
-        details, or other private information.
+        A parent or guardian can ask a privacy question from the{" "}
+        <Link href="/login">parent account</Link>. Please don’t include a
+        child’s name, contact details, or other private information in any
+        public place.
       </p>
+      <GrownUpSocial />
       <p style={{ marginTop: 24 }}>
         <Link href="/grown-ups">More information for grown-ups</Link>
       </p>

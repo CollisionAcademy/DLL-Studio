@@ -1,12 +1,14 @@
 import Link from "next/link";
 import { YouTubeEpisodes } from "@/components/youtube-episodes";
 import { youtubeVideos } from "@/lib/youtube-videos";
+import { pageMetadata } from "@/lib/page-metadata";
 
-export const metadata = {
+export const metadata = pageMetadata({
+  path: "/stories",
   title: "Story Vault",
   description:
     "Choose a DLL Studio adventure: funny mysteries, football stories, and spooky fun. Free videos with click-to-play viewing and no automatic playlists.",
-};
+});
 export default function StoriesPage() {
   return (
     <main id="main" className="page-wrap vault-page">

@@ -1,5 +1,11 @@
 import Link from "next/link";
-export const metadata = { title: "Parent controls & family safety" };
+import { pageMetadata } from "@/lib/page-metadata";
+export const metadata = pageMetadata({
+  path: "/parents/safety",
+  title: "Parent controls & family safety",
+  description:
+    "How parents stay in the grown-up seat for DLL Studio accounts, memberships, and character play.",
+});
 export default function Safety() {
   return (
     <main id="main" className="page-wrap info-page">

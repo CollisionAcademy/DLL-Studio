@@ -1,9 +1,24 @@
+import type { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { db } from "@/lib/membership/db";
 import { publicEpisodeQuery } from "@/lib/membership/public-content-query";
 
 export const dynamic = "force-dynamic";
+
+export async function generateMetadata({
+  params,
+}: {
+  params: Promise<{ id: string }>;
+}): Promise<Metadata> {
+  const { id } = await params;
+  if (!/^[\w-]+$/.test(id)) return { title: "A DLL Studio adventure" };
+  return {
+    title: "A DLL Studio adventure",
+    alternates: { canonical: `/watch/${id}` },
+    openGraph: { url: `/watch/${id}` },
+  };
+}
 
 export default async function PublicEpisode({
   params,
